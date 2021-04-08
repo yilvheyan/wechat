@@ -1,0 +1,118 @@
+<!-- 我的店铺 -->
+
+<view class='myshop' style='height:{{height}}rpx'>
+    <!-- xxx的酒庄专栏 -->
+    <view class='myshop_top'>
+        <view class='top_background'>
+
+        </view>
+        <image class='top_background_img' src='{{userinformation.background}}'></image>
+        <view class='top_state'>
+
+        </view>
+        <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_medium.png' class='top_name_medium'></image> -->
+        <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_touxiangkuang.png' class='top_name_touxiangkuang'></image>
+        <image src='{{headerimg}}' class='top_name_headportrait'></image>
+        <view class='top_who'>
+            <view class='top_who_name'>{{userinformation.name}}</view>
+            <view class='top_who_language'>{{userinformation.desc}}</view>
+        </view>
+    </view>
+    <!-- 酒单详情 -->
+    <scroll-view scroll-y="true" style='height:{{height-356}}rpx' class='myshop_center_scroll'>
+        <view class='myshop_center'>
+            <view class='myshop_center_one' bindtap='shopForDetails' wx:for="{{shopForDetailslist}}" wx:key="" data-id="{{item.id}}">
+                <image src='{{item.playimage}}'></image>
+                <view class='myshop_center_one_black'>{{item.name}}</view>
+                <view class='myshop_center_one_writh'>{{item.subname}}</view>
+                <view class='myshop_center_one_money'>￥{{item.price}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view catchtap='clickPup' class='myshop_shopcar'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/shoppingcar.png' class='myshop_shopcar_img'></image>
+        <view class='myshop_shopcar_button'>{{mycatnum}}</view>
+    </view>
+    <!-- 底部弹窗动画的内容 -->
+
+    <view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true'>
+        <scroll-view scroll-y="true" style="height: 525rpx;" class='myshop_track'>
+            <!-- 购物车实现购买详情1 -->
+            <!-- 最外层视图pages -->
+            <view class="pages">
+                <view wx:if="{{hasList}}">
+                    <!-- 编辑 -->
+                    <view class='edit'>
+                        <label class='edit_btn' bindtap='btn_edit'>{{edit_name}}</label>
+                    </view>
+                    <!-- 列表 -->
+                    <view class="list" wx:for="{{shopmessage}}" wx:key="{{index}}">
+                        <!-- radio选择IOCN -->
+                        <!-- 删除 -->
+                        <image class='dele_edit' bindtap='deletes' data-index='{{index}}' style='display:{{edit_show}}' src='http://qiniu-test.ishzm.com/jxb/img/delect.png'></image>
+                        <view class='radio_chek_zong'>
+                            <!-- 全选和不全选 -->
+                            <image wx:if="{{item.selected}}" data-index="{{index}}" class="radio_chek" bindtap="selectList" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+                            <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="radio_chek" data-index="{{index}}" bindtap="selectList"></image>
+                        </view>
+                        <!-- 列表标题 -->
+                        <!-- <text class='shop_message_style_top'>{{name}}</text> -->
+                        <view>
+                            <image src='{{item.playimage}}' class='list_image'></image>
+                        </view>
+                        <view class='shop_message_style'>
+                            <view class='shop_message_style_top'>
+                                {{item.name}}
+                            </view>
+                            <view class='shop_message_style_bttom'>
+                                ￥{{item.price}}/瓶
+                            </view>
+                        </view>
+                        <!-- 商品数量加减  style='display:{{show_edit}}'-->
+                        <view style='display:{{show_edit}}'>
+                            <view class="carts-num">
+                                <!--减按钮  -->
+                                <lable class="minus" bindtap="btn_minus" data-obj="{{obj}}" data-index="{{index}}">-</lable>
+                                <!-- 文本框值 -->
+                                <!-- <input class="view_text_center" disabled='disabled' value="{{item.num}}" bindinput='input_num' data-index="{{index}}"></input> -->
+                                <label class="view_text_center" bindinput='input_num' data-index="{{index}}">{{item.buynum}}</label>
+                                <lable class="plus" bindtap="btn_add" data-index="{{index}}">+</lable>
+
+                            </view>
+                        </view>
+                        <!-- 删除 -->
+                        <!-- <text class="list_del" bindtap="deleteList" data-index="{{index}}">×</text> -->
+                    </view>
+
+
+                </view>
+                <view wx:else>
+                    <view class="list_none">购物车是空的哦~</view>
+                </view>
+
+            </view>
+
+        </scroll-view>
+        <!-- <button class='myshop_payment' bindtap='myshoppayment'>支付</button> -->
+        <!-- 固定底部 -->
+        <view class="cont_bot">
+            <!-- 全选ICON -->
+            <image wx:if="{{selectAllStatus}}" class="total-select" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+            <image wx:else class="total-select" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png'></image>
+            <!-- <icon wx:else type="circle" color="#999" class="total-select" bindtap="selectAll" />  -->
+            <!-- 全选标题 -->
+            <text class='sel_count_name'>全选</text>
+            <!-- 合计金额 -->
+            <lable class="count_price">合计：
+                <text>￥{{totalPrice}}</text>
+            </lable>
+            <!-- 提交订单 -->
+            <label class='submit' bindtap='btn_submit_order'>提交订单</label>
+        </view>
+    </view>
+
+    <!-- 固定的背景 -->
+    <view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'></view>
+
+
+</view>

@@ -1,0 +1,54 @@
+.applyWaiter_overall {
+    width: 750rpx;
+    height: 1390rpx;
+    background: rgba(245, 246, 247, 1);
+    overflow: hidden;
+}
+
+.applyWaiter_pitch {
+    width: 706rpx;
+    height: 610rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin-left: 22rpx;
+    margin-top: 22rpx;
+}
+
+.applyWaiter_name {
+    width: 706rpx;
+    height: 117rpx;
+    border-bottom: 1rpx #efefef solid;
+    display: flex;
+}
+
+.applyWaiter_name text {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 117rpx;
+    margin-left: 52rpx;
+}
+
+.applyWaiter_name input {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin: 30rpx 0rpx 0rpx 21rpx;
+}
+
+.applyfor {
+    width: 608rpx;
+    height: 73rpx;
+    background: linear-gradient(180deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 238, 1) 100%);
+    margin-left: 49rpx;
+    border-radius: 6rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 73rpx;
+    text-align: center;
+    margin-top: 92rpx;
+}

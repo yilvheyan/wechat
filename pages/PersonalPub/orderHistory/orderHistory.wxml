@@ -1,0 +1,83 @@
+<!--订单历史-->
+<view class='orderhistory'>
+    <view class='orderhistory_one'>
+        <!-- 下拉框 -->
+        <view class='top-selected' bindtap='bindShowMsg'>
+            <text class='top-selected_quanbu'>{{grade_name}}</text>
+            <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/xiala.png' class='top-selected_xiala'></image> -->
+        </view>
+        <!-- 下拉需要显示的列表 -->
+        <view class="select_box" wx:if="{{select}}">
+            <view wx:for="{{grades}}" wx:key="unique">
+                <view class="select_one" bindtap="mySelect" data-name="{{item}}">{{item}}</view>
+            </view>
+        </view>
+        <!-- 选择日期 -->
+        <view class="section">
+            <picker mode="date" value="{{date}}" start="2019-09-01" end="{{nowdata}}" bindchange="bindDateChange">
+                <view class="picker">
+                    <view bindtap='showTip' wx:if="{{show==0}}">起始日期</view>
+                    <view bindtap='hideTip' wx:if="{{show==1}}">{{date}}</view>
+                    <!-- <image></image> -->
+                </view>
+            </picker>
+        </view>
+        <!-- 选择日期 -->
+        <view class="section">
+            <picker mode="date" value="{{date}}" start="2019-09-01" end="{{nowdata}}" bindchange="bindDateChangeto">
+                <view class="picker">
+                    <view bindtap='showTip' wx:if="{{toshow==0}}">截止日期</view>
+                    <view bindtap='hideTip' wx:if="{{toshow==1}}">{{todate}}</view>
+                    <!-- <image></image> -->
+                </view>
+            </picker>
+        </view>
+    </view>
+    <!-- 收益记录 -->
+    <view class='record'>
+        <!-- x月订单收益记录 -->
+        <view class='gainrecording' wx:for="{{orderRecordlist}}" data-index="{{index}}" wx:key="">
+            <view class='gainrecording_one'>
+                <view class='gainrecording_one_none'></view>
+                <view class='gainrecording_one_top'>{{item.title}}
+                    <!-- <span class='gainrecording_one_top_span'></span> -->
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/chateau/xiala.png" bindtap="clickPerson" data-index='{{index}}' class="personal_image {{item.selectArea ? 'rotateRight' :''}}"></image>
+                </view>
+            </view>
+            <!-- 日收益 -->
+            <view class='gainrecording_two'>
+                <view class='gainrecording_two_left'>
+                    <span class='gainrecording_two_left_one'>{{}}</span>
+                    <span class='gainrecording_two_left_two'>日总销售额</span>
+                    <span class='gainrecording_two_left_three'>+{{item.total}}</span>
+                </view>
+
+                <view class='gainrecording_two_none'></view>
+            </view>
+            <view class="gainrecording_xl">
+                <view class="phone_select" wx:if="{{item.selectPerson}}">
+                    <view bindtap="mySelect">
+                        <view class='gainrecording_two_center'>
+                            <!-- 标题栏 -->
+                            <view class="gainrecording_mm" wx:if="{{allarry.list.length!=0}}">
+                                <view class='gainrecording_mm_vw1'>买家</view>
+                                <view class='gainrecording_mm_vw2'>小二</view>
+                                <view class='gainrecording_mm_vw3'>成交额</view>
+                            </view>
+                            <!-- 日收益 -->
+                            <view class='gainrecording_two_center_two'>
+                                <!-- 酒名+小二+积分 -->
+                                <view class='gainrecording_two_xiaoer' wx:for="{{item.list}}" wx:for-item="items" wx:key="">
+                                    <view class='gainrecording_two_xiaoer_span1'>{{items.uname}}</view>
+                                    <view class='gainrecording_two_xiaoer_span2'>{{items.waitername}}</view>
+                                    <view class='gainrecording_two_xiaoer_span3'>+{{items.money}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

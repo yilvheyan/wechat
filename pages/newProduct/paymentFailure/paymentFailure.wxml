@@ -1,0 +1,13 @@
+<!-- 支付失败 -->
+<view>
+    <view class='pay_success'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/bg_sb.png' class='pay_success_image_one'></image>
+        <view class='pay_success_one'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/presell/shibai.png' class='pay_success_image_three'></image>
+                <view class='pay_success_one1'>支付失败</view>
+                <view class='pay_success_one2'>请返回页面重新支付</view>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/presell/dingdan_ok.png' class='pay_success_image_two'></image>
+                <view class='pay_success_one3'></view>
+        </view>
+    </view>
+</view>

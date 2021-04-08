@@ -1,0 +1,143 @@
+<!-- <个人主页> -->
+
+<view class="page">
+    <!-- <wxs src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></wxs> -->
+    <!-- <web-view wx:if="{{getohoutai}}" src='http://jiangxiaobai.test.ishzm.com/admin/index/index?id='>
+    </web-view> -->
+    <view>
+        <!-- <scroll-view scroll-y="true" class="page-slidebar {{open ? ['c-state','cover'] : ''}}"> -->
+        <scroll-view scroll-y="true" class="page-content page-slidebar {{open ? ['c-state','cover'] : ''}}">
+            <!-- 侧边栏头像框 -->
+            <view class='wc'>
+                <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_xiaoxi.png" bindtap="goxiaoXiInform" class='wc_three'></image>
+                <image src="{{avatarUrl}}" class='wc_head' bindtap="getoqklian"></image>
+                <image src="http://qiniu-test.ishzm.com/jxb/img/home_tx_biank.png" class='wc_headtwo'></image>
+                <view class="wc_identity" wx:if="{{community==0}}">普通用户</view>
+                <view class="wc_identity" wx:if="{{community==1}}">小二</view>
+                <view class="wc_identity" wx:if="{{community==2}}">店主</view>
+                <view class='wc_radio' bindtap="goxiaoXiInform">{{pushinfo}}</view>
+                <view class="wc_message" bindtap="getoqkliansee" data-name="{{nickName}}">
+                    <view class='wc_name'>{{nickName}}</view>
+                    <view class='wc_labal'>我有孤独和烈酒、是否愿意跟我走</view>
+                </view>
+                <!-- <view class="home_selectll" bindtap="selectll">跳转信息</view> -->
+                <view class="home_select" bindtap="selectxx">修改信息</view>
+            </view>
+            <!-- 积分总览 -->
+            <view class='integral'>
+                <view class='integral_jifen'>
+                    <!-- <积分> -->
+                    <view class='integral_jifen_one' catchtap='myjifen'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_blue.png " class='integral_jifen_image' catchtap='myjifen'></image>
+                        <view class='integral_money'>
+                            <view class='integral_money_one'>积分</view>
+                            <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/left_money.png " class="integral_money_one_img "></image>
+                            <view class='integral_money_two'>{{totalscore.remainscores}}</view>
+                            <view class='integral_money_three'>
+                                昨日收益: \t{{yestodayscore}}\t
+                            </view>
+                        </view>
+                    </view>
+                    <!-- <酒钻> -->
+                    <view class='integral_jifen_two' catchtap='myjiuzuan'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_pop.png " class='integral_jifen_img'></image>
+                        <view class='integral_corkscrew'>
+                            <view class='integral_money_one'>酒钻</view>
+                            <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/left_jiuzuan.png " class="integral_money_one_img "></image>
+                            <view class='integral_money_two'>{{totalwineDrill}}</view>
+                            <view class='integral_money_three'>
+                                昨日分红:\t{{yestodaywineDrill}}\t
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- <我的订单> -->
+            <view class='indent'>
+                <view class="indent_fo" bindtap='nonpayment' data-index='0'>
+                    <view class='indent_font'>我的订单</view>
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/home/right_bracket.png " class='right_bracket'></image>
+                </view>
+                <view class='indent_fukuan'>
+                    <!-- 每一个小view -->
+                    <view class='indent_weifukuan_one1' data-index='0' bindtap='nonpayment'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_daifukuan.png " class='index_one_img1'></image>
+                        <view class='index_jifen_one11'>未付款</view>
+                    </view>
+                    <view class='indent_weifukuan_one1' data-index='1' bindtap='nonpayment'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_daifahuo.png " class='index_one_img2'></image>
+                        <view class='index_jifen_one11'>待发货</view>
+                    </view>
+                    <view class='indent_weifukuan_one1' data-index='2' bindtap='nonpayment'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_daishouhuo.png " class='index_one_img3'></image>
+                        <view class='index_jifen_one11'>待收货</view>
+                    </view>
+                    <view class='indent_weifukuan_one2' data-index='3' bindtap='nonpayment'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_shouhou.png " class='index_one_img_one4'></image>
+                        <view class='index_jifen_one11'>售后</view>
+                    </view>
+                </view>
+            </view>
+            <!-- 我的应用 -->
+            <view class='application'>
+                <view class='application_use'>
+                    <span>我的应用</span>
+                </view>
+                <view class='application_list'>
+                    <view class='application_list_one' bindtap='integralWithdraw'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_integral.png " class='application_list_oneimg'></image>
+                        <view class='application_list_one_text'>积分提现</view>
+                    </view>
+                    <view class='application_list_one' bindtap='joinWaiter' wx:if="{{community==0}}">
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_integral.png " class='application_list_oneimg'></image>
+                        <view class='application_list_one_text'>应聘小二</view>
+                    </view>
+                    <view class='application_list_one' bindtap='mytavern' wx:if="{{community>0}}">
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_plus.png" class='application_list_oneimg'></image>
+                        <view class='application_list_one_text'>我的酒馆</view>
+                    </view>
+                    <!-- <view class='application_list_one' wx:if="{{community==2}}" bindtap="shopkeepersq">
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_shequ.png" class='application_list_oneimg'></image>
+                        <view class='application_list_one_text'>店主社区</view>
+                    </view> -->
+                    <view class='application_list_one' bindtap='yiJianFeedback'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_igoumai.png" class='application_list_oneimgyi'></image>
+                        <view class='application_list_one_text'>意见反馈</view>
+                    </view>
+                    <view class='application_list_one' bindtap='lianXiService'>
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/home_left/home_left_kefu.png" class='application_list_oneimgkf'></image>
+                        <view class='application_list_one_text'>联系客服</view>
+                    </view>
+                    <view class='application_list_one' bindtap="goshopcar">
+                        <image src="http://qiniu-test.ishzm.com/jxb/img/shoppingcar_litter.png" class='application_list_oneshopping'></image>
+                        <view class='application_list_one_text'>购物车</view>
+                    </view>
+                </view>
+            </view>
+            <!-- <button class="tuichubut" bindtap="tuichucli">退出账号</button> -->
+
+        </scroll-view>
+        <image src="http://qiniu-test.ishzm.com/jxb/img/home/zuoji.png" class='wc_zuoji' wx:if="{{hiddenName}}" bindtap='zuoji'></image>
+        <!-- </scroll-view> -->
+        <!-- 页面内容 -->
+        <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top">
+            <image catchtap="tap_ch" src="{{avatarUrl}}" class="page-top_img"></image>
+            <image catchtap="tap_ch" src="http://qiniu-test.ishzm.com/jxb/img/home_tx_biank.png" class="page-top_img_waiquan"></image>
+            <image catchtap="tap_ch" src="http://qiniu-test.ishzm.com/jxb/img/home_pople_bck.png" class="page-top_img_pople"></image>
+            <view class='page-top_one' catchtap="goexchangeSuo"></view>
+            <navigator class='page-top_two' open-type="switchTab" url='../square/square'></navigator>
+            <!-- <view class='page-top_three' url='/' bindtap='dianzhusequ'>店主社区</view> -->
+            <view class='page-top_four' url='/' catchtap='gerenjiu'></view>
+        </view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/homebannerbut.png' class='home_background'></image>
+        <!-- <image src="http://qiniu-test.ishzm.com/jxb/img/homebanner.gif" class="homeimgtwo"></image> -->
+        <image src="http://qiniu-test.ishzm.com/jxb/img/homebig.png" class="homebigimg" mode='widthFix' style="top:{{bigtophegth}}rpx" animation="{{bigani}}"></image>
+        <image src="http://qiniu-test.ishzm.com/jxb/img/homesmall.png" class="homesmallimg" mode='widthFix' style="top:{{tophegth}}rpx" animation="{{ani}}"></image>
+
+    </view>
+
+    <!-- 组件 -->
+    <popup id="popup"></popup>
+    <phonepopup id="phonepopup"></phonepopup>
+
+</view>

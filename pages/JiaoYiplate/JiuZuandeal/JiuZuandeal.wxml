@@ -1,0 +1,188 @@
+<!-- 酒钻买卖 -->
+<view class='JiuZuandeal'>
+  <view class='JiuZuandeal_top'>
+    <view class='JiuZuandeal_topfixd'>
+      <!-- 头像名字专栏 -->
+      <view class='JiuZuandeal_topfixd_tou'>
+        <image src='{{kolinfo.headpic}}' class='JiuZuandeal_topfixd_touimg'></image>
+        <view class='JiuZuandeal_topfixd_name'>{{kolinfo.kolname}}</view>
+        <view class='JiuZuandeal_topfixd_select' bindtap="show">{{kolinfo.kolname}}的白酒</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_Shape.png' class='JiuZuandeal_topfixd_touimgmot'> </image>
+      </view>
+      <!--  酒钻买入、酒钻卖出 -->
+      <view class='JiuZuandeal_recommendone'>
+        <view class='JiuZuandeal_style  {{item.id==num?"JiuZuandeal_active":""}}' catchtap='jiuZuandeal_ch' wx:for="{{message}}" wx:key="" id="{{index}}">{{item.text}}
+        </view>
+      </view>
+      <!-- <酒钻买入> -->
+      <view class='JiuZuandeal_gaishu' wx:if="{{sindex==0}}">
+        <!-- 交易流程 -->
+        <view class='JiuZuandeal_explain'>
+          <view class='JiuZuandeal_explain_liucheng'>交易流程</view>
+          <view class='JiuZuandeal_explain_tixian'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_jiuzuanmol.png'></image>
+            <view class='JiuZuandeal_explain_tixian_progress'></view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_tixian.png'></image>
+            <view class='JiuZuandeal_explain_tixian_progress_two'></view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_wancheng.png'></image>
+          </view>
+          <view class='JiuZuandeal_explain_bottixian'>
+            <view class='JiuZuandeal_explain_tixian_one'>
+              <view class='JiuZuandeal_explain_tixian_one_huanjiu'>选择KOL酒钻</view>
+              <view class='JiuZuandeal_explain_tixian_one_gray'>选择交易的KOL酒钻</view>
+            </view>
+            <view class='JiuZuandeal_explain_tixian_two'>
+              <view class='JiuZuandeal_explain_tixian_two_huanjiu'>积分挂单</view>
+              <view class='JiuZuandeal_explain_tixian_two_gray'>通过积分进行购买</view>
+            </view>
+            <view class='JiuZuandeal_explain_tixian_three'>
+              <view class='JiuZuandeal_explain_tixian_three_huanjiu'>交易完成</view>
+              <view class='JiuZuandeal_explain_tixian_three_gray'>获得购买酒钻数量</view>
+            </view>
+          </view>
+        </view>
+        <!-- <市场挂单> -->
+        <view class="JiuZuandeal_bazaar">
+          <view class='JiuZuandeal_bazaar_name'>市场挂单(卖出)</view>
+          <view class="JiuZuandeal_bazaar_center">
+            <span>汇率</span>
+            <span>当价挂单量</span>
+            <span>累积挂单量</span>
+          </view>
+          <view class="JiuZuandeal_bazaar_number" wx:key wx:for="{{bazaarnumber}}">
+            <view class="JiuZuandeal_bazaar_number_one">{{item.sellprice}}</view>
+            <span class="JiuZuandeal_bazaar_number_two">{{item.sellcount}}</span>
+            <span class="JiuZuandeal_bazaar_number_two">{{item.allsellcount}}</span>
+          </view>
+        </view>
+        <!-- 自定义汇率 -->
+        <view class='JiuZuandeal_custom'>
+          <view class='JiuZuandeal_custom_name'>自定义汇率</view>
+          <view class='JiuZuandeal_custom_center'>
+            <text class='JiuZuandeal_custom_text'>最新成交汇率</text>
+            <text class='JiuZuandeal_custom_text' class='JiuZuandeal_custom_ceninput'>{{kolinfo.price}}</text>
+          </view>
+          <view class='JiuZuandeal_custom_today'>
+            <span>你的出价</span>
+            <input class="JiuZuandeal_custom_toinput" type="digit" bindinput="buyprise" value='{{inputbuyprise}}'></input>
+          </view>
+        </view>
+        <!-- 酒钻买入 -->
+        <view class='JiuZuandeal_buy'>
+          <view class='JiuZuandeal_buy_name'>酒钻买入</view>
+          <view class='JiuZuandeal_buy_center'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_bigjiuzuan.png' class='JiuZuandeal_buy_centerimg'></image>
+            <input placeholder="请输入买入数量" type="number" class='JiuZuandeal_buy_ceninput' bindinput="buynum" value="{{buynumval}}" type="number"></input>
+          </view>
+          <!-- <view class='JiuZuandeal_buy_center_buzu'>您的当前积分不足，无法购买</view> -->
+        </view>
+        <!-- 可用积分 -->
+        <view class='JiuZuandeal_jifen'>
+          <view class='JiuZuandeal_jifen_name'>
+            <view class='JiuZuandeal_jifen_spanone'>可用积分</view>
+            <view class='JiuZuandeal_jifen_spanone'>{{myscorse}}分</view>
+          </view>
+          <view class='JiuZuandeal_duihuan'>预计可兑换酒钻{{usejiuznum}}个</view>
+        </view>
+      </view>
+      <!-- 酒钻卖出 -->
+      <view class='JiuZuandeal_gaishu' wx:if="{{sindex==1}}">
+        <!-- 交易流程 -->
+        <view class='JiuZuandeal_explain'>
+          <view class='JiuZuandeal_explain_liucheng'>交易流程</view>
+          <view class='JiuZuandeal_explain_tixian'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_jiuzuanmol.png'></image>
+            <view class='JiuZuandeal_explain_tixian_progress'></view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_tixian.png'></image>
+            <view class='JiuZuandeal_explain_tixian_progress_two'></view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_wancheng.png'></image>
+          </view>
+          <view class='JiuZuandeal_explain_bottixian'>
+            <view class='JiuZuandeal_explain_tixian_one'>
+              <view class='JiuZuandeal_explain_tixian_one_huanjiu'>选择KOL酒钻</view>
+              <view class='JiuZuandeal_explain_tixian_one_gray'>选择交易的KOL酒钻</view>
+            </view>
+            <view class='JiuZuandeal_explain_tixian_two'>
+              <view class='JiuZuandeal_explain_tixian_two_huanjiu'>积分挂单</view>
+              <view class='JiuZuandeal_explain_tixian_two_gray'>通过积分进行购买</view>
+            </view>
+            <view class='JiuZuandeal_explain_tixian_three'>
+              <view class='JiuZuandeal_explain_tixian_three_huanjiu'>交易完成</view>
+              <view class='JiuZuandeal_explain_tixian_three_gray'>获得购买酒钻数量</view>
+            </view>
+          </view>
+        </view>
+        <!-- <市场挂单> -->
+        <view class="JiuZuandeal_bazaar">
+          <view class='JiuZuandeal_bazaar_name'>市场挂单(买入)</view>
+          <view class="JiuZuandeal_bazaar_center">
+            <span>汇率</span>
+            <span>当价挂单量</span>
+            <span>累积挂单量</span>
+          </view>
+          <view class="JiuZuandeal_bazaar_number" wx:key wx:for="{{bazaarnumber}}">
+            <span class="JiuZuandeal_bazaar_number_one">{{item.buyprice}}</span>
+            <span class="JiuZuandeal_bazaar_number_two">{{item.buycount}}</span>
+            <span class="JiuZuandeal_bazaar_number_two">{{item.allbuycount}}</span>
+          </view>
+        </view>
+        <!-- 自定义汇率 -->
+        <view class='JiuZuandeal_custom'>
+          <view class='JiuZuandeal_custom_name'>自定义汇率</view>
+          <view class='JiuZuandeal_custom_center'>
+            <text class='JiuZuandeal_custom_text'>最新成交汇率</text>
+            <text class='JiuZuandeal_custom_text' class='JiuZuandeal_custom_ceninput'>{{kolinfo.price}}</text>
+            <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_bianxie.png' class='JiuZuandeal_custom_image'> </image> -->
+          </view>
+          <view class='JiuZuandeal_custom_today'>
+            <span>你的出价</span>
+            <input class="JiuZuandeal_custom_toinput" bindinput="sellprise" type="digit" value="{{intsellprise}}"></input>
+          </view>
+        </view>
+        <!-- 酒钻卖出 -->
+        <view class='JiuZuandeal_buy'>
+          <view class='JiuZuandeal_buy_name'>酒钻卖出</view>
+          <view class='JiuZuandeal_buy_center'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_bigjiuzuan.png' class='JiuZuandeal_buy_centerimg'></image>
+            <input placeholder="请输入卖出数量" class='JiuZuandeal_buy_ceninput' type="number" bindinput="sellnum" value="{{sellvalue}}"></input>
+          </view>
+          <!-- <view class='JiuZuandeal_buy_center_buzu'>酒钻数值不在范围内，请输入正确的数量</view> -->
+        </view>
+        <!-- 可用积分 -->
+        <view class='JiuZuandeal_jifen'>
+          <view class='JiuZuandeal_jifen_name'>
+            <view class='JiuZuandeal_jifen_spanone'>酒钻数量</view>
+            <view class='JiuZuandeal_jifen_spanone'>{{jiuznum}}个</view>
+          </view>
+          <view class='JiuZuandeal_duihuan'>预计可兑换积分{{allsellprise}}分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 交易规则 -->
+  <view class='JiuZuandeal_smoll'>
+    <!-- <span>
+      查看交易规则</span>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_youkuo.png' class='tanchu_view_btnimg'></image> -->
+    <view class='JiuZuandeal_none'></view>
+  </view>
+  <!-- 确认挂单 -->
+  <view class='JiuZuandeal_fod'>
+    <button class='JiuZuandeal_fodbtn' bindtap='jiuZuanResult'> 确认挂单</button>
+  </view>
+  <!-- 遮罩显示 -->
+  <view class="zhezao" wx:if="{{goodsexchangeSuoflag}}" catchtap='conceal'>
+    <!--弹出框开始-->
+    <scroll-view scroll-y="true" class="tanchu_view">
+      <view class='tanchu_view_numone' wx:key wx:for="{{kollist}}" catchtap="choekol" data-index="{{index}}">
+        <image src='{{item.headpic}}' class='tanchu_view_numoneimg'></image>
+        <view class='tanchu_view_numname'>{{item.name}}</view>
+      </view>
+
+    </scroll-view>
+  </view>
+
+
+  <popup id="popup"></popup>
+  <phonepopup id="phonepopup"></phonepopup>
+</view>

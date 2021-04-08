@@ -1,0 +1,475 @@
+.discover {
+    width: 750rpx;
+    height: 100%;
+    background: rgba(243, 246, 250, 1);
+}
+
+.discover_top_back {
+    width: 100%;
+    height: 420rpx;
+}
+
+/* 轮播图 */
+
+.lunbo_image {
+    width: 750rpx;
+    height: 480rpx;
+    border-radius: 11rpx;
+}
+
+/* .swiper_img {
+  position: absolute;
+  top: 158rpx;
+  left: 22rpx;
+  width: 706rpx;
+  height: 282rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 11rpx;
+} */
+
+.swiper_img {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    width: 750rpx;
+    height: 474rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 11rpx;
+}
+
+/* 做任务得积分 */
+
+.discover_task {
+    width: 100%;
+    margin-top: 42rpx;
+}
+
+.discover_task_gray {
+    font-size: 27rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+}
+
+.discover_task_border {
+    width: 706rpx;
+    height: 96rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    display: flex;
+    align-items: center;
+    margin-left: 22rpx;
+    margin-top: 15rpx;
+}
+
+.discover_task_border_image {
+    width: 38rpx;
+    height: 38rpx;
+    margin-left: 30rpx;
+    overflow: hidden;
+}
+
+.image {
+    height: 0rpx;
+}
+
+.swiper_container {
+    height: 96rpx;
+    width: 338rpx;
+    margin-left: 23rpx;
+}
+
+.swiper_item {
+    margin-left: 23rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 98rpx;
+}
+
+.discover_task_accomplish {
+    width: 120rpx;
+    height: 52rpx;
+    border-radius: 30rpx;
+    border: 1px solid rgba(187, 187, 187, 1);
+    margin-left: 127rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    text-align: center;
+    line-height: 52rpx;
+}
+
+/* 发现 */
+
+.discover_tietleli {
+    width: 404rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 63rpx;
+    left: 23rpx;
+    display: flex;
+    /* background-color: tan; */
+    z-index: 300;
+}
+
+.discover_button_left_ever {
+    width: 100rpx;
+    height: 50rpx;
+}
+
+.discover_button_left {
+    width: 21rpx;
+    height: 35rpx;
+    margin-top: 10rpx;
+}
+
+.discover_titletext {
+    margin-left: 210rpx;
+    font-size: 37rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: white;
+    line-height: 45rpx;
+}
+
+/* <!-- 酒馆排名和新品预售专区  --> */
+
+.section {
+    width: 100%;
+    height: 186rpx;
+    display: flex;
+    justify-content: center;
+}
+
+/* <!-- 销量排名 --> */
+
+.section_one {
+    width: 332rpx;
+    height: 170rpx;
+    margin-top: 16rpx;
+}
+
+/* .section_one image {
+  width: 332rpx;
+  height: 170rpx;
+} */
+
+.section_one_text {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 60rpx;
+}
+
+.section_one_sales {
+    position: relative;
+    left: -40rpx;
+    top: -140rpx;
+    text-align: center;
+}
+
+.section_one_tavern {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(245, 136, 40, 1);
+}
+
+.section_one_ranking {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(239, 127, 28, 1);
+}
+
+/* <!-- 预售专区 --> */
+
+.section_two {
+    width: 332rpx;
+    height: 170rpx;
+    margin-left: 23rpx;
+    margin-top: 16rpx;
+    /* display:flex;                   
+  justify-content: center; */
+}
+
+.section_two image {
+    width: 332rpx;
+    height: 170rpx;
+}
+
+.section_two_moddle {
+    position: relative;
+    left: -40rpx;
+    top: -140rpx;
+    text-align: center;
+}
+
+.section_two_new {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(245, 136, 40, 1);
+}
+
+.section_two_presell {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(239, 127, 28, 1);
+}
+
+.component {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    width: 750rpx;
+    height: 100%;
+}
+
+/* 推荐和附近 */
+
+.recommendone {
+    width: 100%;
+    height: 110rpx;
+    display: flex;
+    position: relative;
+}
+
+.discover_style {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+    text-align: center;
+    margin-left: 42rpx;
+    margin-top: 13rpx;
+    line-height: 86rpx;
+}
+
+.discover_active {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 253, 1);
+    /* border-bottom: 8rpx rgba(68, 156, 253, 1) solid; */
+}
+
+/* xxx的酒庄 */
+
+.discover_cafe {
+    width: 100%;
+    background: rgba(243, 246, 250, 1);
+}
+
+.discover_cafe_none {
+    column-count: 2;
+    column-gap: 0rpx;
+    padding-bottom: 30rpx;
+}
+
+.discover_null {
+    width: 48rpx;
+    height: 6rpx;
+    background: rgba(67, 147, 242, 1);
+    border-radius: 3rpx;
+    margin-left: 15rpx;
+}
+
+/* 推荐 */
+
+.discover_cafe_recommend {
+    width: 344rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 29rpx;
+    margin: 29rpx 0rpx 0rpx 12rpx;
+    display: inline-block;
+}
+
+.discover_cafe_recommend_img {
+    width: 100%;
+    margin: 0 auto;
+    max-height: 400rpx;
+    overflow: hidden;
+}
+
+.discover_cafe_recommend_img image {
+    width: 100%;
+    display: block;
+    padding-bottom: 10rpx;
+    border-radius: 29rpx 29rpx 0rpx 0rpx;
+}
+
+.discover_cafe_recommend_text {
+    width: 309rpx;
+    height: 100rpx;
+    margin: 14rpx 18rpx 0rpx 17rpx;
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.discover_cafe_recommend_textbig {
+    font-size: 22rpx;
+    color: rgba(51, 51, 51, 1);
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.discover_cafe_recommend_textvule {
+    font-size: 22rpx;
+    color: rgba(51, 51, 51, 1);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.discover_cafe_like {
+    width: 309rpx;
+    height: 50rpx;
+    margin: 5rpx 18rpx 0rpx 17rpx;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20rpx;
+}
+
+.discover_cafe_touxiang {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 50%;
+}
+
+.discover_cafe_span {
+    width: 200rpx;
+    font-size: 18rpx;
+    margin-left: 15rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.discover_cafe_like_good {
+    width: 24rpx;
+    height: 19rpx;
+}
+
+.discover_cafe_like_z {
+    font-size: 18rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin-left: 12rpx;
+}
+
+.discover_nearby {
+    width: 706rpx;
+    height: 256rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin: 22rpx;
+    display: flex;
+    align-items: center;
+}
+
+.discover_nearby_numberone {
+    width: 46rpx;
+    height: 56rpx;
+    margin: 0rpx 18rpx 0rpx 19rpx;
+}
+
+.discover_nearby_numbertwo {
+    width: 179rpx;
+    height: 179rpx;
+    margin-right: 25rpx;
+    margin: 0rpx auto;
+    /* border: 1rpx solid rgba(181,182,184,1);  */
+    box-shadow: 0rpx 1rpx 1rpx rgba(181, 182, 184, 1);
+    border-radius: 12rpx;
+    padding: 12rpx;
+}
+
+.discover_nearby_nomber {
+    width: 389rpx;
+    height: 199rpx;
+}
+
+.discover_nearby_nomber_top {
+    display: flex;
+    align-items: center;
+}
+
+.discover_nearby_nomber_center {
+    height: 60rpx;
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-top: 16rpx;
+}
+
+.discover_nearby_nomber_footer {
+    margin-top: 20rpx;
+    text-align: right;
+    margin-right: 10rpx;
+}
+
+.discover_nearby_nomber_footer_textone {
+    font-size: 21rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-left: 16rpx;
+}
+
+.discover_nearby_nomber_footer_imgone {
+    width: 30rpx;
+    height: 20rpx;
+}
+
+.discover_nearby_nomber_footer_imgtuijian {
+    width: 24rpx;
+    height: 19rpx;
+}
+
+.discover_nearby_nomber_footer_imgtwo {
+    width: 24rpx;
+    height: 19rpx;
+    margin-left: 56rpx;
+}
+
+.faxianadd {
+    position: fixed;
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+    right: 100rpx;
+    bottom: 100rpx;
+}

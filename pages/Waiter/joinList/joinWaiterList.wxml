@@ -1,0 +1,49 @@
+<!-- 招募小二 -->
+<wxs module="filter" src="../../../utils/util.wxs"></wxs>
+<view class="joinWaiterList" style='height:{{height}}rpx'>
+    <scroll-view scroll-y="true" bindscrolltolower="loadMore" style='height:1440rpx' class='filter'>
+        <view class='Waiter_top'>
+            <view class='Waiter_top_select'>
+                您可以成为以下店铺的小二
+            </view>
+            <view class='Waiter_top_specification'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/Waiter/Waiter_gantan.png'></image>
+                <text bindtap="toggleDialog">\t使用说明</text>
+            </view>
+        </view>
+        <view class='Waiter_center'>
+            <view wx:for="{{shopList}}" wx:key class='Waiter_every'>
+                <image wx:if="{{item.icon}}"  src='{{item.icon}}' class='Waiter_every_img'></image>
+                <image wx:else  src='http://qiniu-test.ishzm.com/jxb/img/Waiter/Waiter_tuone.png' class='Waiter_every_img'></image>
+                <view class='Waiter_center_night'>
+                    <image src='{{item.head}}' class='Waiter_every_img_little'></image>
+                    <view class='Waiter_center_one'>
+                        <view class='Waiter_center_one_text'>{{item.name}}</view>
+                        <view class='Waiter_center_one_view'>{{item.opentime}}</view>
+                    </view>
+                    <view class='Waiter_center_two'>小二月收入：
+                        <view class='Waiter_center_onespan'>{{item.avgIncome}}</view>
+                    </view>
+                </view>
+                <view class='Waiter_center_text_big'>
+                    <view class='Waiter_center_text'>{{item.desc}}
+                    </view>
+                    <!-- <view class='Waiter_center_quxiao' wx:if="{{item.isapply==1}}" bindtap='norequest'>！取消申请</view> -->
+                </view>
+                <view>
+                    <button wx:if="{{item.isapply==0}}" id="{{index}}" bindtap="applyWaiter" class='Waiter_center_button' data-shopuid="{{item.uid}}">应聘店小二</button>
+                    <button wx:if="{{item.isapply>0}}" class='Waiter_center_button_one'>已申请</button>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="zan-dialog {{ showDialog ? 'zan-dialog_show' : '' }}">
+    <view class="zan-dialog__container">
+        <view class='Waiter_regulation'>
+            规则说明
+        </view>
+        <view class='Waiter_regulation_neirong'>每位店主可以招募3位小二，招募小二需要在该店铺购买商品，才有成为该店铺小二的资格</view>
+        <button bindtap="ontoggleDialog" class='Waiter_regulation_button'>知道了</button>
+    </view>
+</view>

@@ -1,0 +1,78 @@
+<view class='listdetailsbox'>
+    <view class='lstopbox'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/ldtopbox.png' class='lstopboximg'></image>
+        <view class='ldtitlebox' bindtap='skiphome'>
+            <image class='ldtitlebast' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+        </view>
+        <view class='ldtitletext'>详情列表</view>
+    </view>
+    <!--列表主页  -->
+    <view class='ldmainbox'>
+        <view class='ldmainboxlistcla' wx:key wx:for="{{ldmainboxlist}}">
+            <!-- 头部 -->
+            <view class='ldmainboxlisttopcla'>
+                <view style='float:left'>
+                    <image src='{{item.headinfo.head}}' class='ldheadimgcla'></image>
+                    <view class='ldheadnamelist'>
+                        <view class='ldheadname'>{{item.headinfo.nickname}}</view>
+                        <view class='ldheadtime'>{{item.time}}</view>
+                    </view>
+                </view>
+                <view class="ldshop" catchtap="gotoshop" wx:if="{{item.shopuid>0||item.waiteruid>0}}" data-shopuid="{{item.shopuid}}" data-shopname="{{item.shopname.name}}">
+                    <image src="https://jiangxiaobai.test.ishzm.com/public/upload/20190726/963a86d428356828605f2b10e4faf171.png"></image>
+                </view>
+                <view class='jubao' bindtap='libiaojubao' data-infoid="{{item.id}}">举报</view>
+            </view>
+            <!-- 图片 -->
+            <view class='ldmainboxlistimgcla'>
+                <!-- <image src='{{items}}' class='imagecla' wx:for="{{item.image}}" wx:key wx:for-item="items" bindtap='toshowpic' data-item="{{items}}" data-itemfor="{{item.image}}"></image>
+                <view style='clear: both;'></view> -->
+                <swiper class='swiperimg' autoplay="true" interval="2000" duration="1000" circular="true">
+                    <block wx:for="{{item.image}}" wx:key="{{index}}" wx:for-item="items" bindtap='toshowpic' data-item="{{items}}" data-itemfor="{{item.image}}">
+                        <swiper-item>
+                            <image src="{{items}}" mode="aspectFit" style="width:{{bannerimgwidth}}rpx" class="lunbo-image" />
+                        </swiper-item>
+                        <!-- 重置小圆点样式 -->
+                        <view class="dots">
+                            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+                        </view>
+                    </block>
+                </swiper>
+            </view>
+            <!-- 文字 -->
+            <view class='ldmainboxlisttextcla'>
+                <text>{{item.content}}</text>
+                <!-- {{item.content}} -->
+            </view>
+            <!-- 推荐 -->
+            <view class='ldmainboxlisttuijiancla' bindtap='colisttjnageto' data-item="{{item}}" wx:if="{{item.goods}}">
+                <image src='{{item.goods.playimage}}' class='tuijianimg'></image>
+                <view class='tuijanxinxi'>
+                    <view class='tuijanxtitle'>{{item.goods.name}}{{item.goods.subname}}</view>
+                    <view class='tuijanmoney'>￥{{item.goods.price}}</view>
+                </view>
+                <view style='clear: both;'></view>
+            </view>
+            <!-- 底部 -->
+            <view class='ldmainboxlistnattoncla'>
+                <view class='buttxinxi'>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgone.png' class='buttenimg'></image>
+                    <text class='buttentext'>{{item.views}}</text>
+                </view>
+                <view class='buttxinxi' bindtap='listzhuanfa' data-shopname="{{item.headinfo.nickname}}" data-share="{{item.share}}" data-infoid="{{item.id}}" data-index="{{index}}">
+                    <button open-type='share' class='sharebutten'></button>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgtwo.png' class='buttenimgtwo'></image>
+                    <text class='buttentext'>{{item.share}}</text>
+                </view>
+                <view class='buttxinxi' bindtap='listdianzan' data-praise="{{item.praise}}" data-infoid="{{item.id}}" data-index="{{index}}" data-praises_state="{{item.praises_state}}">
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgthree.png' class='buttenimg' wx:if="{{item.praises_state==0}}"></image>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgthreered.png' class='buttenimg' wx:if="{{item.praises_state==1}}"></image>
+                    <text class='buttentext'>{{item.praise}}</text>
+                </view>
+
+            </view>
+        </view>
+
+    </view>
+
+</view>

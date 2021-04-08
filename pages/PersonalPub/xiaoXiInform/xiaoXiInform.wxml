@@ -1,0 +1,36 @@
+<!-- 消息通知 -->
+<view class="xiaoXiInform" style='height:{{height}}rpx'>
+  <view class="xiaoXiInform_top">
+    <view class="xiaoXiInform_news">
+      <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoXiInform_lb.png" class="xiaoXiInform_img"></image>
+      <view class="xiaoXiInform_font">
+        消息通知
+      </view>
+    </view>
+    <view class="xiaoXiInform_exchange">
+      <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoXiInform_ls.png" class="xiaoXiInform_img"></image>
+      <view class="xiaoXiInform_font">
+        交易提醒
+      </view>
+    </view>
+  </view>
+  <view class="xiaoXiInform_center">
+    <view class="xiaoXiInform_center_view" wx:key wx:for="{{xiaoXiInform}}" bindtap="goparticulars" data-infoid="{{item.id}}">
+      <view class="xiaoXiInform_center_red" wx:if="{{item.readed==0}}"></view>
+      <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoXiInform_wx.png" class="xiaoXiInform_img2"></image>
+      <view class="xiaoXiInform_center_right">
+      <image src="http://qiniu-test.ishzm.com/jxb/img/delect.png" class="delet" data-infoid="{{item.id}}" catchtap="deleteinfinfo"></image>
+        <!-- <view ></view> -->
+        <view class="xiaoXiInform_right_top">
+          <view class="xiaoXiInform_right_top_span">{{item.name}}</view>
+          <view class="xiaoXiInform_right_top_data">{{item.time}}</view>
+        </view>
+        <view class="xiaoXiInform_right_bottom">
+          <view class="xiaoXiInform_right_bottom_span">{{item.content}}</view>
+          <!-- <image class="xiaoXiInform_right_bottom_img" src="http://qiniu-test.ishzm.com/jxb/img/xiaoxi_hebingright.png"></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isinfos==0}}" class="xiaoXiInform_none">暂无最新消息哦！</view>
+</view>

@@ -1,0 +1,22 @@
+<!-- 酒钻处理结果 -->
+<view class='jiuZuanResult' style='height:{{height}}rpx'>
+    <!-- 交易正在处理中 -->
+    <view class='jiuZuanResult_view'>
+        <view class='jiuZuanResult_view_text'>已提交挂单</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo_zzcltwo.png' class='jiuZuanResult_viewimg'></image>
+        <view class='jiuZuanResult_fot'>
+            <view class='jiuZuanResult_fotleft' bindtap="myJiFen">返回首页</view>
+            <view class='jiuZuanResult_fotright' bindtap="goexchangeSuo">交易中心</view>
+        </view>
+    </view>
+    <!-- 交易成功
+    <view class='jiuZuanResult_view'>
+        <image src='/img/exchangeSuo/exchangSuo_success.png' class='jiuZuanResult_viewsuccess'></image>
+        <view class='jiuZuanResult_view_textsucc'>交易成功</view>
+        <view class='jiuZuanResult_view_textsuccess'>恭喜，提交订单成功</view>
+        <view class='jiuZuanResult_successfot'>
+            <view class='jiuZuanResult_fotleft' bindtap='myJiFen'>我的积分</view>
+            <view class='jiuZuanResult_fotright' bindtap='goexchangeSuo'>交易中心</view>
+        </view>
+    </view> -->
+</view>

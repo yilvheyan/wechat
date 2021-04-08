@@ -1,0 +1,111 @@
+var firstx = 3000 //按下的坐标
+var firsty = 3000
+var instancex = 0 //元素的坐标
+var instancey = 0
+var shmallfirstx = 0 //小元素
+var shmallfirsty = 0
+
+
+// var touchstart = function(e, instance){
+// console.log('1111', e.touches[0].pageX)
+// firstx = parseInt(e.touches[0].pageX) 
+// firsty = parseInt(e.touches[0].pageY)
+// instancex = parseInt(e.currentTarget.dataset.instancex)
+// instancey = parseInt(e.currentTarget.dataset.instancey)
+
+// }
+
+// var touchmove = function(e, instance) {
+//   console.log('a', e.touches[0].pageX)
+//   if (firstx == 3000) {
+//     firstx = parseInt(e.touches[0].pageX)
+//     firsty = parseInt(e.touches[0].pageY)
+//     instancex = parseInt(e.currentTarget.dataset.instancex)
+//     instancey = parseInt(e.currentTarget.dataset.instancey)
+//     return;
+//   }
+//   var changeleft = e.touches[0].pageX - firstx
+//   var changetop = e.touches[0].pageY - firsty
+
+//   instancex += changeleft
+//   instancey += changetop
+
+//   firstx = e.touches[0].pageX
+//   firsty = e.touches[0].pageY
+//   console.log(instancex)
+//   // var int = instance.selectAllComponents('.movable')
+//   // var intb = instance.selectComponent('.movable')
+//   // console.log('aaa', int[0])
+//   // console.log('bbb', intb)
+//   instance.selectComponent('.movable .picol').setStyle({
+//     // 'left': instancex+"rpx",
+//     // 'top': instancey + "rpx",
+//     // 'border': '1px dashed #ffffff'
+//     'background': 'white'
+//   })
+//   instance.selectComponent('.movable').setStyle({
+//     'left': instancex + "rpx",
+//     'top': instancey + "rpx",
+//     'border': '1px dashed #ffffff'
+//   })
+
+// }
+
+// var touchend = function(e, instance) {
+//   console.log(e)
+//   // if (firstx == 3000) {
+//   //   firstx = parseInt(e.touches[0].pageX)
+//   //   firsty = parseInt(e.touches[0].pageY)
+//   //   instancex = parseInt(e.currentTarget.dataset.instancex)
+//   //   instancey = parseInt(e.currentTarget.dataset.instancey)
+//   // }
+// }
+
+
+
+// var changepictouchstart = function(e, instance) {
+//   // shmallfirstx = parseInt(e.touches[0].pageX)
+//   // shmallfirsty = parseInt(e.touches[0].pageY)
+//   var thisinstance = instance.selectComponent('.classSelector')
+//   console.log('aaaaaaa')
+
+// }
+
+// var changepictouchmove = function(e, instance) {
+//   var changeleft = e.touches[0].pageX - shmallfirstx
+
+
+//   shmallfirstx = parseInt(e.touches[0].pageX)
+// }
+
+// var touchmove = function (event, instance){
+//   console.log('11111',event, instance)
+// }
+
+
+// module.exports = {
+//   touchmove = function (event, instance) {
+//     console.log('11111', event, instance)
+//   }
+//   // changepictouchstart: changepictouchstart,
+//   // changepictouchmove: changepictouchmove,
+//   // touchmove: touchmove,
+//   // touchend: touchend,
+//   // propObserver: function(newValue, oldValue, ownerInstance, instance) {
+//   //   console.log('prop observer', newValue, oldValue)
+//   // }
+// }
+var x = 150
+module.exports = {
+  touchmove: function(event, instance) {
+    x++;
+    console.log('log event', JSON.stringify(event))
+    var instance = instance.selectComponent('.movable') // 返回组件的实例
+    instance.setStyle({
+      "width": x + 'rpx' // 支持rpx
+    })
+  },
+  propObserver: function(newValue, oldValue, ownerInstance, instance) {
+    console.log('prop observer', newValue, oldValue)
+  }
+}

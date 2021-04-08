@@ -1,0 +1,176 @@
+@import '../../weui.wxss';
+
+/* 登录 */
+
+.login {
+    width: 340px;
+    height: 428px;
+    border: 1px gray solid;
+    border-radius: 12rpx;
+    margin-top: 43px;
+    background: rgba(255, 255, 255, 1);
+    /* box-shadow: 0px 1px 20px 0px rgba(196, 209, 224, 0.4); */
+}
+
+.login_yanjing {
+    margin-left: 60px;
+    width: 50px;
+    height: 50px;
+}
+
+.login_phone {
+    font-size: 30px;
+    color: black;
+}
+
+.login_touxiang {
+    width: 58px;
+    height: 19px;
+    margin: 0px auto;
+    font-weight: bold;
+    margin-top: 43px;
+}
+
+.login_shouji {
+    display: flex;
+    margin: 62px 40px 0px 40px;
+    border-bottom: 1px #e4e4e4 solid;
+    width: 260px;
+    height: 40px;
+}
+
+.login_shouji image {
+    width: 15px;
+    height: 18px;
+    margin-top: 5px;
+}
+
+.login_mima {
+    display: flex;
+    border-bottom: 1px #e4e4e4 solid;
+    width: 260px;
+    height: 40px;
+    margin: 42px 40px 0px 40px;
+}
+
+.login_mima image {
+    width: 20px;
+    height: 18px;
+    margin-top: 5px;
+}
+
+.login_shuru {
+    font-size: 14px;
+    color: #61676d;
+    margin-left: 19px;
+}
+
+.login_zh {
+    display: flex;
+    /* border: 1px #E4E4E4 solid; */
+    width: 260px;
+    height: 40px;
+    margin: 12px 40px 0px 40px;
+}
+
+.login_chuangjian {
+    width: 120rpx;
+    height: 26rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(67, 147, 242, 1);
+}
+
+.login_wangji {
+    width: 120rpx;
+    height: 26rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(76, 80, 85, 1);
+    margin-left: 140px;
+}
+
+.login_denglu {
+    width: 520rpx;
+    height: 92rpx;
+    background: linear-gradient(0deg, rgba(116, 202, 251, 1) 100%, rgba(91, 163, 237, 1) 0%);
+    border-radius: 12rpx;
+    font-size: 36rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 40px;
+}
+
+/* 注册 */
+
+.registered {
+    width: 340px;
+    height: 957rpx;
+    border: 1px gray solid;
+    border-radius: 10rpx;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 1);
+}
+.registered_button {
+    width: 120px;
+    height: 30px;
+    background-color: #5ba3ed;
+    border-radius: 10rpx;
+    margin-top: 2px;
+    color: white;
+    font-size: 12px;
+}
+
+.registered_yanzheng {
+    width: 187rpx;
+    height: 26px;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(67, 147, 242, 1);
+}
+
+.registered_shouji {
+    display: flex;
+    margin: 62px 40px 0px 40px;
+    border-bottom: 1px #e4e4e4 solid;
+    width: 260px;
+    height: 40px;
+}
+
+.registered_shouji image {
+    width: 13px;
+    height: 18px;
+    margin-top: 5px;
+}
+
+.registered_xieyi {
+    margin: 12px 40px 0px 40px;
+    width: 260px;
+    height: 30px;
+}
+
+.registered_xieyi_one {
+    border-radius: 50%;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+}
+
+.registered_xieyi_two {
+    color: #b5b6b8;
+    font-size: 12px;
+    margin-left: 25px;
+}
+
+.registered_zhuce {
+    width: 520rpx;
+    height: 92rpx;
+    margin-top: 40px;
+    background: linear-gradient(0deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 237, 1) 100%);
+    opacity: 0.6;
+    border-radius: 12rpx;
+}

@@ -1,0 +1,294 @@
+.shopkertication {
+    width: 100%;
+    border-top: 1rpx solid #ccc;
+    position: relative;
+}
+
+.xinzengaddress {
+    width: 100%;
+    position: relative;
+}
+
+.szlistdz {
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    width: 250rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    line-height: 100rpx;
+    float: left;
+    color: #373a3d;
+}
+
+.xinname {
+    width: 686rpx;
+    height: 100rpx;
+    margin: 0 auto;
+}
+
+.dianzuptext {
+    width: 300rpx;
+    height: 100rpx;
+    font-size: 28rpx;
+    color: #373a3d;
+}
+
+.rjiant {
+    float: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-right: 20rpx;
+}
+
+.xinaddress {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 98rpx;
+    text-align: center;
+    line-height: 98rpx;
+    color: white;
+    font-size: 34rpx;
+    left: 0;
+    bottom: 0;
+    background: #74cafb;
+}
+
+.xieyi {
+    left: 50rpx;
+    position: fixed;
+    bottom: 130rpx;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+    /* line-height: 40rpx; */
+}
+
+.yiyuedu {
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+}
+
+.labelo {
+    width: 10rpx;
+    height: 10rpx;
+}
+
+.chebox {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+}
+
+.xian {
+    width: 686rpx;
+    height: 2rpx;
+    background: rgba(181, 182, 184, 1);
+    opacity: 0.2;
+    margin: 0 auto;
+}
+
+.shenfenz {
+    margin-top: 39rpx;
+    margin-left: 52rpx;
+    width: 350rpx;
+    height: 22rpx;
+    font-size: 22rpx;
+    color: #b5b6b8;
+}
+
+.hongxin {
+    width: 8rpx;
+    height: 8rpx;
+    background: rgba(227, 67, 67, 1);
+    border-radius: 50%;
+    position: absolute;
+    top: 257rpx;
+    left: 32rpx;
+}
+
+.oyiyue {
+    left: 110rpx;
+    position: fixed;
+    bottom: 136rpx;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #b5b6b8;
+    text-decoration: underline;
+}
+
+.oyiyue:hover {
+    color: black;
+}
+
+.getdianadress {
+    width: 200rpx;
+    height: 100rpx;
+    float: left;
+    overflow: hidden;
+    background: white;
+    font-size: 26rpx;
+    margin-right: 10rpx;
+    text-align: center;
+    border-radius: 23rpx;
+}
+
+.picker {
+    height: 100%;
+    line-height: 100rpx;
+}
+
+.nowadreeclass {
+    width: 200rpx;
+    height: 100rpx;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    line-height: 100rpx;
+    background: white;
+    font-size: 26rpx;
+    border-radius: 23rpx;
+}
+
+.nowadreeclassreget {
+    width: 200rpx;
+    height: 100rpx;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    line-height: 100rpx;
+    color: #ccc;
+    font-size: 26rpx;
+    border-radius: 23rpx;
+}
+
+radio {
+    transform: scale(0.7);
+}
+
+/* 遮罩 */
+
+.zhezao {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.tanchu_view {
+    width: 79.2%;
+    height: calc(100% - 300rpx);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10rpx 0rpx 0rpx 0rpx;
+    padding: 4rpx;
+    margin: 75rpx 0rpx 0rpx 75rpx;
+    position: relative;
+}
+
+.tanchu_view_cuowu {
+    width: 48rpx;
+    height: 48rpx;
+    position: fixed;
+    right: 76rpx;
+    top: 30rpx;
+    display: inline-block;
+    border-radius: 10rpx 10rpx 0rpx 0rpx;
+    /* background-color: rgba(255, 255, 255, 1); */
+}
+
+.tanchu_view_que {
+    width: 102rpx;
+    height: 102rpx;
+    margin: 0rpx 0rpx 0rpx 249rpx;
+}
+
+.tanchu_view_succ {
+    font-size: 30rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin-top: 12rpx;
+}
+
+.tanchu_view_yea {
+    font-size: 24rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    text-align: center;
+    margin-top: 25rpx;
+}
+
+.tanchu_view_goto {
+    font-size: 24rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(41, 139, 241, 1);
+    text-align: center;
+    margin-top: 33rpx;
+}
+
+.tanchu_view_gotoimg {
+    width: 12rpx;
+    height: 18rpx;
+    margin-left: 6rpx;
+}
+
+.tanchu_view_bottom {
+    width: 80%;
+    margin: 0rpx auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    border-radius: 0rpx 0rpx 10rpx 10rpx;
+}
+
+.tanchu_view_bottom_left {
+    width: 50%;
+    font-size: 26rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 97rpx;
+    text-align: center;
+    border-top: 1rpx solid rgba(238, 238, 238, 1);
+    border-right: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.tanchu_view_bottom_right {
+    width: 50%;
+    font-size: 26rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 97rpx;
+    text-align: center;
+    border-top: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.tanchu_clause {
+    font-size: 26rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+
+.tanchu_clause view {
+    text-indent: 60rpx;
+    padding-bottom: 10rpx;
+}
+
+.clause_head {
+    font-size: 30rpx;
+    font-family: PingFangSC;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+}

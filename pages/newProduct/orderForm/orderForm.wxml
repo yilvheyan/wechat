@@ -1,0 +1,49 @@
+<!-- 确认订单 -->
+<view class='orderform' style='height:{{height}}rpx'>
+  <view class='orderform_div'>
+    <view class='orderform_top'>
+      <view class='orderform_top_one'>
+        <image src='{{imageUrl}}{{orderfimage}}'></image>
+      </view>
+      <view class='orderform_top_two'>
+        <view class='orderform_top_two_baijiu'>{{presellName}}</view>
+        <view class='orderform_top_two_money'>￥{{buynum*price}}元</view>
+      </view>
+      <!-- <view class='orderform_top_three'>
+                <view class="stepper">
+
+                  {{buynum}}
+
+                </view>
+            </view> -->
+
+    </view>
+    <view class='orderform_top_underline'></view>
+    <view class='orderform_center'>
+      <text class='orderform_center_one'>购买份额</text>
+      <text class='orderform_center_two'>{{buynum}}</text>
+    </view>
+    <view class='orderform_foot'>
+      <text class='orderform_foot_one'>合计金额</text>
+      <text class='orderform_foot_two'>￥{{buynum*price}}</text>
+    </view>
+  </view>
+  <view class='close'>
+    <view class='close_left'>
+      <!-- <合计合算> -->
+      <view class='heji'>
+        <text class='heji_one'>合计金额</text>
+        <text class='heji_two'>\t\t￥\t{{buynum*price}}元</text>
+      </view>
+    </view>
+    <button class='close_right {{ispointer?"pointer":""}}' bindtap='mycanyucli'>提交订单</button>
+    <!-- <toast hidden="{{status}}" duration="1000" bindchange="submitorder">
+       订单只能提交一次
+</toast> -->
+  </view>
+
+
+
+  <popup id="popup"></popup>
+  <phonepopup id="phonepopup"></phonepopup>
+</view>

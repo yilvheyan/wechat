@@ -1,0 +1,26 @@
+<view class="selectAddress" style='height:{{height}}rpx'>
+    <view class="choaddress">
+        <!-- 选择地址 -->
+        <scroll-view scroll-y="true" style='height:{{height-500}}rpx' class="choaddresscen" wx:if="{{choindex==0}}">
+            <view wx:for="{{choaddresslist}}" wx:key='index' class='choaddresslistcla'>
+                <view class='choose' bindtap='choosecli' data-usr="{{item.state}}" data-index="{{item.id}}">
+                    <icon wx:if="{{item.state==1}}" type="success" size="25" style='display:block' />
+                </view>
+                <view class='choosemain'>
+                    <view class='choosemainname'>
+                        <view class='chooesname'>{{item.name}}</view>
+                        <view class='chooesphone'>{{item.phone}}</view>
+                        <view style='clear:both;'></view>
+                    </view>
+                    <view class='choosemainaddress'>{{item.address}}
+                    </view>
+                </view>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/choaddress/chomark.png' class='chomarkcla' data-index="{{item}}" bindtap='bianji'></image>
+            </view>
+        </scroll-view>
+    </view>
+    <view class='xinaddress' bindtap='szaddress'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/xinzengdizhi.png' class='xinaddress_img'></image>
+        新增地址</view>
+    <view class='choaddress_bottom' bindtap='confirm'>确定</view>
+</view>

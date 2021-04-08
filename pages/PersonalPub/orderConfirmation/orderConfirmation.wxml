@@ -1,0 +1,485 @@
+<!-- 订单确认 -->
+<view class='orderConfirmation'>
+  <view class='order_tietleli'>
+    <view class='order_button_left_ever' bindtap='orderskiphome'>
+      <image class='order_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+    </view>
+    <view class='order_titletext'>订单确认</view>
+  </view>
+  <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_top.png' class='order_back'></image>
+  <!-- 待付款、待发货、待收货、售后 -->
+  <view class='order_recommendone'>
+    <view class='order_style  {{item.id==num?"order_active":""}}' catchtap='order_ch' wx:for="{{message}}" wx:key="" id="{{index}}">{{item.text}}
+    </view>
+  </view>
+  <!-- 待付款 -->
+  <view class='order_obligation' wx:if="{{sindex==0}}" wx:key="">
+    <!--待付款 ： 预售 酒市 切换 -->
+    <view class='order_obligation_one'>
+      <view class='order_styleone  {{item.id==numone?"order_activeone":""}}' catchtap='order_list' wx:for="{{orderlistone}}" wx:key="" data-index="{{index}}">{{item.text}}</view>
+    </view>
+    <!-- 待付款-预售 -->
+    <view class='order_presell' wx:if="{{sindexone==0}}" wx:key="">
+      <scroll-view class='order_presell_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='order_presell_one' wx:for="{{orderpresellone}}" wx:key catchtap='yushounvgetoneedpay' data-id='{{item.id}}'>
+          <view class='order_presell_one_top'>
+            <image src='{{item.kolname.headpic}}'></image>
+            <text class='order_one_top_textone'>{{item.kolname.name}}酒馆</text>
+            <text class='order_one_top_texttwo'>待付款</text>
+          </view>
+          <view class='order_presell_one_center'>
+            <!-- 全选和不全选 -->
+            <!-- <image wx:if="{{item.selected}}" data-index="{{index}}" class="order_radio_chek" catchtap="selectListone" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+            <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="order_radio_chek" data-index="{{index}}" catchtap="selectListone"></image> -->
+            <image src='{{item.goodsinfo.pic}}' class='order_presell_one_center_imgt' mode="scaleToFill"></image>
+            <view class='order_presell_one_center_right'>
+              <view class='order_presell_right_top'>{{item.goodsinfo.title}}</view>
+              <view class='order_presell_right_right'>
+                <text class='order_presell_right_texto'>预售价：\t</text>
+                <text class='order_presell_right_textw'>￥{{item.goodsinfo.price*item.buynum}}</text>
+              </view>
+            </view>
+          </view>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_progress.png' class='order_presell_one_center_progress'></image>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/order_progresstwo.png' class='order_presell_one_center_aa' style='width:{{item.goodsinfo.jindu*5.98}}rpx'></image>
+          <view class='order_presell_one_center_res'>
+            <text class='order_presell_one_center_reso'>预售进度：</text>
+            <text class='order_presell_one_center_resw'>{{item.goodsinfo.jindu}}%</text>
+            <text class='order_presell_one_center_res_right'>参与者：{{item.renshu}}名</text>
+            <view class="order_presell_one_center_pay">立即支付</view>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- <view class='order_presell_bottom'>
+        <image wx:if="{{selectAllStatus}}" data-index="{{index}}" class="order_radio_chek" bindtap="selectAllone" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+        <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="order_radio_chek" data-index="{{index}}" bindtap="selectAllone"></image>
+        <text class='order_presell_select' bindtap='selectAllone'>全选</text>
+        <text class='order_presell_total'>合计:</text>
+        <text class='order_presell_money'>￥{{dfkallmoney}}</text>
+        <view class='order_presell_botton' bindtap='orderDetails'>确认支付</view>
+      </view> -->
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 待付款-酒市 -->
+    <view class='order_Wine' wx:if="{{sindexone==1}}">
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='order_Wine_one' wx:for="{{orderWineone}}" wx:key='index' data-id='{{item.id}}' catchtap='getojsneedpay'>
+          <view class='order_Wine_one_top'>
+            <!-- <image wx:if="{{item.selected}}" data-index="{{index}}" class="order_Wine_radio_chek_img" catchtap="selectList" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+                        <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="order_Wine_radio_chek_img" data-index="{{index}}" catchtap="selectList"></image> -->
+            <image src='{{item.shophead.head}}' class='order_Wine_one_top_img'></image>
+            <view class='order_Wine_one_top_textone'>{{item.shopname.name}}的酒馆</view>
+            <view class='order_Wine_one_top_texttwo'>待付款</view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='order_Wine_one_center' wx:key wx:for="{{item.order}}" wx:for-item="items">
+            <!-- 全选和不全选 -->
+            <!-- <image wx:if="{{item.selected}}" data-index="{{index}}" class="order_radio_chek" bindtap="selectList" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+                        <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="order_radio_chek" data-index="{{index}}" bindtap="selectList"></image> -->
+            <image src='{{items.goodsinfo.playimage}}' class='order_Wine_one_center_imgt'></image>
+            <view class='order_Wine_one_center_right' bindtap='needmnnvgeto'>
+              <view class='order_Wine_right_top'> {{items.goodsinfo.name}}</view>
+              <view class='order_Wine_right_right'>
+                <text class='order_Wine_right_textw'>￥{{items.goodsinfo.price*items.num}}</text>
+              </view>
+            </view>
+
+          </view>
+          <!-- <view class='sendgoods_presell_one_food_none'></view> -->
+          <view class="order_presell_one_center_pay" style="clear:both">立即支付</view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+
+
+      </scroll-view>
+      <!-- <view class='order_Wine_bottom'>
+        <image wx:if="{{selectAllStatus}}" data-index="{{index}}" class="order_radio_chek" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png' bindtap="selectAll"></image>
+        <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' bindtap="selectAll" class="order_radio_chek" data-index="{{index}}"></image>
+        <text class='order_Wine_select' bindtap='selectAll'>全选</text>
+        <image wx:else class="total-select" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png'></image>                     
+        <text class='order_Wine_total'>合计:</text>
+        <text class='order_Wine_money'>￥{{thisdfkallmoney}}</text>
+        <view class='order_Wine_botton' bindtap='squorderDetails'> 确认支付</view>
+      </view> -->
+      <!-- <view class='sendgoods_presell_one_food_none'></view> -->
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+  </view>
+  <!-- 待发货 -->
+  <view class='order_shipments' wx:if="{{sindex==1}}" wx:key="">
+    <!-- 待发货：预售 酒市 积分切换 -->
+    <view class='order_obligation_one'>
+      <view class='order_styleone  {{item.id==numone?"order_activeone":""}}' catchtap='order_list' wx:for="{{orderlist}}" wx:key="" data-index="{{index}}">{{item.text}}</view>
+    </view>
+    <!-- 待发货-预售 -->
+    <view class='sendgoods_obligation' wx:if="{{sindexone==0}}" wx:key="">
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{sendgoodspresell}}" wx:key bindtap='yushounvgeto' data-id='{{item.id}}'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='{{item.kolname.headpic}}' class='sendgoods_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>{{item.kolname.name}}的酒馆</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text'>正在备货中</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center' wx:key>
+            <image src='{{item.goodsinfo.pic}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{item.goodsinfo.title}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{item.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{item.buynum}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.buynum}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.goodsinfo.price*item.buynum}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 待发货-酒市 -->
+    <view class='order_obligation' wx:if="{{sindexone==1}}" wx:key="">
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{sendgoodspresellwine}}" wx:key bindtap='nvgeto' data-id='{{item.id}}'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='{{item.shophead.head}}' class='sendgoods_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>{{item.shopname.name}}酒馆</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text'>正在备货中</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center' wx:key wx:key='index' wx:for="{{item.order}}" wx:for-item="items">
+            <image src='{{items.goodsinfo.playimage}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{items.goodsinfo.name}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{items.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{items.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.allnum}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.allmoney}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 待发货-积分 -->
+    <view class='order_obligation' wx:if="{{sindexone==2}}" wx:key="" bindtap='nvgetofahuo'>
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{sendgoodspresellwinejifen}}" wx:key>
+          <view class='sendgoods_presell_one_top'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_shopping.png' class='sendgoods_integral_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>积分商城</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text'>正在备货中</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center'>
+            <image src='{{item.goodsinfo.playimage}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{item.goodsinfo.name}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{item.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{item.num}}</text>
+              </view>
+            </view>
+            <view class='sendgoods_presell_one_food'>
+              <text class='sendgoods_presell_one_food_textone'>共\t</text>
+              <text class='sendgoods_presell_one_food_blod'>{{item.num}}</text>
+              <text class='sendgoods_presell_one_food_textone'>件商品</text>
+              <text class='sendgoods_presell_one_food_total'>合计：</text>
+              <text class='sendgoods_presell_one_food_blod'>￥{{item.goodsinfo.price*item.num}}</text>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+  </view>
+  <!-- 待收货 -->
+  <view class='order_takegood' wx:if="{{sindex==2}}" wx:key="">
+    <!-- 待收货 ：预售 酒市 积分切换 -->
+    <view class='order_obligation_one'>
+      <view class='order_styleone  {{item.id==numone?"order_activeone":""}}' catchtap='order_list' wx:for="{{orderlist}}" wx:key="" data-index="{{index}}">{{item.text}}</view>
+    </view>
+    <!-- 待收货-预售 -->
+    <view class='order_obligation' wx:if="{{sindexone==0}}">
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:key wx:for="{{suyhougoodspresellwine}}" bindtap="yushounvgeto" data-id='{{item.id}}'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='{{item.kolname.headpic}}' class='sendgoods_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>{{item.kolname.name}}酒馆</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text'>已发货</text>
+            </view>
+          </view>
+          <!-- 预售每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center'>
+            <image src='{{item.goodsinfo.pic}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{item.goodsinfo.title}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{item.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{item.buynum}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.buynum}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.goodsinfo.price*item.buynum}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_botton'>
+            <view class='sendgoods_presell_one_food_botton_gray' catchtap="checklogistics" data-orderid="{{item.id}}" data-whogeto="yushou">查看物流</view>
+            <!-- <view class='sendgoods_presell_one_food_botton_blue' catchtap="confirmreceipt">确认收货</view> -->
+          </view>
+
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 待收货-酒市 -->
+    <view class='order_obligation' wx:if="{{sindexone==1}}" bindtap='nvgetofahuo'>
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{getgoodspresellwine}}" wx:key bindtap='nvgeto' data-id='{{item.id}}'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='{{item.shophead.head}}' class='sendgoods_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>{{item.shopname.name}}酒馆</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text'>已发货</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center' wx:key='index' wx:for="{{item.order}}" wx:for-item="items">
+            <image src='{{items.goodsinfo.playimage}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{items.goodsinfo.name}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{items.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{items.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.allnum}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.allmoney}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_botton'>
+            <view class='sendgoods_presell_one_food_botton_gray' catchtap="checklogistics" data-orderid="{{item.id}}" data-whogeto="jiushi">查看物流</view>
+            <!-- <view class='sendgoods_presell_one_food_botton_blue' catchtap="confirmreceipt">确认收货</view> -->
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 待收货-积分 -->
+    <view class='order_obligation' wx:if="{{sindexone==2}}" wx:key="" bindtap='nvgetofahuo'>
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{sendgoodspresellwineshoujifen}}" wx:key>
+          <view class='sendgoods_presell_one_top'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_shopping.png' class='sendgoods_integral_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>积分商城</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text'>已发货</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center'>
+            <image src='{{item.goodsinfo.playimage}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{item.goodsinfo.name}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{item.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{item.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.num}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.goodsinfo.price*item.num}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_botton' style="chear:both;">
+            <view class='sendgoods_presell_one_food_botton_gray' catchtap="checklogistics" data-orderid="{{item.id}}" data-whogeto="jifen">查看物流</view>
+            <!-- <view class='sendgoods_presell_one_food_botton_blue' catchtap="confirmreceipt">确认收货</view> -->
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+  </view>
+  <!-- 售后 -->
+  <view class='order_aftersale' wx:if="{{sindex==3}}" wx:key="">
+
+    <!-- 预售 酒市 积分切换 -->
+    <view class='order_obligation_one'>
+      <view class='order_styleone  {{item.id==numone?"order_activeone":""}}' catchtap='order_list' wx:for="{{orderlist}}" wx:key="" data-index="{{index}}">{{item.text}}</view>
+    </view>
+    <!-- 售后 预售 -->
+
+    <view class='order_obligation' wx:if="{{sindexone==0}}" wx:key="">
+
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{getdgoodspresellwine}}" wx:key bindtap='yushounvgeto' data-id='{{item.id}}'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='{{item.kolname.headpic}}' class='sendgoods_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>{{item.kolname.name}}的酒馆</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <text class="sendgoods_one_top_texttwo_img"></text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==2}}">退款申请</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==3}}">退款中</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==4}}">退款完成</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==5}}">失效</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==6}}">付款失败</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==9}}">订单完成</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center'>
+            <image src='{{item.goodsinfo.pic}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{item.goodsinfo.title}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{item.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{item.buynum}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.buynum}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.goodsinfo.price*item.buynum}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_botton'>
+            <view class='sendgoods_presell_one_food_botton_gray' catchtap="tryagainxd" data-number="{{item.goodsinfo.stockQuantity}}" data-id="{{item.goodsinfo.id}}">重新下单</view>
+            <view class='sendgoods_presell_one_food_botton_gray' catchtap="delectdd" data-orderid="{{item.id}}"> 删除订单</view>
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 售后 酒市 -->
+    <view class='order_obligation' wx:if="{{sindexone==1}}" wx:key="">
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{shouhoujiugoodspresellwine}}" wx:key data-name="{{item.shopname.name}}" data-id='{{item.id}}'  bindtap='nvgeto'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='{{item.shophead.head}}' class='sendgoods_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>{{item.shopname.name}}酒馆</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <text class="sendgoods_one_top_texttwo_img"></text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==3}}">订单完成</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==4}}">退款申请中</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==5}}">退款完成</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==6}}">失效</text>
+              
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center' wx:key='index' wx:for="{{item.order}}" wx:for-item="items">
+            <image src='{{items.goodsinfo.playimage}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{items.goodsinfo.name}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{items.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{items.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.allnum}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.allmoney}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_botton'>
+            <view class='sendgoods_presell_one_food_botton_gray' catchtap="seeyoualgin" data-item="{{item}}">再买一单</view>
+
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+    <!-- 售后 积分 -->
+    <view class='order_obligation' wx:if="{{sindexone==2}}" wx:key="">
+      <scroll-view class='order_Wine_tavern' scroll-y="true" wx:if="{{iskong==0}}">
+        <view class='sendgoods_presell_one' wx:for="{{shouhouo_jifen}}" wx:key bindtap='nvgeto' data-id='{{item.id}}'>
+          <view class='sendgoods_presell_one_top'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_shopping.png' class='sendgoods_integral_presell_one_top_image'></image>
+            <text class='sendgoods_one_top_textone'>积分商城</text>
+            <view class='sendgoods_one_top_texttwo'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_car.png' class='sendgoods_one_top_texttwo_img'></image>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==3}}">订单完成</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==4}}">退款申请中</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==5}}">退款完成</text>
+              <text class='sendgoods_one_top_texttwo_text' wx:if="{{item.state==6}}">失效</text>
+            </view>
+          </view>
+          <!-- 酒市每一个酒馆下的商品 -->
+          <view class='sendgoods_presell_one_center'>
+            <image src='{{item.goodsinfo.playimage}}' class='sendgoods_presell_one_center_imgt'></image>
+            <view class='sendgoods_presell_one_center_right'>
+              <view class='sendgoods_presell_right_top'> {{item.goodsinfo.name}}</view>
+              <view class='sendgoods_presell_right_right'>
+                <text class='sendgoods_presell_right_texto'>￥{{item.goodsinfo.price}}\t</text>
+                <text class='sendgoods_presell_right_textw'>×{{item.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='sendgoods_presell_one_food'>
+            <text class='sendgoods_presell_one_food_textone'>共\t</text>
+            <text class='sendgoods_presell_one_food_blod'>{{item.num}}</text>
+            <text class='sendgoods_presell_one_food_textone'>件商品</text>
+            <text class='sendgoods_presell_one_food_total'>合计：</text>
+            <text class='sendgoods_presell_one_food_blod'>￥{{item.goodsinfo.price*item.num}}</text>
+          </view>
+          <view class='sendgoods_presell_one_food_botton'>
+            <view class='sendgoods_presell_one_food_botton_gray'>再买一单</view>
+
+          </view>
+          <view class='sendgoods_presell_one_food_none' style="clear: both;"></view>
+        </view>
+      </scroll-view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_none.png' wx:if="{{iskong==1}}" class='noorders'></image>
+    </view>
+  </view>
+</view>

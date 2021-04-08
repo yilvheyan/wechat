@@ -1,0 +1,215 @@
+<!-- 交易所 -->
+<view class='exchangeSuo'>
+  <view class='exchangeSuo_top'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangeSuo_topbck.png' class='exchangeSuo_topbck'></image>
+    <view class='exchangeSuo_topfixd'>
+      <!-- 头像名字专栏 -->
+      <view class='exchangeSuo_topfixd_tou'>
+        <image src='{{kolinfo.headpic}}' class='exchangeSuo_topfixd_touimg'></image>
+        <view class='exchangeSuo_topfixd_name' bindtap="show">{{kolinfo.kolname}}</view>
+        <view class='exchangeSuo_topfixd_select' bindtap="show">选择KOL</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exchangeSuo/exchangSuo.xiadian.png' class='exchangeSuo_topfixd_touimgmot'> </image>
+      </view>
+
+      <!-- 积分池、酒钻持有专栏 -->
+      <view class='exchangeSuo_topfixd_foot'>
+        <view class='topfixd_foot_one'>
+          <view class='topfixd_foot_one_chi'>已分红(按天)</view>
+          <view class='topfixd_foot_one_match'>
+            <span class='topfixd_foot_one_match_span'>{{kolinfo.fenhong}}</span>分</view>
+        </view>
+        <view class='topfixd_foot_one'>
+          <view class='topfixd_foot_one_chi'>发行酒钻总数</view>
+          <view class='topfixd_foot_one_match'>
+            <span class='topfixd_foot_one_match_span'>{{kolinfo.jiuzuanshu}}</span>个</view>
+        </view>
+        <view class='topfixd_foot_one'>
+          <view class='topfixd_foot_one_chi'>我的酒钻</view>
+          <view class='topfixd_foot_one_match'>
+            <span class='topfixd_foot_one_match_span'>{{kolinfo.ecmyjiuz}}</span>个</view>
+        </view>
+      </view>
+    </view>
+    <view class='exchangeSuo_parities'>
+      <view class='exchangeSuo_parities_title'>酒钻兑换积分汇率</view>
+      <view class='exchangeSuo_parities_bili'>当前汇率
+        <span class='exchangeSuo_parities_bili_span'>{{kolinfo.price}}</span>
+      </view>
+      <view class='exchangeSuo_parities_huan'>当前1酒钻={{kolinfo.price}}分，预估可兑换积分{{kolinfo.price*kolinfo.ecmyjiuz}}</view>
+      <button class='exchangeSuo_parities_btn' bindtap='exchangeSuobtn'>酒钻买卖</button>
+    </view>
+  </view>
+  <!-- 曲线图 -->
+  <view class='exchangeSuo_graph'>
+    <view class="etextll">
+      <view class="etextllimage {{0==etextindex?'ecolor':''}}" bindtap="etextcli" data-index="0">小时</view>
+      <view class="etextllimage {{1==etextindex?'ecolor':''}}" bindtap="etextcli" data-index="1">日线</view>
+      <!-- <image class="etextllimage" bindtap="etextcli" data-index="0" src="http://qiniu-test.ishzm.com/jxb/img/leftone.png"></image>
+      <image class="etextllimage" bindtap="etextcli" data-index="1" src="http://qiniu-test.ishzm.com/jxb/img/rigthtwo.png"></image> -->
+    </view>
+
+
+
+    <!-- <view class="etext">
+      <view class="etextlistclas {{index==etextindex?'ecolor':''}}" data-index="{{index}}" bindtap="etextcli" wx:for="{{etextlist}}" wx:key>{{item}}</view>
+    </view> -->
+    <view class="ettimecla" bindtap="chosedaymouth" wx:if="{{etextindex==0}}">{{etyear}}年{{etmouth}}月{{etdata}}日</view>
+    <view class="ettimecla" bindtap="chosedaymouth" wx:if="{{etextindex==1}}">{{etyear}}年{{etmouth}}月</view>
+    <!-- <view class="etmengb" wx:if="{{dateshow!=0}}"></view> -->
+    <!-- <view class="mychartview"  style="width:{{etwidth}}rpx;left:{{etleft}}rpx"> -->
+    <view class="mychartvie" style="{{dateshow==0?'display:block':'display:none'}}">
+      <ec-canvas id="mychart" bind:touchstart="ettouchstart" bind:touchend="ettouchend" bind:touchmove="ettouchmove" canvas-id="mychart-bar" bindmyevent='' ec="{{ ecLine }}"></ec-canvas>
+    </view>
+  </view>
+  <!--  实时交易情况、成交切换 -->
+  <view class='exchangeSuo_recommendone'>
+    <view class='exchangeSuo_style  {{item.id==num?"exchangeSuo_active":""}}' catchtap='exchangeSuo_ch' wx:for="{{message}}" wx:key="" id="{{index}}">{{item.text}}
+    </view>
+  </view>
+  <!-- 实时交易情况、提交 -->
+  <view class='exchangeSuo_sub' wx:if="{{sindex==0}}">
+    <!--所有交易 下：view -->
+    <view class='exchangeSuo_exch_view' wx:key wx:for="{{shishijiapoyi}}">
+      <view class='exchangeSuo_exch_view_top'>
+        <view class='exchangeSuo_exch_view_two'>{{item.time}}</view>
+        <span class='exchangeSuo_exch_view_three' wx:if="{{item.type==0}}">已买入</span>
+        <span class='exchangeSuo_exch_view_threetwo' wx:if="{{item.type==1}}">已卖出</span>
+      </view>
+      <view class='exchangeSuo_exch_view_bottom'>
+        <view class='exchangeSuo_exch_view_bottom_textone'>酒钻数量</view>
+        <view class='exchangeSuo_exch_view_bottom_texttwo'>{{item.count}}</view>
+        <view class='exchangeSuo_exch_view_bottom_none'></view>
+        <view class='exchangeSuo_exch_view_bottom_textone'>成交汇率</view>
+        <view class='exchangeSuo_exch_view_bottom_texttwo'>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <!--我的成交 ：view -->
+  <view class='exchangeSuo_sub' wx:if="{{sindex==1}}">
+
+    <!-- 挂单买 -->
+    <view class='exchangeSuo_exch_cj_view' wx:if="{{tobuy==1}}">
+      <view class='exchangeSuo_exch_cj_view_top'>
+        <view class='exchangeSuo_exch_cj_view_name'>
+          <view class='exchangeSuo_exch_cj_view_one'>挂单委托</view>
+          <view class='exchangeSuo_exch_cj_view_one onecolor'>买入</view>
+          <view style="clear:both;"></view>
+          <view class='exchangeSuo_exch_cj_view_two'>{{buytime}}</view>
+        </view>
+        <span class='exchangeSuo_exch_cj_view_three' bindtap='revocation' data-tobuy="{{tobuy}}" data-isdeal="{{item.isdeal}}">撤销委托</span>
+      </view>
+      <view class='exchangeSuo_exch_cj_view_bottom'>
+        <view class='exchangeSuo_exch_cj_view_bottom_textone'>酒钻分数</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_texttwo'>{{buycount}}</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_none'></view>
+        <view class='exchangeSuo_exch_cj_view_bottom_textone'>挂单卖汇率</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_texttwo'>{{buyprice}}</view>
+      </view>
+    </view>
+
+    <!-- 挂单买 -->
+    <view class='exchangeSuo_exch_cj_view' wx:if="{{forsell==1}}">
+      <view class='exchangeSuo_exch_cj_view_top'>
+        <view class='exchangeSuo_exch_cj_view_name'>
+          <view class='exchangeSuo_exch_cj_view_one'>挂单委托</view>
+          <view class='exchangeSuo_exch_cj_view_one onecolor'>卖出</view>
+          <view style="clear:both;"></view>
+          <view class='exchangeSuo_exch_cj_view_two'>{{selltime}}</view>
+        </view>
+        <span class='exchangeSuo_exch_cj_view_three' bindtap='revocation' data-id="{{item.id}}" data-what="{{item.what}}" data-isdeal="{{item.isdeal}}">撤销委托</span>
+      </view>
+      <view class='exchangeSuo_exch_cj_view_bottom'>
+        <view class='exchangeSuo_exch_cj_view_bottom_textone'>酒钻分数</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_texttwo'>{{sellcount}}</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_none'></view>
+        <view class='exchangeSuo_exch_cj_view_bottom_textone'>挂单买汇率</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_texttwo'>{{sellprice}}</view>
+      </view>
+    </view>
+
+    <!-- 已成交 -->
+    <view class='exchangeSuo_exch_cj_view' wx:key wx:for="{{myexchangeSuo}}">
+      <view class='exchangeSuo_exch_cj_view_top'>
+        <view class='exchangeSuo_exch_cj_view_name'>
+          <view class='exchangeSuo_exch_cj_view_one' wx:if="{{item.status==0}}">成交订单</view>
+          <view class='exchangeSuo_exch_cj_view_one' wx:if="{{item.status==3}}">撤销订单</view>
+          <view class='exchangeSuo_exch_cj_view_one onecolor' wx:if="{{item.type==1}}">卖出</view>
+          <view class='exchangeSuo_exch_cj_view_one onecolor' wx:if="{{item.type==0}}">买入</view>
+          <view style="clear:both;"></view>
+          <view class='exchangeSuo_exch_cj_view_two'>{{item.time}}</view>
+        </view>
+        <span class='exchangeSuo_exch_cj_view_three' wx:if="{{item.status==0}}">已成交</span>
+        <span class='exchangeSuo_exch_cj_view_three' wx:if="{{item.status==3}}">已撤销</span>
+      </view>
+      <view class='exchangeSuo_exch_cj_view_bottom'>
+        <view class='exchangeSuo_exch_cj_view_bottom_textone'>酒钻分数</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_texttwo'>{{item.cont}}</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_none'></view>
+        <view class='exchangeSuo_exch_cj_view_bottom_textone'>成交汇率</view>
+        <view class='exchangeSuo_exch_cj_view_bottom_texttwo'>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 遮罩显示 -->
+  <view class="zhezao" wx:if="{{goodsexchangeSuoflag}}" catchtap='conceal' catch:touchmove='move'>
+    <!--弹出框开始-->
+    <scroll-view scroll-y="true" class="tanchu_view">
+      <view class='tanchu_view_numone' wx:key wx:for="{{kollist}}" catchtap="choekol" data-index="{{index}}">
+        <image src='{{item.headpic}}' class='tanchu_view_numoneimg'></image>
+        <view class='tanchu_view_numname'>{{item.name}}</view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <view class="dateboxmeng" catchtap="cleardateshow" wx:if="{{dateshow==1}}">
+    <view class="datevie">
+      <view class="datebox" catchtap="name">
+        <view class="date">
+          <image class="direction" src="http://qiniu-test.ishzm.com/jxb/img/left.png" catchtap='minusMouth' />
+          <label>{{year}}年{{mouth}}月</label>
+          <image class="direction" src="http://qiniu-test.ishzm.com/jxb/img/rigth.png" catchtap='plusMouth' />
+        </view>
+        <view class="header">
+          <block wx:for="{{weeks}}" wx:key="index">
+            <text class="weeks-item-text">{{item}}</text>
+          </block>
+        </view>
+        <view class="body-days">
+          <block wx:for="{{days}}" wx:key="index">
+            <block wx:if="{{item !== nowDate }}">
+              <view class="days-item {{thisgre<=item?'thisgrecla':''}}" data-year='{{year}}' data-mouth='{{mouth}}' data-day='{{item}}' catchtap='selDate'>
+                <view class="days-item-text" wx:if="{{item>0}}">{{item}}</view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="days-item days-item-selected" data-date='{{year}}-{{mouth}}-{{item}}' catchtap='selDate'>
+                <view class="days-item-text" wx:if="{{item>0}}">{{item}}</view>
+              </view>
+            </block>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="dateboxmeng" catchtap="cleardateshow" wx:if="{{dateshow==2}}">
+    <view class="datevie">
+      <view class="datebox" catchtap="name">
+        <view class="date">
+          <image class="direction" src="http://qiniu-test.ishzm.com/jxb/img/left.png" catchtap='minusyear' />
+          <label>{{year}}年</label>
+          <image class="direction" src="http://qiniu-test.ishzm.com/jxb/img/rigth.png" catchtap='plusyear' />
+        </view>
+        <view class="body-days">
+          <block wx:for="{{mouths}}" wx:key="index">
+            <block>
+              <view class="days-item" data-year='{{year}}' data-mouth='{{item}}' catchtap='selmouth'>
+                <view class="days-item-text" wx:if="{{item>0}}">{{item}}</view>
+              </view>
+            </block>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

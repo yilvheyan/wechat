@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "loginPopup": "/components/loginPopup/loginPopup"
+    },
+    "navigationBarTitleText": "酒市"
+ 
+}

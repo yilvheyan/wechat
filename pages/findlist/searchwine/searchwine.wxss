@@ -1,0 +1,82 @@
+.searchwinebox {
+    width: 100%;
+}
+
+.searchtop {
+    width: 750rpx;
+    height: 88rpx;
+    background: rgba(255, 255, 255, 1);
+}
+
+.searchmain {
+    width: 100%;
+    padding: 22rpx 22rpx;
+    box-sizing: border-box;
+    background: rgba(243, 246, 250, 1);
+}
+
+.searchinput {
+    width: 620rpx;
+    height: 60rpx;
+    background: rgba(243, 246, 250, 1);
+    border-radius: 31rpx;
+    margin: 10rpx auto;
+    padding-left: 30rpx;
+    /* padding-top: 2rpx; */
+    box-sizing: border-box;
+}
+
+.searchinput input {
+    width: 600rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 25rpx;
+    text-align: center;
+}
+
+.searchmainlisttuijiancla {
+    border-radius: 12rpx;
+    margin-top: 20rpx;
+    width: 97%;
+    background: rgba(255, 255, 255, 1);
+}
+
+.smtuijianimg {
+    display: block;
+    float: left;
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 33rpx;
+}
+
+.smtuijianimg image {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.smtuijanxinxi {
+    float: left;
+    padding-top: 41rpx;
+    box-sizing: border-box;
+}
+
+.smtuijanxtitle {
+    width: 447rpx;
+    height: 69rpx;
+    font-size: 23rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+    overflow: hidden;
+    line-height: 69rpx;
+}
+
+.smtuijanmoney {
+    width: 113rpx;
+    height: 38rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 800;
+    color: rgba(250, 50, 50, 1);
+    line-height: 24rpx;
+}

@@ -1,0 +1,83 @@
+<!-- 编辑资料 -->
+<view class="redactData" style='height:{{height}}rpx'>
+  <view class="redactData_top">
+    <!-- 头像 -->
+    <view class="redactData_top_view">
+      <view class="redactData_top_left">头像:
+      </view>
+      <view class="redactData_top_right" bindtap="clickImg">
+        <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoxi_hebingright.png" class="redactData_youkuo"></image>
+        <image class="redactData_top_right_pic" src="{{avatarUrl}}"></image>
+      </view>
+    </view>
+    <view class="redactData_top_view">
+      <view class="redactData_top_left">用户名:
+      </view>
+      <view class="redactData_top_right" bindtap="show" data-getnum="1" data-name="{{nickName}}">
+        <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoxi_hebingright.png" class="redactData_youkuo"></image>
+        <view class="redactData_top_right_name">{{nickName}}</view>
+      </view>
+    </view>
+    <view class="redactData_top_view_xb">
+      <view class="redactData_top_left">性别:
+      </view>
+      <view class="redactData_top_right">
+        <text class="redactData_youkuo_nogai">（不可更改）</text>
+        <!-- <image src="/img/xiaoxi_hebingright.png" class="redactData_youkuo"></image> -->
+        <view class="redactData_top_right_xb" wx:if="{{sex==1}}">男</view>
+        <view class="redactData_top_right_xb" wx:if="{{sex==0}}">女</view>
+      </view>
+    </view>
+    <view class="redactData_top_view_xb" wx:if="{{show}}">
+      <view class="redactData_top_left">性别:
+      </view>
+      <view class="redactData_top_right">
+        <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoxi_hebingright.png" class="redactData_youkuo"></image>
+        <view class="redactData_top_right_xb">男</view>
+      </view>
+    </view>
+  </view>
+  <view class="redactData_bottom">
+    <view class="redactData_bottom_view" bindtap="show" data-getnum="2" data-name="{{phone}}">
+      <view class="redactData_top_left">绑定手机:
+      </view>
+      <view class="redactData_top_right">
+        <image src="http://qiniu-test.ishzm.com/jxb/img/xiaoxi_hebingright.png" class="redactData_youkuo"></image>
+        <view class="redactData_top_right_name_yes">{{phone}}</view>
+      </view>
+    </view>
+    <view class="redactData_bottom_view_xb">
+      <view class="redactData_top_left">绑定微信:
+      </view>
+      <view class="redactData_top_right">
+        <!-- <image src="/img/xiaoxi_hebingright.png" class="redactData_youkuo"></image> -->
+        <view class="redactData_top_right_name_yes" bindtap="">已绑定</view>
+      </view>
+    </view>
+  </view>
+  <!-- 遮罩显示 -->
+  <view class="zhezao" wx:if="{{redactDataname}}">
+    <!--弹出框开始-->
+    <view class="tanchu_view">
+      <view class="tanchu_view_title">{{whochange}}</view>
+      <input class="select_name" value='{{userininfor.name}}' bindinput="changename"></input>
+
+      <view wx:if="{{getnum==2}}">
+        <view class="tanchu_view_title" catchtap="getphoneyan" wx:if="{{istimenum==0}}">请点击此处获取验证码</view>
+        <view class="tanchu_view_title" wx:if="{{istimenum==1}}">{{timenum}}</view>
+        <input class="select_name" value='{{userininfor.name}}' bindinput="code"></input>
+      </view>
+
+      <view class="redactData_yes">
+        <text bindtap='conceal' data-index='0'>取消</text>
+        <text bindtap='conceal' data-index='1'> 确定</text>
+      </view>
+    </view>
+  </view>
+  <button class="redactData_btn {{isredactData_btnba?'redactData_btnba':''}}" bindtap="yeschange">确定</button>
+
+
+  <!-- 获取手机组件 -->
+  <phonepopup id="phonepopup"></phonepopup>
+  <popup id="popup"></popup>
+</view>

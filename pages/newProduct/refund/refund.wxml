@@ -1,0 +1,27 @@
+<!--pages/tuikuan/tuikuan.wxml-->
+<!-- <text>pages/tuikuan/tuikuan.wxml</text> -->
+<view class="choaddress">
+    <!--更改地址  -->
+    <view class='xinzengaddress'>
+        <view class='xinname'>
+            <view class='szlist'>退款金额：</view>
+            <view class='tuimoneycla'>{{tuimoney}}</view>
+
+        </view>
+        <view class='xinname'>
+            <view class='szlist'>收款人：</view>
+            <input type='text' class='ptext' placeholder='收款人姓名' maxlength='19' value='{{refundinformation.tuimoneyman}}' bindinput='tuimoneyman'></input>
+        </view>
+        <view class='xinname'>
+            <view class='szlist'>收款账号：</view>
+            <input type='number' class='ptext' value='{{refundinformation.tuimoneynum}}' style='float:left; width:379rpx;' placeholder='收款人收款账号' bindinput='tuimoneynum' maxlength='19'></input>
+            <!-- <view class='rjiant'>></view> -->
+        </view>
+        <view class='xinname'>
+            <view class='szlist'>开户行：</view>
+            <input type='text' class='ptext' value='{{refundinformation.tuimoneyka}}' placeholder='××银行××支行' bindinput='tuimoneyka'></input>
+        </view>
+    </view>
+    <view class='xinaddress' bindtap='tuikuan'>确认退款</view>
+
+</view>

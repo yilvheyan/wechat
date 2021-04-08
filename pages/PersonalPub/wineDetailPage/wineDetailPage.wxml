@@ -1,0 +1,28 @@
+<!--酒品详情页面 -->
+<view class='wineDatailPage'>
+  <!-- 轮播图 -->
+  <swiper class='swiper_img' indicatorDots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+    <block wx:for="{{bannerimgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="lunbo-image" mode="aspectFit" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='wine'>
+    <view class='wine_money'>{{imgUrls.price}}</view>
+    <view class='wine_name'>{{imgUrls.name}}</view>
+    <view class='wine_milliliter'>{{imgUrls.subname}}</view>
+  </view>
+  <!-- 预售 -->
+  <view class='wine_yushou'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/Bookingdetails.png'></image>
+  </view>
+  <!-- 大图 -->
+  <view class='wine_big'>
+    <image src='{{imgUrls.detailimage}}' mode="aspectFit"></image>
+  </view>
+  <view class='wineDatailPage_footer'>
+    <view class='wineDatailPage_footer_left'>商品库存充足</view>
+    <view class='wineDatailPage_footer_right' bindtap='wineDatailPageslect'>添加到酒架</view>
+  </view>
+</view>

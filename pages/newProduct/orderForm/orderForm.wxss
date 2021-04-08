@@ -1,0 +1,243 @@
+.orderform {
+  width: 750rpx;
+  border-top: 1px #f2f2f2 solid;
+  position: relative;
+}
+
+.orderform_div {
+  width: 686rpx;
+  height: 419rpx;
+  /* border: 1px lightblue solid; */
+  margin-left: 32rpx;
+  background-color: white;
+}
+
+.orderform_top {
+  height: 246rpx;
+  width: 100%;
+  display: flex;
+}
+
+.orderform_top_underline {
+  width: 700rpx;
+  height: 2rpx;
+  background-color: #f4f4f4;
+}
+
+.orderform_top_one {
+  width: 162rpx;
+  height: 162rpx;
+  /* border: 1px #B5B6B8 solid; */
+  margin-top: 44rpx;
+}
+
+.center {
+  width: 750rpx;
+  height: 787rpx;
+  background: rgba(243, 243, 243, 1);
+  opacity: 0.6;
+}
+
+.orderform_top_one image {
+  width: 144rpx;
+  height: 144rpx;
+}
+
+.orderform_top_two_baijiu {
+  margin: 44rpx 0rpx 0rpx 30rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(55, 58, 61, 1);
+}
+
+.orderform_top_two_money {
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(67, 147, 242, 1);
+  margin: 57rpx 0rpx 0rpx 30rpx;
+}
+
+.close {
+  position: fixed;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 98rpx;
+  background: rgba(255, 255, 255, 1);
+}
+
+.close_left {
+  width: 492rpx;
+  height: 98rpx;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+}
+
+.close_right {
+  width: 258rpx;
+  height: 98rpx;
+  background: linear-gradient(0deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 237, 1) 100%);
+  font-size: 36rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 0rpx;
+}
+
+/*主容器*/
+
+.stepper {
+  width: 202rpx;
+  height: 46rpx;
+  background: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  border-radius: 4rpx;
+  margin-top: 200rpx;
+}
+
+/* 份额 */
+
+.share {
+  width: 53rpx;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: rgba(181, 182, 184, 1);
+  margin: 38rpx 0rpx 0rpx 31rpx;
+}
+
+/*加号和减号*/
+
+.normal1 {
+  text-align: center;
+  float: left;
+  width: 42rpx;
+  line-height: 20px;
+  height: 46rpx;
+  background: rgba(238, 238, 238, 1);
+  border-right: 1px solid rgba(224, 223, 230, 1);
+  color: rgba(181, 182, 184, 1);
+}
+
+.normal2 {
+  text-align: center;
+  float: right;
+  width: 42rpx;
+  line-height: 20px;
+  height: 46rpx;
+  background: rgba(255, 255, 255, 1);
+  border-left: 1px solid rgba(224, 223, 230, 1);
+  color: rgba(181, 182, 184, 1);
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+/*数值*/
+
+.shuzhi {
+  width: 40rpx;
+  height: 26rpx;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 35rpx;
+}
+
+/* 核算 */
+
+.heji {
+  height: 80rpx;
+  /* border: 1px firebrick solid; */
+  margin: 17rpx 0rpx 0rpx 44rpx;
+}
+
+.heji_one {
+  height: 32rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: rgba(181, 182, 184, 1);
+}
+
+.heji_two {
+  font-size: 36rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(67, 147, 242, 1);
+}
+
+.orderform_center_one {
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(55, 58, 61, 1);
+  margin-top: 40rpx;
+}
+
+.orderform_center_two {
+  float: right;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(55, 58, 61, 1);
+}
+
+.orderform_foot {
+  margin-top: 39rpx;
+}
+
+.orderform_foot_one {
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(55, 58, 61, 1);
+  margin-top: 40rpx;
+}
+
+.orderform_foot_two {
+  float: right;
+  font-size: 36rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(67, 147, 242, 1);
+}
+
+/* **********数量不足提示样式 */
+
+.numnaut {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 300rpx;
+}
+
+.numnautcen {
+  width: 450rpx;
+  height: 100rpx;
+  background: white;
+  margin: 0 auto;
+}
+
+.pointer {
+  pointer-events: none;
+  background: gainsboro;
+}

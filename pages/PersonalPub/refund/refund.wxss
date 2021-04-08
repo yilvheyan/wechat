@@ -1,0 +1,549 @@
+uploadingpz {
+    width: 750rpx;
+    /* height: 100%; */
+    background: rgba(238, 238, 238, 1);
+    overflow: hidden;
+}
+
+.imagecla {
+    width: 159rpx;
+    height: 159rpx;
+    float: left;
+    margin-left: 11rpx;
+    margin-bottom: 11rpx;
+}
+
+.aa {
+    margin-right: 0rpx;
+}
+
+.fcmainboxlistimgcla {
+    margin-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.refund {
+    width: 750rpx;
+    height: 100%;
+    background: rgba(243, 246, 250, 1);
+}
+
+.refund_back {
+    width: 750rpx;
+    height: 268rpx;
+}
+
+/* 订单详情 */
+
+.refund_tietleli {
+    width: 447rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 63rpx;
+    left: 23rpx;
+    display: flex;
+    /* background-color: tan; */
+    z-index: 0;
+}
+
+.refund_button_left_ever {
+    width: 100rpx;
+    height: 50rpx;
+}
+
+.refund_button_left {
+    width: 21rpx;
+    height: 35rpx;
+    margin-top: 10rpx;
+}
+
+.refund_titletext {
+    margin-left: 210rpx;
+    font-size: 37rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: white;
+    line-height: 45rpx;
+}
+
+/* 去除滚动条样式 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.refund_positin {
+    position: relative;
+    top: -120rpx;
+    left: 0rpx;
+}
+
+/* <!-- 商品信息样式 --> */
+
+.refund_shop {
+    width: 706rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 15rpx;
+    margin-left: 22rpx;
+    overflow: hidden;
+    /* position: absolute;
+    top: 448rpx;
+    left: 22rpx; */
+}
+
+.refund_shop_hint {
+    width: 624rpx;
+    margin-left: 41rpx;
+    margin-top: 42rpx;
+}
+
+.refund_shop_hintone {
+    color: #fa3232;
+    font-size: 26rpx;
+}
+
+.refund_shop_hinttwo {
+    color: #666;
+    font-size: 26rpx;
+}
+
+.shop_message {
+    width: 100%;
+    height: 91rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 91rpx;
+    border-bottom: 1rpx #f2f2f2 solid;
+    display: flex;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.shop_message_img {
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: 23rpx;
+    border-radius: 50%;
+}
+
+.paid_shop_textone {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-left: 12rpx;
+}
+
+.shop_message_style {
+    width: 100%;
+    height: 218rpx;
+    /* border: 1rpx saddlebrown solid; */
+}
+
+.shop_message_style_one {
+    display: flex;
+    width: 678rpx;
+    height: 158rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 30rpx;
+    margin-left: 23rpx;
+}
+
+.shop_message_style_one_image {
+    width: 158rpx;
+    height: 158rpx;
+}
+
+.shop_message_style_two {
+    width: 480rpx;
+    height: 158rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-left: 22rpx;
+}
+
+.shop_message_style_top {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40rpx;
+}
+
+.shop_message_style_bttom {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+    margin-top: 23rpx;
+}
+
+.shop_message_style_zzz {
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10rpx;
+}
+
+/* <!-- 共计样式 --> */
+
+.refund_sumto {
+    width: 706rpx;
+    height: 317rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 15rpx;
+    /* position: absolute;
+   top: 1351rpx;
+   left: 22rpx; */
+    margin: 22rpx;
+    overflow: hidden;
+}
+
+.refund_sumto_zongto {
+    width: 648rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 26rpx;
+    margin-left: 29rpx;
+}
+
+.refund_sumto_top {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.refund_sumto_sp {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 50rpx;
+}
+
+.refund_sumto_en {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #fa3232;
+    line-height: 50rpx;
+    margin-left: 26rpx;
+}
+
+.refund_sumto_center {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.refund_sumto_sp_one {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 400;
+    color: #666;
+    line-height: 50rpx;
+}
+
+.refund_sumto_en_shijitwo {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: rgba(250, 50, 50, 1);
+    line-height: 50rpx;
+}
+
+.refund_sumto_en_two {
+    width: 480rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #333;
+    line-height: 50rpx;
+    margin-left: 26rpx;
+}
+
+.refund_sumto_center_image {
+    width: 19rpx;
+    height: 33rpx;
+}
+
+.refund_sumto_bottom {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.refund_sumto_sp_new {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 400;
+    color: #666;
+    line-height: 50rpx;
+}
+
+.refund_sumto_en_new {
+    height: 50rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #333;
+    margin-left: 26rpx;
+}
+
+.refund_sumto_en_new_img {
+    width: 203rpx;
+    height: 40rpx;
+    margin-top: 10rpx;
+}
+
+/* 订单编号 */
+
+.refund_reference {
+    width: 706rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin: 22rpx;
+    background-color: white;
+}
+
+.refund_reference_none {
+    height: 10rpx;
+}
+
+.refund_reference_zongto {
+    width: 648rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-left: 29rpx;
+}
+
+.refund_reference_big {
+    color: #666;
+    font-size: 28rpx;
+}
+
+.refund_reference_mol {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.refund_reference_slect image {
+    width: 140rpx;
+    height: 140rpx;
+    margin: 34rpx 0rpx 0rpx 29rpx;
+}
+
+/* 占位 */
+
+.refund_none {
+    width: 750rpx;
+    height: 98rpx;
+}
+
+/* 修改皮肤弹出底部弹框 */
+
+.pupContentBG {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.pupContent {
+    width: 100%;
+    /* border: 1rpx saddlebrown solid; */
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px -4rpx 24rpx 0rpx rgba(152, 173, 197, 0.4);
+    border-radius: 12rpx 12rpx 0px 0px;
+}
+
+/* 设置显示的背景 */
+
+.showBG {
+    display: block;
+}
+
+.hideBG {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideBGtUp {
+    from {
+        background: transparent;
+    }
+
+    to {
+        /* background: rgba(0, 0, 0, 0.1); */
+        background: black;
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideBGDown {
+    from {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        background: transparent;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.openBG {
+    animation: slideBGtUp 0.11s ease-in both;
+}
+
+.closeBG {
+    animation: slideBGDown 0.1s ease-in both;
+}
+
+/* 设置显示内容 */
+
+.showContent {
+    display: block;
+}
+
+.hideContent {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideContentUp {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 754rpx;
+    }
+}
+
+@keyframes slideContentDown {
+    from {
+        height: 754rpx;
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.open {
+    animation: slideContentUp 0.3s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.close {
+    animation: slideContentDown 0.2s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+/* 弹出框样式 */
+
+.refund_popup {
+    width: 750rpx;
+    height: 100%;
+}
+
+.refund_popup_top {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin-top: 25rpx;
+}
+
+.refund_popup_footer {
+    margin-left: 51rpx;
+}
+
+.refund_popup_footer view {
+    height: 82rpx;
+}
+
+.refund_popup_select {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin-top: 40rpx;
+}
+
+.refund_popup_img {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.refund_popup_list {
+    height: 80rpx;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    display: flex;
+    align-items: center;
+}
+
+.refund_popup_list text {
+    margin-left: 38rpx;
+}
+
+.refund_footer_button {
+    width: 640rpx;
+    height: 82rpx;
+    background: linear-gradient(179deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 238, 1) 100%);
+    border-radius: 12rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 82rpx;
+    margin-top: 42rpx;
+}
+
+.orderDetails_shop_toppicone {
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 23rpx;
+}
+
+.orderDetails_shop_toppictwo {
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 23rpx;
+}
+
+.shop_message_style_toppicone {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 45rpx 25rpx 0rpx 0rpx;
+}
+
+.shop_message_style_toppictwo {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 45rpx 25rpx 0rpx 0rpx;
+}

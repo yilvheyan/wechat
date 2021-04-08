@@ -1,0 +1,526 @@
+swiper_img.shopSetUp {
+    width: 750rpx;
+}
+
+/* xxx的酒庄专栏  */
+
+.shopSetUp_top {
+    width: 750rpx;
+    height: 356rpx;
+}
+
+.shopSetUp_top_bgcolor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    position: absolute;
+    width: 750rpx;
+    height: 356rpx;
+    top: 0rpx;
+    right: 0rpx;
+    z-index: -1;
+}
+
+.shopSetUptop_xiugaipifu {
+    background: #d3d3d3;
+    border-radius: 6rpx;
+    width: 160rpx;
+    height: 48rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 25rpx;
+    right: 172rpx;
+    text-align: center;
+    line-height: 48rpx;
+}
+
+.shopSetUptop_background_img {
+    width: 750rpx;
+    height: 356rpx;
+    position: absolute;
+    top: 0rpx;
+    right: 0rpx;
+    z-index: -10;
+}
+
+.shopSetUp_top_state {
+    display: flex;
+    position: absolute;
+    top: 25rpx;
+    right: 32rpx;
+    margin-left: 25rpx;
+}
+
+.shopSetUp_top_state image {
+    width: 120rpx;
+    height: 48rpx;
+    margin-left: 25rpx;
+}
+
+/*头像 名字专栏 */
+
+.shopSetUp_top_name_medium {
+    width: 54rpx;
+    height: 52rpx;
+    position: absolute;
+    top: 210rpx;
+    left: 39rpx;
+    z-index: 100;
+}
+
+.shopSetUp_top_name_touxiangkuang {
+    width: 102rpx;
+    height: 102rpx;
+    position: absolute;
+    top: 233rpx;
+    left: 47rpx;
+}
+
+.shopSetUp_top_name_headportrait {
+    width: 82rpx;
+    height: 82rpx;
+    position: absolute;
+    top: 242rpx;
+    left: 57rpx;
+    border-radius: 50%;
+}
+
+.top_who {
+    position: absolute;
+    top: 212rpx;
+    left: 168rpx;
+}
+
+.shopSetUptop_who_name {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+}
+
+.shopSetUptop_who_name_span {
+    width: 200rpx;
+    height: 60rpx;
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.shopSetUptop_who_name image {
+    width: 48rpx;
+    height: 48rpx;
+    position: absolute;
+    top: 12rpx;
+    left: 230rpx;
+}
+
+.shopSetUptop_top_who_language {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* 酒单详情 */
+
+.shopSetUp_center {
+    width: 750rpx;
+    height: 1200rpx;
+    background: rgba(243, 243, 243, 1);
+    /* display: flex; */
+    flex-wrap: wrap;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+/* one */
+
+.shopSetUp_center_one {
+    width: 332rpx;
+    height: 470rpx;
+    /* border: 1rpx sandybrown solid; */
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin-top: 32rpx;
+    float: left;
+    margin-left: 30rpx;
+}
+
+.shopSetUp_center_one_delete {
+    width: 120rpx;
+    height: 48rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    position: absolute;
+    margin: 20rpx 0rpx 0rpx 192rpx;
+    text-align: center;
+    line-height: 48rpx;
+    z-index: 100;
+}
+
+.shopSetUp_center_one_zhezhao {
+    width: 332rpx;
+    height: 470rpx;
+    position: absolute;
+    z-index: 10;
+}
+
+.shopSetUp_center_one image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+.shopSetUp_center_one_black {
+    font-size: 24rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(19, 46, 76, 1);
+    margin-left: 17rpx;
+}
+
+.shopSetUp_center_one_writh {
+    font-size: 20rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(19, 46, 76, 1);
+    opacity: 0.5;
+    margin-left: 17rpx;
+}
+
+.shopSetUp_center_one_money {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    margin-right: 17rpx;
+    float: right;
+}
+
+/* two */
+
+.shopSetUp_center_two {
+    width: 332rpx;
+    height: 470rpx;
+    margin-left: 23rpx;
+    margin-top: 32rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+}
+
+.shopSetUp_center_two_delete {
+    width: 120rpx;
+    height: 48rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    position: absolute;
+    margin: 20rpx 0rpx 0rpx 192rpx;
+    text-align: center;
+    line-height: 48rpx;
+    z-index: 100;
+}
+
+.shopSetUp_center_two_zhezhao {
+    width: 332rpx;
+    height: 470rpx;
+    position: absolute;
+    z-index: 10;
+}
+
+.shopSetUp_center_two image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+/* three */
+
+.shopSetUp_center_three {
+    width: 332rpx;
+    height: 470rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin-top: 25rpx;
+}
+
+.shopSetUp_center_three_delete {
+    width: 120rpx;
+    height: 48rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    position: absolute;
+    margin: 20rpx 0rpx 0rpx 192rpx;
+    text-align: center;
+    line-height: 48rpx;
+    z-index: 100;
+}
+
+.shopSetUp_center_three_zhezhao {
+    width: 332rpx;
+    height: 470rpx;
+    position: absolute;
+    z-index: 10;
+}
+
+.shopSetUp_center_three image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+/* four */
+
+.shopSetUp_center_four {
+    width: 332rpx;
+    height: 470rpx;
+    margin-left: 23rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin-top: 25rpx;
+}
+
+.shopSetUp_center_four_delete {
+    width: 120rpx;
+    height: 48rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    position: absolute;
+    margin: 20rpx 0rpx 0rpx 192rpx;
+    text-align: center;
+    line-height: 48rpx;
+    z-index: 100;
+}
+
+.shopSetUp_center_four_zhezhao {
+    width: 332rpx;
+    height: 470rpx;
+    position: absolute;
+    z-index: 10;
+}
+
+.shopSetUp_center_four image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+/* 增加 */
+
+.shopSetUp_footer {
+    width: 127rpx;
+    height: 127rpx;
+    position: fixed;
+    bottom: 38rpx;
+    left: 312rpx;
+}
+
+/* 修改皮肤弹出底部弹框 */
+
+.pupContentBG {
+    width: 100%;
+    /* height: 705rpx; */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.pupContent {
+    width: 100%;
+    background: white;
+    /* border: 1rpx saddlebrown solid; */
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    z-index: 999;
+    border-radius: 12px 12px 0px 0px;
+}
+
+/* 设置显示的背景 */
+
+.showBG {
+    display: block;
+}
+
+.hideBG {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideBGtUp {
+    from {
+        background: transparent;
+    }
+
+    to {
+        /* background: rgba(0, 0, 0, 0.1); */
+        background: black;
+        opacity: 0.3;
+    }
+}
+
+@keyframes slideBGDown {
+    from {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        background: transparent;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.openBG {
+    animation: slideBGtUp 0.11s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.closeBG {
+    animation: slideBGDown 0.1s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+/* 设置显示内容 */
+
+.showContent {
+    display: block;
+}
+
+.hideContent {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideContentUp {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 538rpx;
+    }
+}
+
+@keyframes slideContentDown {
+    from {
+        height: 538rpx;
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.open {
+    animation: slideContentUp 0.3s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.close {
+    animation: slideContentDown 0.5s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.modification_pf_one {
+    text-align: center;
+    font-size: 20rpx;
+    margin-top: 100rpx;
+    color: gray;
+}
+
+.modification_pf_two {
+    text-align: center;
+    font-size: 20rpx;
+    margin-top: 100rpx;
+    color: darkgreen;
+}
+
+.modification_pf_three {
+    text-align: center;
+    font-size: 20rpx;
+    margin-top: 100rpx;
+    color: cornflowerblue;
+}
+
+.modification_pf {
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+    margin: -45rpx 0rpx 0rpx 31rpx;
+}
+
+.modification_pf_recommend {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx 12rpx 0rpx 0rpx;
+    margin-left: 4rpx;
+    width: 120rpx;
+    height: 48rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(127, 129, 130, 1);
+    text-align: center;
+}
+
+.modification_view {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx 12rpx 0rpx 0rpx;
+    margin-left: 4rpx;
+    width: 160rpx;
+    height: 48rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 253, 1);
+    text-align: center;
+}
+
+.recommend_skin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recommend_one {
+    width: 213rpx;
+    height: 200rpx;
+    margin: 32rpx 0rpx 0rpx 31rpx;
+}
+
+.recommend_skin_one_img {
+    width: 213rpx;
+    height: 180rpx;
+}
+
+.recommend_skin_one_name {
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    text-align: center;
+}

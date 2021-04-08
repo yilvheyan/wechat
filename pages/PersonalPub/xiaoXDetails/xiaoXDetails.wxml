@@ -1,0 +1,7 @@
+<!-- 消息通知 -->
+<view class="xiaoXiInform" style='height:{{height}}rpx'>
+    <view class="xiaoXiInform_bt">{{xiaoXiInform.name}}</view>
+    <view class='yiJianFeedback_bor'>
+        <view class='addmain' wx:for="{{xiaoXiInform.content}}" wx:key>{{item}}</view>
+    </view>
+</view>

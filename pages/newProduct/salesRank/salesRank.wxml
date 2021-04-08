@@ -1,0 +1,96 @@
+<!-- 销售排名 -->
+<view class='salesrank'>
+    <view class='salesrank_tietleli'>
+        <view class='salesrank_button_left_ever' bindtap='skiphome'>
+            <image class='salesrank_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+        </view>
+        <view class='salesrank_titletext'>店铺排名</view>
+    </view>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/salesRank/salesrank_back.png' class='salesrank_back'></image>
+    <view class='salesrank_data'>2019.8.1-2019.10.31</view>
+    <view class='salesrank_titleview'>
+        <view class='salesrank_titleview_one' wx:if="{{showYour}}">{{rownum}}</view>
+        <image src='{{headimg}}' class='salesrank_titleview_two' wx:if="{{showYour}}"></image>
+        <image src='{{headimg}}' class='salesrank_titleview_two' wx:if="{{!showYour}}"></image>
+        <view class='salesrank_titleview_three' wx:if="{{showYour}}">{{wxname}}</view>
+        <view class='salesrank_titleview_three' wx:if="{{!showYour}}">{{wxname}}</view>
+        <view class='salesrank_titleview_four' wx:if="{{showYour}}">
+            您酒馆该季度第
+            <span>{{rownum}}</span>
+            名
+        </view>
+        <view class='salesrank_titleview_five' wx:if="{{!showYour}}">
+            您还没有酒馆
+        </view>
+    </view>
+    <view class='salesrank_center'>
+        <!-- 季度排名和上季度奖励名单 -->
+        <view class='salesrank_recommendone'>
+            <view class='salesrank_style  {{item.id==num?"salesrank_active":""}}' catchtap='salesrank_ch' wx:for="{{message}}" wx:key="" id="{{index}}">{{item.text}}
+            </view>
+        </view>
+    </view>
+    <!-- 季度排名 -->
+    <view class='salesrank_left' wx:if="{{sindex==0}}" wx:key="">
+        <view wx:if="{{isdata==1}}">
+            <view class='salesrank_explain'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/salesRank/salesrank_gantan.png' class='salesrank_explain_gantan'></image>
+                <text>说明：</text>
+            </view>
+            <view class='salesrank_explain_updata'>榜单每季度重置，每天更新一次，下一次奖励发放时间2019-9-30</view>
+            <view class='salesrank_explain_numberone' wx:key wx:for="{{numberlist}}">
+                <image src='{{item.img}}' class='salesrank_explain_numberone_img'></image>
+                <view class='salesrank_explain_numberone_right' catchtap='getoshop' data-uid="{{item.uid}}" data-name="{{item.name}}">
+                    <image src='{{item.image}}' class='salesrank_numberone_right_img'></image>
+                    <view class='salesrank_numberone_right_view'>
+                        <view class='salesrank_numberone_right_view_top'>
+                            <image src='{{item.head}}' class='salesrank_numberone_right_view_img'></image>
+                            <text class='salesrank_numberone_right_view_text'>{{item.name}}的酒馆</text>
+                        </view>
+                        <view class='salesrank_numberone_right_view_centet'>
+                            {{item.desc}}
+                        </view>
+                        <view class='salesrank_numberone_right_view_food'>
+                            <text class='salesrank_view_food_textone'>销售额\t</text>
+                            <text class='salesrank_view_food_texttwo'>￥{{item.money}}</text>
+                            <text class='salesrank_view_food_textthree'>第{{item.rownum}}名</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{isdata==0}}" class="sorry_none">抱歉，暂无名单</view>
+    </view>
+
+    <!-- 上季度奖励名单 -->
+    <view class='salesrank_left' wx:if="{{sindex==1}}" wx:key="">
+        <view wx:if="{{isdata==1}}">
+            <view class='salesrank_explain'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/salesRank/salesrank_gantan.png' class='salesrank_explain_gantan'></image>
+                <text>说明：</text>
+            </view>
+            <view class='salesrank_explain_updata'>奖励机制：销售排名top10奖励酒钻</view>
+            <view class='salesrank_explain_numberone' wx:key wx:for="{{numberlist}}">
+                <image src='{{item.img}}' class='salesrank_explain_numberone_img'></image>
+                <view class='salesrank_explain_numberone_right' catchtap='getoshop' data-uid="{{item.uid}}" data-name="{{item.name}}">
+                    <image src='{{item.image}}' class='salesrank_numberone_right_img'></image>
+                    <view class='salesrank_numberone_right_view'>
+                        <view class='salesrank_numberone_right_view_top'>
+                            <image src='{{item.head}}' class='salesrank_numberone_right_view_img'></image>
+                            <text class='salesrank_numberone_right_view_text'>{{item.name}}的酒馆</text>
+                        </view>
+                        <view class='salesrank_numberone_right_view_centet'>
+                            {{item.desc}}
+                        </view>
+                        <view class='salesrank_numberone_right_view_food'>
+                            <text class='salesrank_view_food_textone'>销售额\t</text>
+                            <text class='salesrank_view_food_texttwo'>￥{{item.money}}</text>
+                            <text class='salesrank_view_food_textthree'>第{{item.rownum}}名</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{isdata==0}}" class="sorry_none">抱歉，暂无上季度奖励名单</view>
+    </view>
+</view>

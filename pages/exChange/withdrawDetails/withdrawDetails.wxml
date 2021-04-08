@@ -1,0 +1,31 @@
+<!-- 积分购买详情 -->
+<view class='withdrawDetails'>
+    <!-- 轮播图 -->
+    <swiper class='swiper_img' indicatorDots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+        <block wx:for="{{bannerimgUrls}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class="lunbo-image" mode="scaleToFill" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='withdrawDetails_slect'>
+        <view class='withdrawDetails_center'>
+            <view class='withdrawDetails_center_one'>积分：
+                <span class='withdrawDetails_center_one_span'>{{imgUrls.price}}</span>
+            </view>
+            <view class='withdrawDetails_center_two'>
+                {{imgUrls.name}}
+            </view>
+            <view class='withdrawDetails_center_three'>
+                {{imgUrls.subname}}</view>
+        </view>
+        <view class='withdrawDetails_details'>
+            <view class='withdrawDetails_details_one'></view>
+            <view class='withdrawDetails_details_two'>商品详情</view>
+        </view>
+        <image src='{{imgUrls.detailimage}}' class='withdrawDetails_bg' mode="widthFix"></image>
+    </view>
+    <button class='withdrawDetails_foot' catchtap='withdfoot'>
+        立即兑换
+    </button>
+</view>

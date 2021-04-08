@@ -1,0 +1,17 @@
+<!-- 添加酒品 -->
+<view class='AddTheWine'>
+  <view class='list'>
+    <view class='style {{item.id==currentIndex?"active":""}}' catchtap='clickList' wx:for="{{classify}}" wx:key="" id="{{index+1}}">{{item.name}}</view>
+  </view>
+  <!-- KOL酒品 -->
+  <scroll-view scroll-y="true" class='content'>
+    <view class='content_type' wx:for="{{wines}}" wx:key="" data-id="{{item.id}}" bindtap='addshow'>
+      <view class='content_type_left'>
+        <view class='content_type_left_one'>{{item.name}}</view>
+        <view class='content_type_left_two'>{{item.subname}}</view>
+        <view class='content_type_left_three'>￥{{item.price}}</view>
+      </view>
+      <image src='{{item.playimage}}' class='content_type_right'></image>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,26 @@
+<!-- 提现 -->
+<view class="changemoney">
+  <view class='changemoney_bor'>
+    <view class="changemoney_bor_ever">
+      <view class="changemoney_bor_ever_view">收款人:</view>
+      <input type='text' class='' maxlength="4" placeholder='收款人姓名' bindinput="userNameInput"></input>
+    </view>
+    <view class="changemoney_bor_ever">
+      <view class="changemoney_bor_ever_view" type='number'>银行卡号:</view>
+      <input type='text' class='' maxlength="19" placeholder='请输入银行卡号' bindinput="phoneInput"></input>
+    </view>
+    <view class="changemoney_bor_ever">
+      <view class="changemoney_bor_ever_view">开户行:</view>
+      <input type='text' class='' placeholder='请输入支户名称' bindinput="addressInput"></input>
+    </view>
+    <view class="changemoney_bor_tixian">
+      <view class="changemoney_bor_tixian_view">提现金额:</view>
+      <view class="changemoney_bor_tixian_in">
+        <image src="http://qiniu-test.ishzm.com/jxb/img/tixian_delol.png" class="changemoney_bor_tixian_inimg"></image>
+        <view class='changemoney_bor_tixian_input'>{{allmoney}}</view>
+      </view>
+    </view>
+    <view class="changemoney_bor_zhu">注：该笔订单由成都经销商进行支付</view>
+  </view>
+  <button class='takeGoods_botton {{iscolorgray?"colorgray":""}}' bindtap="tijiaofankui">确认提现</button>
+</view>

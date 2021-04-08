@@ -1,0 +1,4 @@
+<view class='recruitment'>
+  <image class="shareimage" src="http://qiniu-test.ishzm.com/jxb/img/backqiang/backqiang02.png"></image>
+    <button class='recruitment_food' open-type='share'>邀请好友当小二</button>
+</view>

@@ -1,0 +1,14 @@
+<!-- 支付成功 -->
+
+<view>
+    <view class='paymentok'>
+        <view class='paymentok_image_one'></view>
+        <view class='paymentok_one'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/paymentOk.png' class='paymentok_image_three'></image>
+            <view class='paymentok_one1'>支付成功</view>
+            <view class='paymentok_one3'>恭喜，订单已支付完成</view>
+            <view class='paymentok_one3'>订单记录在酒库操作记录查看</view>
+        </view>
+        <button class='pay_food_tihuo' bindtap='fhfirst'>返回首页</button>
+    </view>
+</view>

@@ -1,0 +1,27 @@
+<!-- 积分明细 -->
+<view class='integralDetail' style='height:{{height}}rpx'>
+  <scroll-view scroll-y="true" class='integralDetailist' style='height:{{height-200}}rpx'>
+    <view class='integralDetail_every' wx:key wx:for="{{integralDetail}}">
+      <view class='integralDetail_every_left'>
+      <view class='integralDetail_every_top' wx:if="{{item.type==0}}">奖励</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==1}}">点赞</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==2}}">分享</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==3}}">销售分成 </view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==4}}">酒钻兑换得来积分</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==5}}">按天酒钻分红</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==6}}">买酒钻</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==7}}">取消点赞</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==8}}">销售退款</view>
+        <view class='integralDetail_every_top' wx:if="{{item.type==9}}">积分提现</view>
+        <view class='integralDetail_every_bottom'>{{item.time}}</view>
+      </view>
+      <view class='integralDetail_every_right' wx:if="{{item.type==6||item.type==7||item.type==8||item.type==9}}">
+        -{{item.scores}}
+      </view>
+      <view class='integralDetail_every_right' wx:else>
+        +{{item.scores}}
+      </view>
+    </view>
+    <view class="goutto_end" wx:if="integralDetail.length<10">已经到底啦~</view>
+  </scroll-view>
+</view>

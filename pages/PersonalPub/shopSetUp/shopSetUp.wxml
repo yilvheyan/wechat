@@ -1,0 +1,60 @@
+<!-- 店铺设置 -->
+
+<view class='shopSetUp'>
+    <!-- xxx的酒庄专栏 -->
+    <view class='shopSetUp_top'>
+        <view class='shopSetUp_top_bgcolor'>
+        </view>
+        <view class='shopSetUptop_background'>
+            <!-- <view class='shopSetUptop_xiugaipifu' catchtap='clickPup'>修改皮肤</view> -->
+            <!-- 底部弹窗动画的内容 -->
+            <view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true'>
+                <!-- 修改皮肤 -->
+                <view class='modification_pf'>
+                    <view class='modification_pf_recommend {{item.id==num?"modification_view":""}}' id="{{index}}" catchtap='setonclickList' wx:for="{{modification}}" wx:key>{{item.name}}</view>
+
+                </view>
+                <view wx:if="{{sindex==0}}">
+                    <view class='recommend_skin'>
+                        <view class='recommend_one' wx:for="{{recommendpf}}" wx:key>
+                            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/seabear.png' class='recommend_skin_one_img'></image>
+                            <view class='recommend_skin_one_name'>温暖的北极熊</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:if="{{sindex==1}}" class='modification_pf_one'>抱歉,暂无皮肤</view>
+                <view wx:if="{{sindex==2}}" class='modification_pf_two'>抱歉,暂无皮肤</view>
+                <view wx:if="{{sindex==3}}" class='modification_pf_two'>抱歉,暂无皮肤</view>
+            </view>
+            <!-- 固定的背景 -->
+            <view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'></view>
+            <image src='{{showset.background}}' class='shopSetUptop_background_img'></image>
+        </view>
+        <!-- <view class='shopSetUp_top_state' bindtap='preservation'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/save_nor.png'></image>
+    </view> -->
+        <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_medium.png' class='shopSetUp_top_name_medium'></image> -->
+        <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_touxiangkuang.png' class='shopSetUp_top_name_touxiangkuang'></image>
+        <image src='{{headerimg}}' class='shopSetUp_top_name_headportrait'></image>
+        <view class='top_who'>
+            <view class='shopSetUptop_who_name'>
+                <view class='shopSetUptop_who_name_span'>{{showset.name}}</view>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_revise.png' bindtap='modification'></image>
+            </view>
+            <view class='shopSetUptop_top_who_language'>{{showset.desc}}</view>
+        </view>
+    </view>
+    <!-- 酒单详情 -->
+    <view class='shopSetUp_center'>
+        <view class='shopSetUp_center_one' wx:for="{{showlist}}" wx:key='index'>
+            <view class='shopSetUp_center_one_delete' bindtap='showdelet' data-id="{{item.id}}">删除</view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_zhezhao.png' class='shopSetUp_center_one_zhezhao'></image>
+            <image src="{{item.playimage}}"></image>
+            <view class='shopSetUp_center_one_black'>{{item.name}}</view>
+            <view class='shopSetUp_center_one_writh'>{{item.subname}}</view>
+            <view class='shopSetUp_center_one_money'>￥{{item.price}}</view>
+        </view>
+    </view>
+    <!-- 添加 -->
+    <image src='http://qiniu-test.ishzm.com/jxb/img/chateau/btn_add.png' class='shopSetUp_footer' catchtap='addWine'></image>
+</view>

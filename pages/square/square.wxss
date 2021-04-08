@@ -1,0 +1,365 @@
+.square {
+    width: 750rpx;
+    height: 100%;
+}
+
+/* 轮播图 */
+
+.lunbo-image {
+    width: 750rpx;
+    height: 480rpx;
+}
+
+.swiper_img {
+    width: 100%;
+    height: 480rpx;
+    /* border-bottom: 1rpx #c5cbd9 solid; */
+    /* border-top: 1rpx #c5cbd9 solid; */
+}
+
+/*用来包裹所有的小圆点  */
+
+.dots {
+    width: 210rpx;
+    height: 20rpx;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80rpx;
+}
+
+/*未选中时的小圆点样式 */
+
+.dot {
+    width: 70rpx;
+    height: 10rpx;
+    border-radius: 14rpx;
+    margin-right: 26rpx;
+    background-color: #de8a78;
+}
+
+/*选中以后的小圆点样式  */
+
+.active {
+    width: 70rpx;
+    height: 10rpx;
+    background-color: #fc4308;
+}
+
+.square_tietleli {
+    width: 404rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 63rpx;
+    left: 23rpx;
+    display: flex;
+    /* background-color: tan; */
+    z-index: 300;
+}
+
+.square_button_left_ever {
+    width: 100rpx;
+    height: 50rpx;
+}
+
+.square_button_left {
+    width: 21rpx;
+    height: 35rpx;
+    margin-top: 10rpx;
+}
+
+.square_titletext {
+    margin-left: 210rpx;
+    font-size: 37rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: white;
+    line-height: 45rpx;
+}
+
+/* <!-- 酒馆排名和新品预售专区  --> */
+
+.section {
+    width: 100%;
+    height: 186rpx;
+    display: flex;
+    justify-content: center;
+}
+
+/* <!-- 销量排名 --> */
+
+.section_one {
+    width: 332rpx;
+    height: 170rpx;
+    margin-top: 16rpx;
+}
+
+.section_one image {
+    width: 332rpx;
+    height: 170rpx;
+}
+
+.section_one_text {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 60rpx;
+}
+
+.section_one_sales {
+    position: relative;
+    left: -40rpx;
+    top: -140rpx;
+    text-align: center;
+}
+
+.section_one_tavern {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(245, 136, 40, 1);
+}
+
+.section_one_ranking {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(239, 127, 28, 1);
+}
+
+/* <!-- 预售专区 --> */
+
+.section_two {
+    width: 332rpx;
+    height: 170rpx;
+    margin-left: 23rpx;
+    margin-top: 16rpx;
+    /* display:flex;                   
+  justify-content: center; */
+}
+
+.section_two image {
+    width: 332rpx;
+    height: 170rpx;
+}
+
+.section_two_moddle {
+    position: relative;
+    left: -40rpx;
+    top: -140rpx;
+    text-align: center;
+}
+
+.section_two_new {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(245, 136, 40, 1);
+}
+
+.section_two_presell {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(239, 127, 28, 1);
+}
+
+.component {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    width: 750rpx;
+    height: 100%;
+}
+
+/* 推荐和附近 */
+
+.recommendone {
+    width: 100%;
+    height: 110rpx;
+    display: flex;
+    position: relative;
+}
+
+.square_style {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+    text-align: center;
+    margin-left: 42rpx;
+    margin-top: 13rpx;
+    line-height: 86rpx;
+}
+
+.square_active {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 253, 1);
+    /* border-bottom: 8rpx rgba(68, 156, 253, 1) solid; */
+}
+
+/* xxx的酒庄 */
+
+.cafe {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: rgba(243, 243, 243, 1);
+    height: calc(100%);
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30rpx;
+}
+
+.square_null {
+    width: 48rpx;
+    height: 6rpx;
+    background: rgba(67, 147, 242, 1);
+    border-radius: 3rpx;
+    margin-left: 15rpx;
+}
+
+.inabatch {
+    color: goldenrod;
+    font-size: 24rpx;
+    position: absolute;
+    right: 50rpx;
+    top: 50rpx;
+}
+
+.cafe_left {
+    width: 332rpx;
+    /* height: 434rpx; */
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin: 32rpx 0rpx 0rpx 32rpx;
+    position: relative;
+    padding-bottom: 20rpx;
+}
+
+.cafe_left_none {
+    position: absolute;
+    top: 280rpx;
+    left: 0rpx;
+    width: 100%;
+    height: 50rpx;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cafe_left_none text {
+    font-size: 24rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: white;
+    margin-left: 120rpx;
+}
+
+.cafe_left_img {
+    width: 332rpx;
+    height: 332rpx;
+    overflow: hidden;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.cafe_left_img image {
+    width: 332rpx;
+}
+
+.cafe_workoff_one {
+    display: flex;
+    width: 100%;
+    height: 50rpx;
+}
+
+.cafe_workoff_touxiang {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 15rpx 0rpx 0rpx 11rpx;
+    border-radius: 50%;
+}
+
+.cafe_workoff_span {
+    width: 196rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    margin-left: 20rpx;
+    line-height: 54rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cafe_workoff_socor {
+    display: flex;
+    width: 80%;
+    margin-left: 68rpx;
+    position: relative;
+}
+
+.cafe_workoff_socor_one {
+    font-size: 20rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.cafe_workoff_socor_two {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(67, 147, 242, 1);
+    margin-left: 10rpx;
+}
+
+.cafe_workoff_hot {
+    width: 52rpx;
+    height: 64rpx;
+    position: absolute;
+    top: -40rpx;
+    left: 203rpx;
+}
+
+.cafe_workoff_math {
+    width: 40rpx;
+    height: 30rpx;
+    position: absolute;
+    top: -16rpx;
+    left: 210rpx;
+    font-size: 16rpx;
+    text-align: center;
+    font-family: GillSansMT-Bold;
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.nearby {
+    font-size: 30rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: coral;
+    margin: 220rpx 0rpx 0rpx 215rpx;
+}
+
+.contentView {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.btu {
+    width: 100%;
+    background-color: #3d97f2;
+    color: #fff;
+    font-size: 30rpx;
+}

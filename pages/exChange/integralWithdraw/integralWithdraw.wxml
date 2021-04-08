@@ -1,0 +1,64 @@
+<!-- 积分提现 -->
+<view class='Withdraw' style='height:{{height}}rpx'>
+    <view class='myWithdraw'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_back.png' class='myWithdraw_bck'></image>
+        <view class='myWithdraw_view'>
+            <view class='myWithdraw_view_top'>
+                <span class='myWithdraw_view_top_spanone'> 我的收益 </span>
+                <view class='myWithdraw_view_toptwo' bindtap='Withdraw'> 兑换记录
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_youkuohao.png' class='myWithdraw_youkuohao'></image>
+                </view>
+            </view>
+            <view class='myWithdraw_view_center'>
+                <span class='myWithdraw_view_center_spantwo_benyue'>本月收益</span>
+                <view class='myWithdraw_view_center_spantwo_span'>{{thismonth}}</view>
+                <span class='myWithdraw_view_center_spantwo'>元</span>
+            </view>
+            <view class='myWithdraw_view_bottom'>
+                <view class='myWithdraw_view_bottomjf'>历史收益：{{totalmonth}}元</view>
+            </view>
+        </view>
+        <view class='Withdraw_explain'>
+            <view class='Withdraw_explain_liucheng'>积分提现流程</view>
+            <view class='Withdraw_explain_tixian'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_huanjiu.png'></image>
+                <view class='Withdraw_explain_tixian_progress'></view>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_tixian.png'></image>
+                <view class='Withdraw_explain_tixian_progress_two'></view>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_jifen.png'></image>
+            </view>
+            <view class='Withdraw_explain_bottixian'>
+                <view class='Withdraw_explain_tixian_one'>
+                    <view class='Withdraw_explain_tixian_one_huanjiu'>去换酒</view>
+                    <view class='Withdraw_explain_tixian_one_gray'>积分兑换酒品</view>
+                </view>
+                <view class='Withdraw_explain_tixian_two'>
+                    <view class='Withdraw_explain_tixian_two_huanjiu'>去提现</view>
+                    <view class='Withdraw_explain_tixian_two_gray'>酒库提现已有酒品</view>
+                </view>
+                <view class='Withdraw_explain_tixian_three'>
+                    <view class='Withdraw_explain_tixian_three_huanjiu'>完成</view>
+                    <view class='Withdraw_explain_tixian_three_gray'>提现完成</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 积分兑换商品 -->
+    <view class='myWithdraw_view_duihuan'>
+        <span class='myWithdraw_view_duihuan_spanone'> 积分兑换商品 </span>
+        <view class='myWithdraw_view_duihuantwo' bindtap='myWithdraw'> 前往积分商城
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/duihuan_gray.png' class='myWithdraw_view_duihuanimg'></image>
+        </view>
+    </view>
+
+    <view class='Withdraw_exch_ensemble'>
+        <!-- 积分兑换酒品下的每一个酒品 -->
+        <view class='Withdraw_exch' wx:for="{{myshopkeeper}}" bindtap='gowithdrawDetails' wx:key data-infoid="{{item.id}}">
+            <image src='{{item.bannerimg[0]}}' class='Withdraw_exch_img' mode="scaleToFill"></image>
+            <view class='Withdraw_exch_text'>{{item.name}}{{item.subname}}</view>
+            <view class='Withdraw_exch_amoney'>积分：
+                <span class="Withdraw_exch_amoneycolor">{{item.price}}</span>
+            </view>
+        </view>
+    </view>
+</view>

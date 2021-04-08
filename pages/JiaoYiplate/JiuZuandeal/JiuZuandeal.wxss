@@ -1,0 +1,570 @@
+.JiuZuandeal {
+  width: 750rpx;
+  /* height: 100%; */
+  background: rgba(243, 246, 250, 1);
+  overflow: hidden;
+}
+
+.JiuZuandeal_top {
+  width: 706rpx;
+  /* height: 1184rpx; */
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12rpx;
+  margin: 22rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+/* <!-- 头像名字专栏 --> */
+
+.JiuZuandeal_topfixd_tou {
+  height: 123rpx;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+}
+
+.JiuZuandeal_topfixd_touimg {
+  width: 68rpx;
+  height: 68rpx;
+  margin-left: 48rpx;
+  border-radius: 50%;
+}
+
+.JiuZuandeal_topfixd_name {
+  margin-left: 17rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.JiuZuandeal_topfixd_select {
+  margin-left: 164rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.JiuZuandeal_topfixd_touimgmot {
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 19rpx;
+}
+
+/* <!-- 积分池、酒钻持有专栏 --> */
+
+.JiuZuandeal_topfixd_foot {
+  height: 193rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.topfixd_foot_one_match {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.topfixd_foot_one_match_span {
+  margin-right: 7rpx;
+  font-size: 38rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.topfixd_foot_one_chi {
+  margin-top: 29rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.JiuZuandeal_parities {
+  height: 390rpx;
+  margin: 27rpx 0rpx 0rpx 30rpx;
+}
+
+.JiuZuandeal_parities_title {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+}
+
+.JiuZuandeal_parities_bili {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 180rpx;
+  margin-top: 28rpx;
+}
+
+.JiuZuandeal_parities_bili_span {
+  font-size: 66rpx;
+  margin-left: 18rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(67, 147, 242, 1);
+}
+
+.JiuZuandeal_parities_huan {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.JiuZuandeal_parities_btn {
+  width: 380rpx;
+  height: 72rpx;
+  background: rgba(67, 147, 242, 1);
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 72rpx;
+  margin-top: 35rpx;
+}
+
+/*   实时交易情况、成交切换  */
+
+.JiuZuandeal_recommendone {
+  width: 480rpx;
+  height: 62rpx;
+  display: flex;
+  line-height: 62rpx;
+  margin-left: 113rpx;
+  margin-top: 36rpx;
+  border-radius: 100rpx 100rpx 100rpx 100rpx;
+  border: 2rpx solid rgba(62, 138, 241, 1);
+}
+
+.JiuZuandeal_style {
+  width: 240rpx;
+  height: 62rpx;
+  background: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(62, 138, 241, 1);
+  border-radius: 100rpx 100rpx 100rpx 100rpx;
+  text-align: center;
+  line-height: 62rpx;
+}
+
+.JiuZuandeal_active {
+  width: 240rpx;
+  height: 62rpx;
+  background: rgba(62, 138, 241, 1);
+  border-radius: 100rpx 100rpx 100rpx 100rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 62rpx;
+}
+
+.JiuZuandeal_explain {
+  width: 100%;
+  height: 278rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.JiuZuandeal_explain_liucheng {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 37rpx;
+  margin: 23rpx 0rpx 0rpx 30rpx;
+}
+
+.JiuZuandeal_explain_tixian {
+  width: 100%;
+  margin-top: 51rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.JiuZuandeal_explain_tixian image {
+  width: 62rpx;
+  height: 62rpx;
+}
+
+.JiuZuandeal_explain_tixian_progress {
+  width: 174rpx;
+  height: 6rpx;
+  background: rgba(67, 147, 242, 1);
+  border-radius: 2rpx;
+}
+
+.JiuZuandeal_explain_tixian_progress_two {
+  width: 174rpx;
+  height: 6rpx;
+  background: rgba(67, 147, 242, 1);
+  border-radius: 2rpx;
+}
+
+.JiuZuandeal_explain_bottixian {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.JiuZuandeal_explain_tixian_one {
+  text-align: center;
+  margin-top: 11rpx;
+}
+
+.JiuZuandeal_explain_tixian_one_huanjiu {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(67, 147, 242, 1);
+}
+
+.JiuZuandeal_explain_tixian_one_gray {
+  font-size: 18rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 6rpx;
+}
+
+.JiuZuandeal_explain_tixian_two {
+  text-align: center;
+  margin-top: 11rpx;
+}
+
+.JiuZuandeal_explain_tixian_two_huanjiu {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(67, 147, 242, 1);
+}
+
+.JiuZuandeal_explain_tixian_two_gray {
+  font-size: 18rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 6rpx;
+}
+
+.JiuZuandeal_explain_tixian_three {
+  text-align: center;
+  margin-top: 11rpx;
+}
+
+.JiuZuandeal_explain_tixian_three_huanjiu {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(67, 147, 242, 1);
+}
+
+.JiuZuandeal_explain_tixian_three_gray {
+  font-size: 18rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 6rpx;
+}
+
+/* 酒钻买入 */
+
+.JiuZuandeal_buy {
+  width: 100%;
+  height: 228rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.JiuZuandeal_buy_name {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  margin: 36rpx 0rpx 0rpx 38rpx;
+}
+
+.JiuZuandeal_buy_center {
+  display: flex;
+  width: 100%;
+  height: 125rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.JiuZuandeal_buy_centerimg {
+  width: 76rpx;
+  height: 68rpx;
+}
+
+.JiuZuandeal_buy_ceninput {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin: 18rpx 0rpx 0rpx 27rpx;
+}
+
+.JiuZuandeal_buy_center_buzu {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(250, 50, 50, 1);
+  text-align: center;
+}
+
+/* 市场挂单 */
+
+.JiuZuandeal_bazaar {
+  width: 100%;
+  /* height: 547rpx; */
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.JiuZuandeal_bazaar_name {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  margin: 36rpx 0rpx 0rpx 38rpx;
+}
+
+.JiuZuandeal_bazaar_center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 85rpx;
+  margin-right: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.JiuZuandeal_bazaar_number {
+  display: flex;
+  align-items: center;
+  height: 82rpx;
+  justify-content: space-between;
+  margin-left: 85rpx;
+  margin-right: 86rpx;
+}
+
+.JiuZuandeal_bazaar_number_one {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(51, 164, 139, 1);
+}
+
+.JiuZuandeal_bazaar_number_two {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+/* 自定义汇率 */
+
+.JiuZuandeal_custom {
+  width: 100%;
+  height: 267rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.JiuZuandeal_custom_name {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  margin: 36rpx 0rpx 0rpx 38rpx;
+}
+
+.JiuZuandeal_custom_center {
+  display: flex;
+  width: 100%;
+  margin-left: 142rpx;
+  align-items: center;
+}
+
+.JiuZuandeal_custom_text {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.JiuZuandeal_custom_ceninput {
+  font-size: 58rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(67, 147, 242, 1);
+  margin-left: 33rpx;
+}
+
+.JiuZuandeal_custom_image {
+  width: 30rpx;
+  height: 31rpx;
+  margin-left: 29rpx;
+}
+
+.JiuZuandeal_custom_today {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+}
+
+.JiuZuandeal_custom_today span {
+  font-size: 20rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 142rpx;
+}
+
+.JiuZuandeal_custom_toinput {
+  width: 258rpx;
+  border-bottom: 1rpx solid rgba(62, 138, 241, 1);
+  margin-left: 8rpx;
+  text-align: center;
+}
+
+/* 可用积分 */
+
+.JiuZuandeal_jifen {
+  width: 100%;
+  height: 188rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.JiuZuandeal_jifen_name {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 36rpx 0rpx 0rpx 38rpx;
+}
+
+.JiuZuandeal_jifen_spanone {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  text-align: left;
+}
+
+.JiuZuandeal_jifen_spantwo {
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  text-align: right;
+}
+
+.JiuZuandeal_duihuan {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin: 16rpx 0rpx 0rpx 38rpx;
+}
+
+.JiuZuandeal_smoll {
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  padding-bottom: 50rpx;
+}
+
+.JiuZuandeal_fod {
+  position: fixed;
+  bottom: 0rpx;
+  width: 750rpx;
+  height: 99rpx;
+  background: rgba(255, 255, 255, 1);
+  z-index: 999;
+}
+
+.JiuZuandeal_fodbtn {
+  width: 640rpx;
+  height: 82rpx;
+  background: rgba(67, 147, 242, 1);
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 82rpx;
+  margin-left: 55rpx;
+  margin-top: 9rpx;
+}
+
+.JiuZuandeal_none {
+  height: 100rpx;
+  width: 100%;
+}
+
+.tanchu_view_btnimg {
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}
+
+/* 遮罩 */
+
+.zhezao {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.tanchu_view {
+  width: 100%;
+  height: 465rpx;
+  border-radius: 0rpx 0rpx 12rpx 12rpx;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 1);
+}
+
+.tanchu_view_numone {
+  width: 100%;
+  height: 138rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.tanchu_view_numoneimg {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 48rpx;
+  border-radius: 50%;
+}
+
+.tanchu_view_numname {
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 23rpx;
+}

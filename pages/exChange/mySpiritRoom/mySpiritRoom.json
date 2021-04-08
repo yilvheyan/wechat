@@ -1,0 +1,6 @@
+{
+"navigationBarTitleText": "我的酒库",
+"navigationStyle": "custom",
+"enablePullDownRefresh": false,
+"backgroundTextStyle": "dark"
+}

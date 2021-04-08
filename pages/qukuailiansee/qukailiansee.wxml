@@ -1,0 +1,7 @@
+<!--pages/qukuailiansee/qukailiansee.wxml-->
+<!-- <text>pages/qukuailiansee/qukailiansee.wxml</text> -->
+
+<view class="qklsee">
+  <web-view src='https://qkl.jxb.zifore.com/page/overview'>
+  </web-view>
+</view>

@@ -1,0 +1,18 @@
+<!-- 招募小二 -->
+
+<view class='recruitment'>
+    <view class='recruitment_top'>我的小二</view>
+    <view class='recruitment_center' wx:for='{{waiterList}}' wx:key>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/path.png' class='recruitment_bgm'></image>
+        <view class='recruitment_track'>
+            <image src='{{item.heads.head}}' class='recruitment_track_img'></image>
+            <view class='recruitment_track_center'>
+                <view class='recruitment_track_center_name'>{{item.name}}</view>
+                <view class='recruitment_track_center_name'>📱:{{item.phone}}\tID:{{item.wechatID}}</view>
+                <view class='recruitment_track_center_time'>应聘时间：{{item.time}}</view>
+            </view>
+            <view class='recruitment_track_right' data-waiteruid="{{item.waiteruid}}">我的</view>
+        </view>
+    </view>
+    <button class='recruitment_food' bindtap='skintmentxer'>招募小二</button>
+</view>

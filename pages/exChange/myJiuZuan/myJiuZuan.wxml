@@ -1,0 +1,64 @@
+<!-- 酒钻 -->
+<view class='corkscrew' style='height:{{height}}rpx'>
+  <!-- 我的酒钻 -->
+  <view class='mycorkscrew'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jiuzuan_back.png' class='mycorkscrew_bck'></image>
+    <view class='mycorkscrew_view'>
+      <view class='mycorkscrew_view_top'>
+        <span class='mycorkscrew_view_top_spanone'> 我的酒钻 </span>
+        <view class='mycorkscrew_view_toptwo' bindtap='mycorkscrew'> 酒钻明细
+          <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_youkuohao.png' class='mycorkscrew_youkuohao'></image>
+        </view>
+      </view>
+      <view class='mycorkscrew_view_center'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jiuzuan_jiuzuan.png' class='mycorkscrew_bckmoney'></image>
+        <span class='mycorkscrew_view_center_spantwo'>
+          可用酒钻:</span>
+        <view class='mycorkscrew_view_center_spantwo_span'>{{grade}}</view>
+        <span class='mycorkscrew_view_center_spantwo'>
+          份</span>
+
+      </view>
+      <view class='mycorkscrew_view_center1' wx:if="{{freezetotal!=0}}">
+        <span class='mycorkscrew_view_center_spantwo1'>
+          冻结酒钻:</span>
+        <view class='mycorkscrew_view_center_spantwo_span1'>{{freezetotal}}</view>
+        <span class='mycorkscrew_view_center_spantwo2'>
+          份</span>
+
+      </view>
+      <view class='mycorkscrew_view_center_spanthree'> 昨日分红\t{{mygains}} </view>
+      <view class='mycorkscrew_view_bottom'>
+
+        <view class='mycorkscrew_view_bottomjz' catchtap="jiuzuandeal">酒钻交易</view>
+      </view>
+    </view>
+    <view class='corkscrew_explain'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_gantanhao.png' class='corkscrew_explain_img'></image>
+      <span class='corkscrew_explain_span'>酒钻说明</span>
+      <view class='corkscrew_explain_shuo'>酒钻属于虚拟商品,您可以在商城里面进行购买商品,购买积分等活动,酒钻的使用需遵守酒钻等相关说明.</view>
+    </view>
+  </view>
+  <!-- 积分兑换酒钻记录 -->
+  <view class='corkscrew_exch'>
+    <view class='corkscrew_exch_title'>酒钻兑换积分记录</view>
+    <!-- 每一个view -->
+    <view class='corkscrew_exch_view' wx:key wx:for="{{mycorkscrew}}">
+      <view class='corkscrew_exch_view_top'>
+        <image src='{{item.kolinfo.headpic}}'></image>
+        <view class='corkscrew_exch_view_name'>
+          <view class='corkscrew_exch_view_one'>{{item.kolinfo.name}}</view>
+          <!-- <view class='corkscrew_exch_view_two'>{{item.count_diamond}}</view> -->
+        </view>
+        <span class='corkscrew_exch_view_three'>{{item.price}}</span>
+      </view>
+      <view class='corkscrew_exch_view_bottom'>
+        <view class='corkscrew_exch_view_bottom_textone'>酒钻份数</view>
+        <view class='corkscrew_exch_view_bottom_texttwo'>{{item.count}}</view>
+        <view class='corkscrew_exch_view_bottom_none'></view>
+        <view class='corkscrew_exch_view_bottom_textone'>该酒钻汇率</view>
+        <view class='corkscrew_exch_view_bottom_texttwo'>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

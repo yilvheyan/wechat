@@ -1,0 +1,70 @@
+/* pages/tuikuan/tuikuan.wxss */
+
+.choaddress {
+    width: 100%;
+    border-top: 1rpx solid #ccc;
+    position: relative;
+}
+
+.xinzengaddress {
+    width: 100%;
+    border-top: 1rpx solid #ccc;
+    position: relative;
+}
+
+.szlist {
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    width: 200rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+    line-height: 100rpx;
+    float: left;
+}
+
+.xinname {
+    width: 686rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #ccc;
+    margin: 0 auto;
+}
+
+.ptext {
+    width: 300rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+}
+
+.tuimoneycla {
+    width: 300rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+    line-height: 100rpx;
+}
+
+.rjiant {
+    float: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-right: 20rpx;
+}
+
+.xinaddress {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 98rpx;
+    text-align: center;
+    line-height: 98rpx;
+    color: white;
+    font-size: 34rpx;
+    left: 0;
+    bottom: 0;
+    background: #74cafb;
+}
+
+.aaaaa{
+  width: 300rpx;
+  height: 300rpx;
+  background: blue;
+}

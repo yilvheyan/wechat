@@ -1,0 +1,85 @@
+<view class='myshop_track' style='height:{{height}}rpx'>
+    <!-- 姓名电话售后地址 -->
+    <view class='wineorder_site_top' bindtap='placeanorder'>
+        <view class='wineorder_site_top_view'>
+            <image class='wineorder_site_top_view_img' src="http://qiniu-test.ishzm.com/jxb/img/myStore/wineorder_map.png"></image>
+            <view class='wineorder_site_two'>
+                <view class='wineorder_site_two_name'>{{tihuoaddress.name}}</view>
+                <view class='wineorder_site_two_phone'>{{tihuoaddress.phone}}</view>
+            </view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/wineoeder_z.png' class='wineorder_site_top_z'></image>
+        </view>
+        <view class='wineorder_site_two_map'>{{tihuoaddress.address}}</view>
+        <image class="orderDetails_email" src="http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_email.png"></image>
+    </view>
+    <!-- 最外层视图pages -->
+    <scroll-view scroll-y="true" style='height:{{height-300}}rpx' class="pages">
+        <view wx:for="{{shoplist}}" wx:key class="list_every" wx:for-index="ind" wx:if="{{hasList}}">
+            <view class='edit'>
+                <image wx:if="{{item.selectshop}}" class="total-select" data-ind="{{ind}}" bindtap="selectshop" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+                <image wx:else class="total-select" bindtap="selectshop" data-ind="{{ind}}" src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png'></image>
+                <span class="edit_shop">{{item.shopname}}的店铺</span>
+                <label class='edit_btn' bindtap='btn_edit'>{{edit_name}}</label>
+            </view>
+            <!-- 列表 -->
+            <view class="list" wx:for="{{item.list}}" wx:for-item="items" wx:key wx:for-index="index">
+                <!-- 删除 -->
+                <image class='dele_edit' bindtap='deletes' data-ind="{{ind}}" data-index='{{index}}' style='display:{{edit_show}}' src='http://qiniu-test.ishzm.com/jxb/img/delect.png'></image>
+                <view class='radio_chek_zong'>
+                    <!-- 全选和不全选 -->
+                    <image wx:if="{{items.selected}}" data-index="{{index}}" data-ind="{{ind}}" class="radio_chek" bindtap="selectList" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+                    <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="radio_chek" data-index="{{index}}" data-ind="{{ind}}" bindtap="selectList"></image>
+                </view>
+                <!-- 列表标题 -->
+                <!-- <text class='shop_message_style_top'>{{name}}</text> -->
+                <view>
+                    <image src='{{items.playimage}}' class='list_image'></image>
+                </view>
+                <view class='shop_message_style'>
+                    <view class='shop_message_style_top'>
+                        {{items.name}}
+                    </view>
+                    <view class='shop_message_style_bttom'>
+                        {{items.desc}}
+                    </view>
+                    <view class='shop_message_style_bttt'>
+                        ￥{{items.price}}/瓶
+                    </view>
+                </view>
+                <!-- 商品数量加减  style='display:{{show_edit}}'-->
+                <view style='display:{{show_edit}}'>
+                    <view class="carts-num">
+                        <!--减按钮  -->
+                        <lable class="minus" bindtap="btn_minus" data-obj="{{obj}}" data-index="{{index}}" data-ind="{{ind}}">-</lable>
+                        <!-- 文本框值 -->
+                        <!-- <input class="view_text_center" disabled='disabled' value="{{item.num}}" bindinput='input_num' data-index="{{index}}"></input> -->
+                        <label class="view_text_center" bindinput='input_num' data-index="{{index}}">{{items.buynum}}</label>
+                        <lable class="plus" bindtap="btn_add" data-index="{{index}}" data-ind="{{ind}}">+</lable>
+
+                    </view>
+                </view>
+                <!-- 删除 -->
+                <!-- <text class="list_del" bindtap="deleteList" data-index="{{index}}">×</text> -->
+            </view>
+        </view>
+
+        <view wx:if="{{!hasList}}">
+            <view class="list_none">购物车是空的哦~</view>
+        </view>
+    </scroll-view>
+    <!-- 固定底部 -->
+    <view class="cont_bot">
+        <!-- 全选ICON -->
+        <image wx:if="{{selectAllStatus}}" class="total-selectbottom" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+        <image wx:else class="total-selectbottom" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png'></image>
+        <!-- <icon wx:else type="circle" color="#999" class="totalselect" bindtap="selectAll" /> -->
+        <text class='sel_count_name'>全选</text>
+        <!-- 合计金额 -->
+        <lable class="count_price">合计：
+            <text>￥{{totalPrice}}</text>
+        </lable>
+        <!-- 提交订单 -->
+        <label class='submit' bindtap='btn_submit_order'>提交订单</label>
+    </view>
+
+</view>

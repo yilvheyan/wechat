@@ -1,0 +1,20 @@
+<view wx:if="{{getuserinfoShow}}">
+    <view class="bg" catchtap='closeshow'></view>
+    <view class='pupContent'>
+        <!-- 下面弹出的部分 -->
+        <view class='refund_popup'>
+            <view class='refund_popup_top'>{{title}}</view>
+            <view class='refund_popup_footer'>
+                <view class='refund_popup_select'>请选择取消订单的原因\t(必选)</view>
+                <view class='refund_popup_list' wx:for="{{popuplist}}" data-id="{{item.id}}" data-index="{{index}}" wx:key="index" wx:for-index="index" bindtap='selectList'>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' wx:if="{{item.orderpopupic==false}}" class='refund_popup_img'></image>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png' wx:if="{{item.orderpopupic==true}}" class='refund_popup_img'></image>
+                    <text>{{item.name}}</text>
+                </view>
+                <view class='refund_popup_list'>其他原因</view>
+                <textarea maxlength='-1' bindinput="textareainput" placeholder="\t请写下其他原因" class='addxinxi' />
+                <button class='poplupebutton' style='background:{{viewBg}};' bindtap='poplupetijiao'>提交</button>
+            </view>
+        </view>
+    </view>
+</view>

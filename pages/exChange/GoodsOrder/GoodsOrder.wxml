@@ -1,0 +1,55 @@
+<!-- 商品下单 -->
+<view class='GoodsOrder'>
+  <view class='GoodsOrder_view' wx:key="{{index}}" wx:for="{{shopmessage}}">
+    <view class='GoodsOrder_view_one'>商品信息</view>
+    <view class='GoodsOrder_view_xx'>
+      <image src='{{item.bannerimg}}' class='GoodsOrder_view_xx_img'></image>
+      <view class='GoodsOrder_view_right'>
+        <view class='GoodsOrder_view_right_top'>{{item.name}}{{item.subname}}</view>
+        <view class='GoodsOrder_view_right_bottom'>
+          积分：
+          <span class='withdrawDetails_center_one_span'>{{item.price}}</span>
+          <!-- 主容器 -->
+          <view class="stepper">
+            <!-- 减号 -->
+            <text class="normal1" bindtap="bindMinus">-</text>
+            <!-- 数值 -->
+            <input class='shuzhi' type="number" bindchange="bindManual" value="{{item.buynum}}" bindinput="numberinput" />
+            <!-- 加号 -->
+            <text class="normal2" bindtap="bindPlus">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='GoodsOrder_bottom'>
+    <view class='GoodsOrder_bottom_left'>
+      <span class='GoodsOrder_bottom_left_heji'>积分合计:</span>
+      <span class='GoodsOrder_bottom_left_span'>{{allmoney}}积分</span>
+    </view>
+    <view class='GoodsOrder_bottom_right' bindtap="show">确认兑换</view>
+    <!-- 遮罩显示 -->
+    <view class="zhezao" wx:if="{{goodsOrderflag}}">
+      <!--弹出框开始-->
+      <view class="tanchu_view">
+        <view class='tanchu_view_cuowu_list'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_cuowu.png' bindtap='conceal' class='tanchu_view_cuowu'></image>
+        </view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_queren.png' class='tanchu_view_que'></image>
+        <view class="tanchu_view_succ">兑换成功</view>
+        <view class="tanchu_view_yea">恭喜您，商品兑换成功</view>
+        <view class="tanchu_view_goto" bindtap='integralShop'>前去兑换更多商品
+          <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_blueyou.png' class='tanchu_view_gotoimg'></image>
+        </view>
+        <view class='tanchu_view_bottom'>
+          <view class='tanchu_view_bottom_left' bindtap='gotomySpiritRoom'>去酒库换钱</view>
+          <view class='tanchu_view_bottom_right' bindtap='gotohome'>回首页</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 组件 -->
+  <popup id="popup"></popup>
+  <phonepopup id="phonepopup"></phonepopup>
+</view>

@@ -1,0 +1,12 @@
+<view class="phone_one" bindtap="clickPerson">
+    <view class="phone_personal">{{firstPerson}}</view>
+    <image src="http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgone.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
+</view>
+
+<view class="person_box">
+    <view class="phone_select" hidden="{{selectPerson}}">
+        <view bindtap="mySelect">测试1</view>
+        <view bindtap="mySelect">测试2</view>
+        <view bindtap="mySelect">测试3</view>
+    </view>
+</view>

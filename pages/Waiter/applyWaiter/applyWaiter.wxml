@@ -1,0 +1,22 @@
+<!-- 应聘申请 -->
+<view class='applyWaiter_overall'>
+  <view class='applyWaiter_pitch'>
+    <form bindsubmit="applyWaiter" class=''>
+      <view class='applyWaiter_name'>
+        <text>姓名：</text>
+        <input name="username" placeholder='请输入姓名' type='text' maxlength='5' focus='true' bindinput="waiert_nameInput"></input>
+      </view>
+      <view class='applyWaiter_name'>
+        <text>手机：</text>
+        <input name="mobile" placeholder='请输入您的手机号码' type='number' maxlength='11' bindinput="waiert_phoneInput"></input>
+      </view>
+      <view class='applyWaiter_name'>
+        <text>微信：</text>
+        <input name="wechatId" placeholder='请输入您的微信号' bindinput="waiert_catInput"></input>
+      </view>
+      <button form-type="submit" class='applyfor' bindtap='applywaitercli'>申请</button>
+    </form>
+  </view>
+
+  <popup id="popup"></popup>
+</view>

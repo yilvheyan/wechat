@@ -1,0 +1,77 @@
+<!-- 酒铺小二 -->
+<wxs module="filter" src="../../../utils/util.wxs"></wxs>
+<view class='chateauXer'>
+    <!-- top -->
+    <view class='chateauXer_jiuzhuang'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/xinxikuang.png' class='chateauXer_jiuzhuang_img'></image>
+        <!-- <姓名头像> -->
+        <view class='chateauXer_jiuzhuang_one'>
+            <image src='{{headimg}}' class='chateauXer_jiuzhuang_img3'></image>
+            <text class='chateauXer_jiuzhuang_text1'>{{nickName}}</text>
+            <text class='chateauXer_jiuzhuang_text2' bindtap='myorder'>我的订单></text>
+        </view>
+        <!-- 收益积分 -->
+        <view class='chateauXer_jiuzhuang_two'>
+            <view class='chateauXer_shouyi_one'>
+                <view class='chateauXer_shouyi_integral'>
+                    +{{ydayScore}}
+                    <span class='chateauXer_shouyi_integra_one'>分</span>
+                </view>
+                <view class='chateauXer_shouyi_integral2'>昨日利润</view>
+            </view>
+            <view class='chateauXer_shouyi_two'>
+                <view class='chateauXer_shouyi_integra3'>
+                    {{monthScore}}
+                    <span class='chateauXer_shouyi_integra_one1'>分</span>
+                </view>
+                <view class='chateauXer_shouyi_integral4'>本月利润</view>
+            </view>
+            <view class='chateauXer_shouyi_three'>
+                <view class='chateauXer_shouyi_integral5'>
+                    {{score}}
+                    <span class='chateauXer_shouyi_integra_one2'>分</span>
+                </view>
+                <view class='chateauXer_shouyi_integral6'>总计</view>
+            </view>
+        </view>
+        <!-- <进入我的店铺> -->
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/btn_enter.png' class='chateauXer_click' bindtap='myshopping'></image>
+    </view>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/writh.png' class='chateauXer_writh'></image>
+    <!-- <center> -->
+    <view class='chateauXer_center'>
+        <view class='chateauXer_center_xiaoer'>小二利润比例</view>
+
+        <view class='chateauXer_center_baifenbi'>
+            <view class='chateauXer_center_dangqian'>比例分销</view>
+            <text class='chateauXer_center_percentage' bindtap='distribution'>{{sharing}}%</text>
+        </view>
+    </view>
+    <!-- 高20rpx的背景色 -->
+    <view class='chateauXer_center_background'></view>
+    <!-- 我的店主 -->
+    <view class='salesrank_shopkeeper'>
+        <view class='salesrank_explain_mynone'></view>
+        <view class='salesrank_explain_mydz'>我的店主</view>
+        <view class='salesrank_explain_numberone' wx:for="{{myshopkeeper}}" wx:key>
+            <view class='salesrank_explain_numberone_right'>
+                <image src='{{item.shops.image}}' class='salesrank_numberone_right_img'></image>
+                <view class='salesrank_numberone_right_view'>
+                    <view class='salesrank_numberone_right_view_top'>
+                        <image src='{{item.heads.head}}' class='salesrank_numberone_right_view_img'></image>
+                        <view class='salesrank_numberone_right_view_text_list'>
+                            <text class='salesrank_numberone_right_view_text'>{{item.shops.name}}</text>
+                            <!-- <view class='salesrank_numberone_right_view_text_two'>{{filter.formatTimeByTs(item.time,'Y/M/D')}}入职</view> -->
+                            <view class='salesrank_numberone_right_view_text_two'>{{item.time}}入职</view>
+                        </view>
+                    </view>
+                    <view class='salesrank_numberone_right_view_food'>
+                        <text class='salesrank_view_food_textone'>销售额\t</text>
+                        <text class='salesrank_view_food_texttwo'>￥{{item.totalmoney}}</text>
+                        <button class='salesrank_view_food_textthree' bindtap='cancelrelation' data-shopuid="{{item.shopuid}}">解除关系</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,526 @@
+.chateau {
+    /* width: 750rpx; *//* border: 1rpx salmon solid; */
+}
+
+.chateau_jiuzhuang {
+    width: 100%;
+    height: 440rpx;
+    /* border: 1rpx saddlebrown solid; */
+}
+
+.chateau_jiuzhuang_one {
+    width: 600rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 65rpx;
+    left: 80rpx;
+}
+
+.chateau_jiuzhuang_img {
+    width: 100%;
+    height: 440rpx;
+}
+
+.chateau_jiuzhuang_img1 {
+    width: 46rpx;
+    height: 44rpx;
+    position: absolute;
+    top: -5rpx;
+    left: -10rpx;
+}
+
+.chateau_jiuzhuang_img2 {
+    width: 77rpx;
+    height: 77rpx;
+    position: absolute;
+    top: 20rpx;
+}
+
+.chateau_jiuzhuang_img3 {
+    width: 64rpx;
+    height: 64rpx;
+    position: absolute;
+    top: 26rpx;
+    left: 6rpx;
+    border-radius: 50%;
+}
+
+.chateau_jiuzhuang_text1 {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(92, 92, 92, 1);
+    margin-left: 100rpx;
+    margin-top: 30rpx;
+    float: left;
+}
+
+.chateau_jiuzhuang_text2 {
+    float: right;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    opacity: 0.6;
+    margin-top: 30rpx;
+}
+
+.chateau_jiuzhuang_text2_img {
+    float: right;
+    width: 8rpx;
+    height: 14rpx;
+}
+
+.chateau_jiuzhuang_two {
+    width: 650rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 188rpx;
+    left: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chateau_shouyi_one {
+    height: 100rpx;
+    /* width: 200rpx; */
+}
+
+/* 收益积分 */
+
+.chateau_shouyi_two {
+    height: 100rpx;
+    /* margin-left: 50rpx; *//* width: 200rpx; */
+}
+
+.chateau_shouyi_three {
+    /* width: 200rpx; */
+    height: 100rpx;
+    /* margin-left: 50rpx; */
+}
+
+.chateau_shouyi_integral {
+    width: 200rpx;
+    font-size: 36rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(252, 166, 43, 1);
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chateau_shouyi_integral2 {
+    width: 200rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    text-align: center;
+}
+
+.chateau_shouyi_integra_one {
+    color: rgba(252, 166, 43, 1);
+    font-size: 20rpx;
+    text-align: center;
+}
+
+.chateau_shouyi_integra_one1 {
+    color: rgba(67, 147, 242, 1);
+    font-size: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chateau_shouyi_integra_one2 {
+    color: rgba(67, 147, 242, 1);
+    font-size: 20rpx;
+}
+
+.chateau_shouyi_integra3 {
+    font-size: 36rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(67, 147, 242, 1);
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chateau_shouyi_integral4 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    text-align: center;
+}
+
+.chateau_shouyi_integral5 {
+    font-size: 36rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(67, 147, 242, 1);
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chateau_shouyi_integral6 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    text-align: center;
+}
+
+/* 点击进入我的店铺 */
+
+.chateau_click {
+    width: 311rpx;
+    height: 160rpx;
+    position: absolute;
+    top: 287rpx;
+    left: 220rpx;
+    z-index: 10;
+}
+
+.chateau_writh {
+    width: 750rpx;
+    height: 550rpx;
+    position: absolute;
+    top: 356rpx;
+}
+
+/* 小二利润比例 */
+
+.chateau_center {
+    width: 100%;
+    height: 277rpx;
+    z-index: 1000;
+}
+
+.chateau_center_xiaoer {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    z-index: 10000;
+    position: absolute;
+    top: 479rpx;
+    left: 32rpx;
+}
+
+.chateau_center_dangqian {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(127, 129, 130, 1);
+    position: absolute;
+    top: 538rpx;
+    left: 311rpx;
+}
+
+.chateau_center_baifenbi {
+    position: absolute;
+    top: 576rpx;
+    left: 331rpx;
+}
+
+.chateau_center_baifenbi_img {
+    width: 48rpx;
+    height: 48rpx;
+    margin-left: 30rpx;
+}
+
+.chateau_center_percentage {
+    font-size: 48rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(67, 147, 242, 1);
+}
+
+.biliclass {
+    display: block;
+    float: left;
+    width: 200rpx;
+    height: 50rpx;
+    font-size: 25rpx;
+    border-radius: 9rpx;
+}
+
+.biliclassbu {
+    display: block;
+    float: left;
+    width: 124rpx;
+    height: 50rpx;
+    font-size: 25rpx;
+    line-height: 50rpx;
+}
+
+.chateau_center_color {
+    width: 8rpx;
+    height: 8rpx;
+    background: rgba(227, 67, 67, 1);
+    border-radius: 50%;
+    position: absolute;
+    top: 667rpx;
+    left: 52rpx;
+}
+
+.chateau_center_red span {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+    position: absolute;
+    top: 656rpx;
+    left: 71rpx;
+}
+
+.chateau_center_background {
+    width: 750rpx;
+    height: 20rpx;
+    background: rgba(243, 243, 243, 1);
+    opacity: 0.6;
+}
+
+/* 我的小二 */
+
+.my_little {
+    position: absolute;
+    top: 776rpx;
+    width: 100%;
+    height: 1300rpx;
+}
+
+.my_little_xiaoer {
+    margin-top: 32rpx;
+    position: relative;
+}
+
+.my_little_name {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    margin-left: 20rpx;
+}
+
+.my_little_background {
+    width: 686rpx;
+    height: 314rpx;
+    margin-left: 32rpx;
+}
+
+.my_little_first_one {
+    width: 656rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 45rpx;
+    left: 53rpx;
+}
+
+.my_little_xiaoer_text1 {
+    width: 450rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(92, 92, 92, 1);
+    margin-left: 80rpx;
+    float: left;
+    position: relative;
+}
+
+.my_little_xiaoer_text2 {
+    float: right;
+    width: 140rpx;
+    height: 48rpx;
+    background: rgba(196, 216, 253, 1);
+    border-radius: 6px;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(99, 145, 238, 1);
+    text-align: center;
+    line-height: 48rpx;
+}
+
+.my_little_xiaoer_img1 {
+    width: 68rpx;
+    height: 68rpx;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.my_little_xiaoer_text1 {
+    position: absolute;
+    top: -10rpx;
+}
+
+.my_little_xiaoer_text1_one {
+    font-size: 25rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(61, 91, 179, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my_little_xiaoer_text1_two {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #3d5bb3;
+}
+
+/* 贡献积分 */
+
+.my_little_xiaoer_gongxian_two {
+    position: absolute;
+    top: 158rpx;
+    display: flex;
+    align-items: center; /*垂直居中*/
+    justify-content: space-around;
+    width: 686rpx;
+    left: 30rpx;
+}
+
+.my_little_xiaoer_numberone {
+    /* width: 200rpx; */
+    text-align: center;
+}
+
+.my_little_xiaoer_two {
+    /* width: 200rpx; */
+    text-align: center;
+}
+
+.my_little_xiaoer_three {
+    /* width: 200rpx; */
+    text-align: center;
+}
+
+.my_little_xiaoer_integral {
+    font-size: 36rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my_little_xiaoer_integral2 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.my_little_xiaoer_integra_one {
+    color: rgba(255, 255, 255, 1);
+    font-size: 22rpx;
+    margin-left: -10rpx;
+}
+
+.my_little_xiaoer_integra_one1 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 22rpx;
+    margin-left: -10rpx;
+}
+
+.my_little_xiaoer_integra_one2 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 22rpx;
+    margin-left: -10rpx;
+}
+
+.my_little_xiaoer_integra3 {
+    font-size: 36rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my_little_xiaoer_integral4 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.my_little_xiaoer_integral5 {
+    font-size: 36rpx;
+    font-family: GillSansMT-Bold;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+
+.my_little_xiaoer_integral6 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+/* 查看订单记录 */
+
+.my_little_select {
+    width: 180rpx;
+    height: 48rpx;
+    border: 2rpx solid rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 253rpx;
+    left: 253rpx;
+    text-align: center;
+    line-height: 48rpx;
+    margin-left: 32rpx;
+}
+
+/* 第二个店小二 */
+
+.my_little_first_two {
+    width: 686rpx;
+    height: 314rpx;
+    background: #eff0f4;
+    border-radius: 12rpx;
+    margin-top: 32rpx;
+    margin-left: 32rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.my_little_first_two image {
+    width: 96rpx;
+    height: 96rpx;
+    margin: 0rpx auto;
+    margin-top: 88rpx;
+}
+
+.my_little_xiaoer_two_kongwei {
+    text-align: center;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+}

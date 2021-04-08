@@ -1,0 +1,7 @@
+{
+    "usingComponents": {},
+    "navigationBarTitleText": "销售排名",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
+}

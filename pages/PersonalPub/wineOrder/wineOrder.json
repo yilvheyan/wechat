@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "phonepopup": "/components/phonepopup/phonepopup",
+    "popup": "/components/popup/popup"
+  },
+  "navigationBarTitleText": "酒品下单"
+}

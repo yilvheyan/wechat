@@ -1,0 +1,35 @@
+<!-- <提货> -->
+<view class='takeGoods'>
+  <!-- 姓名电话售后地址 -->
+  <view class='takeGoods_site_top' bindtap='placeanorder'>
+    <view class='takeGoods_site_top_view'>
+      <image class='takeGoods_site_top_view_img' src="http://qiniu-test.ishzm.com/jxb/img/myStore/wineorder_map.png"></image>
+      <view class='takeGoods_site_two'>
+        <view class='takeGoods_site_two_name'>{{tihuoaddress.name}}</view>
+        <view class='takeGoods_site_two_phone'>{{tihuoaddress.phone}}</view>
+      </view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/wineoeder_z.png' class='takeGoods_site_top_z'></image>
+    </view>
+    <view class='takeGoods_site_two_map'>{{tihuoaddress.address}}</view>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_email.png' class='takeGoods_email'></image>
+  </view>
+  <!-- 商品信息 -->
+  <view class='takeGoods_shop'>
+    <view class='takeGoods_shopxx'>
+      <span>商品信息</span>
+    </view>
+    <scroll-view scroll-y="true" style="height: 760rpx;" class='takeGoods_shoplist'>
+      <view class='takeGoods_view_center' wx:key wx:for="{{takeGoods}}">
+        <image src='{{item.bannerimg[0]}}' class='takeGoods_tuimg'></image>
+        <view class='takeGoods_view_centerright'>
+          <view class='takeGoods_centerright_top'>{{item.goodsinfo.name}}{{item.goodsinfo.subname}}</view>
+          <view class='takeGoods_centerright_center'>积分：
+            <span class='takeGoodst_center_span'>{{item.goodsinfo.price}}</span>
+            <span class='takeGoodst_center_spantwo'>×{{item.num}}</span>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <button class='takeGoods_botton {{istakeGoods_botton?"takeGoods_bottonll":""}}' bindtap='gotihuo'>确定提货</button>
+</view>

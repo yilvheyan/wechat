@@ -1,0 +1,70 @@
+.changeinformation {
+width: 750rpx;
+height: 1000rpx;
+border-top: 1rpx #b5b6b8 solid;
+}
+
+.changeinformation_one {
+width: 128rpx;
+height: 128rpx;
+position: absolute;
+left: 311rpx;
+top: 103rpx;
+border-radius: 50%;
+}
+
+.changeinformation_two {
+text-align: center;
+margin-top: 254rpx;
+}
+.changeinformation_dpname{
+width: 684rpx;
+height: 66rpx;
+border-bottom: 1rpx #F4F4F4 solid;
+margin:20rpx 0rpx 0rpx 32rpx;
+display: flex;
+}
+.changeinformation_textone {
+font-size: 28rpx;
+font-family: PingFang-SC-Medium;
+font-weight: 500;
+color: rgba(55, 58, 61, 1);
+
+}
+
+.changeinformation_texttwo {
+font-size: 28rpx;
+font-family: PingFang-SC-Bold;
+font-weight: bold;
+color: rgba(55, 58, 61, 1);
+
+}
+.changeinformation_{
+width: 684rpx;
+height: 256rpx;
+margin:20rpx 0rpx 0rpx 32rpx;
+}
+.changeinformation_storeone{
+font-size: 28rpx;
+font-family: PingFang-SC-Medium;
+font-weight: 500;
+color: rgba(55, 58, 61, 1);
+}
+.changeinformation_storetwo {
+font-size: 28rpx;
+font-family: PingFang-SC-Bold;
+font-weight: bold;
+color: rgba(55, 58, 61, 1);
+margin-top: 31rpx;
+}
+.changeinformation_button{
+width:520rpx;
+height:76rpx;
+background:linear-gradient(0deg,rgba(116,202,251,1) 0%,rgba(91,163,237,1) 100%);
+border-radius:12rpx;
+text-align: center;
+font-size:32rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+}

@@ -1,0 +1,14 @@
+.personal_image {
+    z-index: 100;
+    position: absolute;
+    right: 2.5%;
+    width: 34rpx;
+    height: 20rpx;
+    margin: 40rpx 20rpx 40rpx 0;
+    transition: All 0.4s ease;
+    -webkit-transition: All 0.4s ease;
+}
+
+.rotateRight {
+    transform: rotate(180deg);
+}

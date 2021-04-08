@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "酒库操作记录",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
+}

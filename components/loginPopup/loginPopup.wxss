@@ -1,0 +1,280 @@
+@import '../../weui.wxss';
+
+/* 登录 */
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100%;
+  opacity: 0.6;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100%;
+}
+
+.login {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 680rpx;
+  height: 696rpx;
+  border: 1rpx #fff;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  box-shadow: 0rpx 1rpx 20rpx 0rpx rgba(196, 209, 224, 0.4);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  overflow: hidden;
+}
+
+.close-icon {
+  position: absolute;
+  top: 17rpx;
+  right: 17rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.login_yanjing {
+  margin-left: 100rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.login_phone {
+  font-size: 30rpx;
+  color: black;
+}
+
+.login_title, .user-agreement-title {
+  margin-top: 76rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgba(55, 58, 61, 1);
+}
+
+.login_shouji {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 58rpx;
+  border-bottom: 1rpx #e4e4e4 solid;
+  box-sizing: border-box;
+  width: 520rpx;
+  height: 80rpx;
+}
+
+.login_shouji image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 5rpx;
+}
+
+.login_mima {
+  display: flex;
+  border-bottom: 1rpx #e4e4e4 solid;
+  box-sizing: border-box;
+  width: 520rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.login_mima image:first-child {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 5rpx;
+}
+
+.login_shuru {
+  font-size: 28rpx;
+  color: #61676d;
+  margin-left: 29rpx;
+  width: 270rpx;
+}
+
+.login_zh {
+  display: flex;
+  width: 520rpx;
+  margin: 12rpx 80rpx 0rpx 80rpx;
+}
+
+.login_chuangjian {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(67, 147, 242, 1);
+}
+
+.login_wangji {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(76, 80, 85, 1);
+  margin-left: 295rpx;
+}
+
+.login_denglu {
+  width: 520rpx;
+  height: 92rpx;
+  background: linear-gradient(0deg, rgba(116, 202, 251, 1) 100%, rgba(91, 163, 237, 1) 0%);
+  opacity: 0.6;
+  border-radius: 12rpx;
+  font-size: 36rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 60rpx;
+}
+
+/* 注册 */
+
+.registered, .user-agreement {
+  width: 680rpx;
+  height: 957rpx;
+  border: 1rpx gray solid;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 1);
+}
+
+.head-img {
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 275rpx;
+  margin-top: 81rpx;
+  border-radius: 50%;
+}
+
+.registered_button {
+  width: 120rpx;
+  height: 30rpx;
+  background-color: #5ba3ed;
+  border-radius: 10rpx;
+  margin-top: 2rpx;
+  color: white;
+  font-size: 12rpx;
+}
+
+.registered_yanzheng {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(67, 147, 242, 1);
+  margin-left: 5rpx;
+  /* float: right; */
+  line-height: 1.4rem;
+  height: 1.4rem;
+}
+
+.registered_shouji {
+  display: flex;
+  margin: 62rpx 80rpx 0rpx 80rpx;
+  border-bottom: 1rpx #e4e4e4 solid;
+  box-sizing: border-box;
+  width: 520rpx;
+  height: 80rpx;
+}
+
+.registered_shouji image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 5rpx;
+}
+
+.registered_xieyi {
+  margin: 12rpx 80rpx 0rpx 80rpx;
+  width: 520rpx;
+  height: 80rpx;
+}
+
+/*复选框外框样式*/
+
+checkbox .wx-checkbox-input {
+  border-radius: 100%;
+  border: 4rpx solid #999;
+  width: 10rpx;
+  height: 10rpx;
+}
+
+/*复选框外框选中样式*/
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border-color: #3cbcee;
+}
+
+/*复选框选中后内部样式*/
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 60%;
+  height: 60%;
+  background: #3cbcee;
+  border-radius: 100%;
+  content: '';
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.registered_xieyi_two {
+  color: #b5b6b8;
+  font-size: 24rpx;
+  margin-left: 13rpx;
+}
+
+.registered_zhuce {
+  width: 520rpx;
+  height: 92rpx;
+  margin-top: 40rpx;
+  background: linear-gradient(0deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 237, 1) 100%);
+  opacity: 0.6;
+  border-radius: 12rpx;
+  color: #fff;
+}
+
+/* 忘记密码 */
+
+.reset {
+  width: 680rpx;
+  height: 687rpx;
+  border: 1rpx gray solid;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin: 0rpx auto;
+  /* margin-top: 300rpx; */
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.reset-box {
+  margin-top: 100rpx;
+  width: 680rpx;
+  height: auto;
+}
+
+/* 用户协议 */
+
+.user-agreement-content {
+  width: 600rpx;
+  height: 687rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+
+.color {
+  background: #4393F2;
+}

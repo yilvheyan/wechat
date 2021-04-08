@@ -1,0 +1,4 @@
+<view class="qkl">
+  <view>*{{id}}*</view>
+  <web-view src="{{url}}"></web-view>
+</view>

@@ -1,0 +1,95 @@
+<!-- <预售详情页> -->
+<view class='presell'>
+  <view class="presellmengb" wx:if="{{ispresellmengb}}"></view>
+  <!-- 轮播图 -->
+  <swiper class='swiper_img' indicatorDots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="lunbo-image" mode='aspectFit' />
+      </swiper-item>
+      <!-- 重置小圆点样式 -->
+      <view class="dots">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </view>
+    </block>
+  </swiper>
+  <!-- 江小白果味白酒 -->
+  <view class='presell_center'>
+    <!-- 江小白果味白酒+分享 -->
+    <view class='presell_fruity'>
+      <view class='presell_fruity_three'>
+        <button open-type='share' class='prbutton'></button>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/btn_share.png'></image>
+      </view>
+      <view class='presell_fruity_one'>{{information.title}}</view>
+      <view class='presell_fruity_two'>{{information.subtitle}}</view>
+      <!-- <进度条> -->
+      <view class='presell_fruity_four'>
+        <view class='presell_fruity_four_span'>预售进度</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/jindutiao.png' class='presell_fruity_four_three'></image>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/blue_jindu.png' class='presell_fruity_four_four' style="width:{{prejindu*6.84}}rpx"></image>
+        <view class='presell_fruity_four_two' style="left:{{prejindu*6.84+50}}rpx">{{jindu}}%
+        </view>
+      </view>
+      <!-- 金额+人数+日期 -->
+      <view class='presell_cmoney'>
+        <view class='presell_cmoney_one'>
+          <view class='presell_cmoney_one1'>{{information.price}}元</view>
+          <view class='presell_cmoney_one2'>目前金额</view>
+        </view>
+        <view class='presell_cmoney_two'>
+          <view class='presell_cmoney_two1'>{{information.renshu}}人</view>
+          <view class='presell_cmoney_two2'>支持人数</view>
+        </view>
+        <view class='presell_cmoney_three'>
+          <view class='presell_cmoney_three1'>{{information.endtime}}</view>
+          <view class='presell_cmoney_three2'>截止日期</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+  <view class='writh'></view>
+  <!-- 头像 -->
+  <view class='touxiang'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/kol_medium.png' class='touxiang_one'></image>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/toukuang.png' class='touxiang_two'></image>
+    <image src='{{imageUrl}}{{information.kol.headpic}}' class='touxiang_three'></image>
+    <view>
+      <view class='touxiang_name'>{{information.kol.name}}</view>
+      <view class='touxiang_jieshao'>{{information.kol.desc}}</view>
+    </view>
+
+  </view>
+  <!-- 预售 -->
+  <view class='yushou'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/Bookingdetails.png'></image>
+    <!-- <image src='{{information.pic}}'></image> -->
+  </view>
+  <view class='mitao'>
+    <image src='{{imageUrl}}{{information.pic}}' mode='aspectFit'></image>
+  </view>
+  <!-- 参加预售结算 -->
+  <view class='close'>
+    <view class='close_left'>
+      <!-- 份额 -->
+      <text class='share'>份额</text>
+      <!-- 主容器 -->
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="normal1" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input class='shuzhi' type="number" bindchange="bindManual" value="{{buynum}}" />
+        <!-- 加号 -->
+        <text class="normal2" bindtap="bindPlus">+</text>
+      </view>
+      <!-- <合计合算> -->
+      <view class='heji'>
+        <view class='heji_one'>合计金额</view>
+        <view class='heji_two'>{{buynum*information.price*information.sellmin}}元</view>
+      </view>
+    </view>
+    <button class='close_right {{isclose_rightco?"close_rightco":""}}' bindtap='presellClick'>参加预售</button>
+  </view>
+</view>

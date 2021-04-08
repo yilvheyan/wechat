@@ -1,0 +1,18 @@
+<!-- 招募小二 -->
+
+<view class='recruitment'>
+  <view class='recruitment_top'>参加应聘的小二</view>
+  <view class='recruitment_center' wx:for='{{recruitment}}' wx:key>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/path.png' class='recruitment_bgm'></image>
+    <view class='recruitment_track'>
+      <image src='{{item.heads.head}}' class='recruitment_track_img'></image>
+      <view class='recruitment_track_center'>
+        <view class='recruitment_track_center_name'>{{item.name}}</view>
+        <view class='recruitment_track_center_time'>应聘时间：\t{{item.time}}</view>
+      </view>
+      <view class='recruitment_track_right' bindtap='recruit' data-waiteruid="{{item.waiteruid}}">招募</view>
+    </view>
+  </view>
+
+  <button class='recruitment_food' bindtap="resharewt">前往分享至好友</button>
+</view>

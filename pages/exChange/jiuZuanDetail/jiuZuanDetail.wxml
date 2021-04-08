@@ -1,0 +1,107 @@
+<!-- 酒钻明细 -->
+<view class='jiuzuanDetail' style='height:{{height}}rpx'>
+  <scroll-view scroll-y="true" class='jiuzuanDetailist' style='height:{{height-200}}rpx'>
+    <view class='jiuzuanDetail_every' wx:key wx:for="{{jiuzuanDetail}}">
+
+
+      <view wx:if="{{item.status==0&&item.type==1}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>挂单卖出已成交</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> -{{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.status==0&&item.type==0}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>挂单买入已成交</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> +{{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.status==1&&item.type==1}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>挂单卖出进行</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> {{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.status==1&&item.type==0}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>挂单买入进行</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> {{item.count}}</view>
+      </view>
+
+
+
+      <view wx:if="{{item.status==2&&item.type==1}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>所挂单卖出已全部成交</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> {{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.status==2&&item.type==0}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>所挂单买入已全部成交</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> {{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.status==3&&item.type==1}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>卖出终止</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> {{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.status==3&&item.type==0}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>买入终止</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'>{{item.count}}</view>
+      </view>
+
+      <view wx:if="{{item.type==3}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>预售</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> +{{item.count}}</view>
+      </view>
+
+
+      <view wx:if="{{item.type==4}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>奖励</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> +{{item.count}}</view>
+      </view>
+
+
+      <view wx:if="{{item.type==5}}" class="jiuzuanDetailcen">
+        <view class='jiuzuanDetail_every_left'>
+          <view class='jiuzuanDetail_every_top'>回收</view>
+          <view class='jiuzuanDetail_every_bottom'>{{item.time}}</view>
+        </view>
+        <view class='jiuzuanDetail_every_right'> -{{item.count}}</view>
+      </view>
+
+
+
+
+
+
+
+    </view>
+  </scroll-view>
+</view>

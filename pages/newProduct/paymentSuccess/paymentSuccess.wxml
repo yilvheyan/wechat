@@ -1,0 +1,20 @@
+<!-- 支付成功 -->
+<!-- 支付成功 -->
+<!-- 支付成功 -->
+
+<view>
+  <view class='pay_success'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/paymentSuccess.png' class='pay_success_image_one'></image>
+    <view class='pay_success_one'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/presell/chenggong.png' class='pay_success_image_three'></image>
+      <view class='pay_success_one1'>支付成功</view>
+      <view class='pay_success_one2'>共支付\t{{price*presellnum}}\t元</view>
+      <image src='{{img}}' class='pay_success_image_two'></image>
+      <view class='pay_success_one3'>订单记录在酒库操作记录中查看</view>
+    </view>
+    <button class='pay_food_tihuo' bindtap='shoumai'>我要售卖</button>
+    <!-- <button class='pay_food_tuikuan'  bindtap='tuikuan'>我要退款</button> -->
+    <button class='pay_food_shoumai' bindtap='tihuo'>我要提货</button>
+    <button class='pay_food_shoumai' bindtap='yushou'>返回预售</button>
+  </view>
+</view>

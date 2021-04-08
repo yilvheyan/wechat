@@ -1,0 +1,58 @@
+<view class='WinePurchase'>
+    <!-- 轮播图 -->
+    <swiper class='swiper_img' indicatorDots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+        <block wx:for="{{bannerimgUrls}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class="lunbo-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='WinePurchase_slect'>
+        <view class='WinePurchase_center'>
+            <view class='WinePurchase_center_one'>￥{{imgUrls.price}}</view>
+            <view class='WinePurchase_center_two'>
+                {{imgUrls.name}}
+            </view>
+            <view class='WinePurchase_center_three'>
+                {{imgUrls.subname}}</view>
+
+            <view class="surpluskc">剩余库存
+                <span>{{imgUrls.stock}}件</span>
+            </view>
+            <!-- 增减 -->
+            <view class="WinePurchase_stepper">
+                <!-- 减号 -->
+                <text class="WinePurchase_normal1" bindtap="bindMinus">-</text>
+                <!-- 数值 -->
+                <input class='WinePurchase_shuzhi' type="number" bindchange="bindManual" value="{{buynum}}" />
+                <!-- 加号 -->
+                <text class="WinePurchase_normal2" bindtap="bindPlus">+</text>
+            </view>
+        </view>
+        <view class='WinePurchase_details'>
+            <view class='WinePurchase_details_one'></view>
+            <view class='WinePurchase_details_two'>商品详情</view>
+        </view>
+        <image src='{{imgUrls.detailimage}}' class='WinePurchase_bg' mode='widthFix'></image>
+    </view>
+    <view class='WinePurchase_footer'>
+        <view class='WinePurchase_footer_left'>
+            <view class='WinePurchase_footer_left_one'>
+                <button open-type='share' class='prbutton'></button>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/WinePurchase_btn_two.png' class='WinePurchase_footer_left_img'></image>
+                <view class='WinePurchase_footer_boot'>分享</view>
+            </view>
+            <!-- TODO:购物车 -->
+            <view class='WinePurchase_footer_left_two' catchtap='addshopping'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/shoppingcar_litter.png' class='WinePurchase_footer_left_two_img'></image>
+                <view class='WinePurchase_footer_boot'>购物车</view>
+            </view>
+        </view>
+        <view class='WinePurchase_footer_right'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/WinePurchase_button.png'></image>
+        </view>
+        <view class='WinePurchase_footer_right_texto' catchtap='addshopping'>加入购物车</view>
+        <view class='WinePurchase_footer_right_textt' bindtap='payment'> 立即支付</view>
+        <view class='WinePurchase_footer_boot_quantity'>{{gouwunum}}</view>
+    </view>
+</view>

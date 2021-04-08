@@ -1,0 +1,134 @@
+<!-- <我参与的预售详情> -->
+<view class='presell'>
+  <!-- 轮播图 -->
+  <swiper class='swiper_img' indicatorDots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <!-- <image src="{{item.image}}" class="lunbo-image" /> -->
+        <image src='{{imageUrl}}{{item}}' class="lunbo-image" mode="aspectFit"></image>
+      </swiper-item>
+      <!-- 重置小圆点样式 -->
+      <view class="dots">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </view>
+    </block>
+  </swiper>
+  <!-- 江小白果味白酒 -->
+  <view class='presell_center'>
+    <!-- 江小白果味白酒+分享 -->
+    <view class='presell_fruity'>
+      <view class='presell_fruity_three'>
+        <button open-type='share' class='prbutton'></button>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/btn_share.png'></image>
+      </view>
+      <view class='presell_fruity_one'>{{presaleOrder.title}}</view>
+      <view class='presell_fruity_two'>{{presaleOrder.subtitle}}</view>
+      <!-- <进度条> -->
+      <view class='presell_fruity_four'>
+        <view class='presell_fruity_four_span'>预售进度</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/jindutiao.png' class='presell_fruity_four_three'></image>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/blue_jindu.png' style="width:{{totalnum*6.84}}rpx" class='presell_fruity_four_four'></image>
+        <view class='presell_fruity_four_two' style="left:{{totalnum*6.8+55}}rpx">{{jindu}}%
+        </view>
+      </view>
+      <!-- 金额+人数+日期 -->
+      <view class='presell_liucheng'>
+        <view class='presell_liucheng_one'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/presell/icon_yushou_big_bule.png' class='presell_liucheng_one_img1'></image>
+          <view class='presell_liucheng_one_t'>
+            <view class='presell_liucheng_one_time hhcolor'>开始预售</view>
+            <view class='presell_liucheng_one_yushou hhcolor' wx:if="{{presaleOrder.knowtimenum==2}}">进行中</view>
+            <view class='presell_liucheng_one_yushou hhcolor' wx:if="{{presaleOrder.knowtimenum>=2}}">已完成</view>
+
+          </view>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/presell/right_bracket.png' class='presell_liucheng_one_img2'></image>
+        </view>
+        <view class='presell_liucheng_two'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/presell/icon_zhizuo_big_grey.png' class='presell_liucheng_one_img5' wx:if="{{presaleOrder.state<1}}"></image>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/presell/icon_zhizuo_big_bule.png' class='presell_liucheng_one_img5' wx:if="{{presaleOrder.state>=1}}"></image>
+          <view class='presell_liucheng_one_t'>
+            <view class='presell_liucheng_two_time {{presaleOrder.knowtimenum>=3?"hhcolor" :""}}'>开始制作</view>
+            <view class='presell_liucheng_two_yushou hhcolor' wx:if="{{presaleOrder.knowtimenum>3}}">已完成</view>
+            <view class='presell_liucheng_two_yushou hhcolor' wx:if="{{presaleOrder.knowtimenum==3}}">进行中</view>
+            <view class='presell_liucheng_two_yushou' wx:if="{{presaleOrder.knowtimenum<3}}">未进行</view>
+          </view>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/presell/right_bracket.png' class='presell_liucheng_one_img2'></image>
+        </view>
+        <view class='presell_liucheng_two'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/presell/icon_fahuo_big_grey.png' class='presell_liucheng_one_img1' wx:if="{{presaleOrder.state<2}}"></image>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/icon_fahuo_big_blue.png' class='presell_liucheng_one_img1' wx:if="{{presaleOrder.state>=2}}"></image>
+          <view class='presell_liucheng_one_t'>
+            <view class='presell_liucheng_two_time  {{presaleOrder.knowtimenum>=4?"hhcolor" :""}}'>准备发货</view>
+            <view class='presell_liucheng_two_yushou hhcolor' wx:if="{{presaleOrder.knowtimenum>4}}">已完成</view>
+            <view class='presell_liucheng_two_yushou hhcolor' wx:if="{{presaleOrder.knowtimenum==4}}">进行中</view>
+            <view class='presell_liucheng_two_yushou' wx:if="{{presaleOrder.knowtimenum<4}}">未进行</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <灰色条框> -->
+  <view class='writh'></view>
+
+
+  <!-- 头像 -->
+  <view class='touxiang'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/kol_medium.png' class='touxiang_one'></image>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/toukuang.png' class='touxiang_two'></image>
+    <image src='{{imageUrl}}{{presaleOrder.presale.kol.headpic}}' class='touxiang_three'></image>
+    <view>
+      <view class='touxiang_name'>{{presaleOrder.presale.kol.name}}</view>
+      <view class='touxiang_jieshao'>{{presaleOrder.presale.kol.desc}}</view>
+    </view>
+  </view>
+  <!-- 预售 -->
+  <view class='yushou'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/Bookingdetails.png'></image>
+    <!-- <image src='{{presaleOrder.pic}}'></image> -->
+  </view>
+  <view class='mitao'>
+    <image src='{{imageUrl}}{{presaleOrder.presale.pic}}' mode="aspectFit"></image>
+  </view>
+  <view class='chobutton' wx:if="{{buttonstatus==1 ||buttonstatus==3}}">
+    <view class='chobuttonlistclatwo {{item=="我要售卖"?"chobuttonlistclatwoboder":""}}' wx:for="{{chobuttonlist}}" wx:for-index="idx" data-index='{{idx}}' wx:key='idx' bindtap='prejoincli' data-item='{{item}}' style='{{item=="其他操作"?"flex: 2;":"" }}'>
+      {{item}}
+      <image src='http://qiniu-test.ishzm.com/jxb/img/pulldown.png' class='pulldownimgone' wx:if='{{item=="其他操作"}}'></image>
+    </view>
+  </view>
+  <view class='chobutton pjbacolor' wx:if="{{buttonstatus==3}}">
+    <view class='chobuttonlistclall' wx:for="{{chobuttonlist}}" wx:for-index="idx" data-index='{{idx}}' wx:key='idx'>
+      {{item}}
+    </view>
+  </view>
+  <!--当为已提货的时候  -->
+  <view class='chobutton' wx:if="{{buttonstatus==2}}">
+    <view class='nowpin'>{{shozhuang}}</view>
+    <view class='chobuttonlistclatwo {{item=="我要售卖"?"chobuttonlistclatwoboder":""}}' wx:for="{{chobuttonlist}}" wx:for-index="idx" data-index='{{idx}}' wx:key='idx' bindtap='prejoincli' data-item='{{item}}'>
+      <view class='chobuttonlistclal' style='float: left;' wx:if='{{idx <=chobuttonlist.length-1&& item!="我要售卖"}}' data-item='{{item}}'>|</view>
+      {{item}}
+      <image src='http://qiniu-test.ishzm.com/jxb/img/pulldown.png' class='pulldownimg {{chobuttonlist.length==1?"pulldownimgtwo":""}}' wx:if='{{item=="其他操作"}}'></image>
+    </view>
+  </view>
+  <view class='chobutton pjbacolor' wx:if="{{buttonstatus==3}}">
+    <view class='chobuttonlistclall' wx:for="{{chobuttonlist}}" wx:for-index="idx" data-index='{{idx}}' wx:key='idx'>
+      {{item}}
+    </view>
+  </view>
+  <view class="tuik" wx:if="{{buttonstatus==10}}" bindtap="refund">退款</view>
+  <view wx:if="{{showusehuo==1}}" class="caozuo">
+    <view class="caozuocen" bindtap="doncaozuo">
+      <view class="caozuocen_but">
+        <view class="qitacla">其他操作</view>
+        <view class='blisttitle' catchtap='prjtihuo' wx:key="index" wx:for="{{cuozuolist}}" data-index="{{index}}" data-item="{{item}}">
+          <view class="blisttitlecen">
+            <view class='blisttitlecentex'>{{item}}</view>
+            <view class='pjqueding'>
+              <radio value="{{item}}" checked="{{sptschekdeti==item}}" style='margin-top:-10rpx' />
+            </view>
+          </view>
+        </view>
+        <view class='pjshull' catchtap='pjshull'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

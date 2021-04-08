@@ -1,0 +1,23 @@
+<!--components/phonepopup/phonepopup.wxml-->
+<!-- <text>components/phonepopup/phonepopup.wxml</text> -->
+
+<view wx:if="{{getuserinfoShow}}">
+  <view class="bg"></view>
+  <view class="wrapper">
+    <view class='getuserinfo'>
+      <view class='getuserinfotitle'>
+        获取授权
+      </view>
+      <view class='getuserinfomailtitle'>
+        需要获取您的手机号
+      </view>
+      <!-- <view class='getuserinfoxian'></view> -->
+      <view class='button'>
+        <view class='cancelbutton' bindtap='noshow'>暂不授权</view>
+        <view class='getuserinfotitlebutton'>
+          <button open-type="getPhoneNumber" class='ebutton' bindgetphonenumber="getPhoneNumber"> 立即授权</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!-- 联系客服 -->
+<view class='lianXiService'>
+    <scroll-view scroll-y="true" class='lianXiService_top'>
+        <view class='lianXiService_top_title'>常见问题</view>
+        <view class='lianXiService_top_list' wx:key wx:for="{{contact}}" bindtap="show" wx:for-index="index" data-index="{{index}}">
+            <view class='lianXiService_top_left'>
+                {{item.question}}
+            </view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/yijian_youkuo.png' class='lianXiService_top_right'></image>
+        </view>
+        <view class="goutto_end">已经到底啦~</view>
+    </scroll-view>
+    <view class='lianXiService_top_kefu' bindtap="servicephone">
+        <text>客服电话：400-850-8805</text>
+    </view>
+    <view class="zhezao" wx:if="{{lianXiService}}">
+        <!--弹出框开始-->
+        <view class="tanchu_viewlist">
+            <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_cuowu.png' bindtap='conceal' class='tanchu_view_cuowu'></image>
+            <scroll-view scroll-y="true" class="tanchu_view">
+                <view class="tanchu_view_question">{{question}}</view>
+                <view class="tanchu_view_answer">{{answer}}</view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

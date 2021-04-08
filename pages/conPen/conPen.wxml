@@ -1,0 +1,99 @@
+<!-- <button catchtap='clickPup'>点击底部动画弹窗</button>
+<!-- 底部弹窗动画的内容 -->
+<!-- <view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true'>
+</view> -->
+<!-- 固定的背景 -->
+<!-- <view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'> 111</view> -->
+<!-- <input type="text" class="form-control" id="recoSoft" maxlength="5" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入排序" style="width: 200px;" />
+
+<view class='lookmap' bindtap='lookmapcli'>获取地图位置</view>
+<view class='lookmap' bindtap='lookmapclill'>查看地图位置</view> -->
+
+<!-- <button bindtap='login'>获取code与openID</button>
+<text>code:{{code}}</text>
+<text>openID:{{openid}}</text>
+<text>session_key:{{session_key}}</text> -->
+<!-- <wxs module="conen" src="./conPen.wxs"></wxs>
+<view change:prop="{{conPen.propObserver}}" prop="{{propValue}}" bind:touchmove="{{conen.touchmove}}" class="movable" capture-bind:touchend="touchendcli"></view> -->
+<!-- <wxs module="test" src="./test.wxs"></wxs>
+<view change:prop="{{test.propObserver}}" prop="{{propValue}}" bindtouchmove="{{test.touchmove}}" class="movable"></view> -->
+<!-- 
+<text>上传图片</text>
+<view>
+<button bindtap="uploadimg">点击选择上传图</button>
+</view>
+<image src='{{source}}' style='width:600rpx; height:600rpx' /> -->
+
+
+
+
+
+<!-- 图片上传截取 -->
+<!-- <wxs module="conPen" src="./conPen.wxs"></wxs> -->
+<!-- <view wx:if="{{showBtn}}" class="btn-w">
+  <view class="btn" bindtap='selectTap'>选择照片</view>
+  <image src="{{showImagell.url}}" mode="widthFix" style="width:{{showImagell.width}}rpx"></image>
+</view>
+<view class="wrapper" wx:if="{{!showBtn}}">
+  <movable-area class="move-area">
+    <movable-view class='move-view' x="{{x}}" y="{{y}}" bindchange="onChange" direction="all" out-of-bounds="false" friction="100" bindscale="onScale" scale='true' scale-min='0.5' style="width:{{showImage.width}}px;height:{{showImage.height}}px;">
+      <image src="{{showImage.url}}" bindload="onImageLoad" mode="aspectFit" style="width:{{showImage.width}}px;height:{{showImage.height}}px"></image>
+    </movable-view>
+  </movable-area>
+  <canvas canvas-id="canvasOne" class="canvas-one" style="width:{{(showImage.width)/2}}px;height:{{(showImage.height)/2}}px"></canvas>
+  <view class="aaa" style="width:{{(showImage.width)/2}}px;height:290rpx"></view>
+
+  <view class="bottom-w"> 
+    <view bindtap='cancelImg'>取消</view>
+    <view bindtap='jieDone'>完成</view>
+  </view>
+</view> -->
+
+
+
+
+<!-- <view class='box' bindtap="aaa">
+  <view class='imgarr' style="position:fixed;left:100000px;" wx:if='{{imgarr!=null}}'>
+    <image class="image" id="{{index}}" src="{{item.img}}" bindload="onImageLoadArr" binderror="onImageErrArr" wx:for='{{imgarr}}' style="width:{{width}}px;height:{{height}}px"></image>
+  </view>
+  <canvas canvas-id="canvasOne" class="canvasomne"></canvas>
+</view> -->
+
+
+<!-- <view class="homebigimg">1111111111111111111111111</view> -->
+
+
+
+<view class="no-content" wx:if="{{areaList.length==0}}">
+    <view class="imgbox">
+      <image style="width:200rpx;" src="/images/none.png" mode="widthFix" />
+    </view>
+    <view>暂无地址信息</view>
+  </view>
+<view class="address-item" wx:for="{{areaList}}" wx:for-index="index" wx:for-item="item" wx:key="*this">
+  <view>
+    <text class="address-item-name">{{item.name}}</text>
+    <text class="address-item-phone">{{item.phone}}</text>
+  </view>
+  <view class="address-item-address">{{item.province}}{{item.city}}{{item.county}}{{item.detailInfo}}</view>
+  <view class="address-item-menu">
+    <view class="address-item-left">
+    <block wx:if="{{item.isDefault}}">
+        <text style="color:#1AAD16;">默认</text>
+    </block>
+    <block wx:else>
+        <button class="none-btn btn-default" data-id="{{item.id}}" bindtap="setAddressDefault">设为默认</button>
+    </block>     
+    </view>
+    <view class="address-item-right">
+      <button class="none-btn btn-edit" data-id="{{item.id}}" bindtap="gotoAddressinfo">编辑</button>
+      <button class="none-btn btn-del">删除</button>
+    </view>
+  </view>
+</view>
+<view class="button-group">
+    <button style="background-color: red;" data-id="add" bindtap="gotoAddressinfo">
+      <my-icon type="jiahao" size="35"/> 新建地址</button>
+  <button bindtap="wxAddress">
+    <my-icon type="weixin" size="35"/> 微信添加</button>
+</view>

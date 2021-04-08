@@ -1,0 +1,17 @@
+<!-- 修改信息 -->
+<view class='changeinformation'>
+<view class='changeinformation_head'>
+<!-- <image src="http://qiniu-test.ishzm.com/jxb/img/home/touxiang.png" class='changeinformation_one'></image> -->
+<image src="{{heqaderimg}}" class='changeinformation_one'></image>
+<view class='changeinformation_two'>{{userininfor.name}}</view>
+</view>
+<view class='changeinformation_dpname'>
+<text class='changeinformation_textone' >店铺名称：</text> 
+<input class='changeinformation_texttwo' maxlength="6" placeholder="名称最多不能超过6个字符" type='text' value='{{userininfor.name}}' bindinput ="shopname"></input>
+</view>
+<view class='changeinformation_ store'>
+<text class='changeinformation_storeone'>店铺简介：</text> 
+<input class='changeinformation_storetwo' placeholder="请输入店铺的简介" type='text' value='{{userininfor.desc}}'  bindinput ="shopsimple"></input>
+</view>
+<button class='changeinformation_button' bindtap='preservation'>保存修改</button>
+</view>

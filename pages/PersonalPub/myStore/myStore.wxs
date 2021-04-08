@@ -1,0 +1,70 @@
+var firstx = 3000 //按下的坐标
+var firsty = 3000
+var instancex = 0 //元素的坐标
+var instancey = 0
+var shmallfirstx = 0 //小元素
+var shmallfirsty = 0
+
+
+
+var touchstart = function(e, instance) {
+    var index = e.currentTarget.dataset.index
+    firstx = parseInt(e.touches[0].pageX)
+    firsty = parseInt(e.touches[0].pageY)
+
+    instancex = parseInt(e.currentTarget.dataset.instancex)
+    instancey = parseInt(e.currentTarget.dataset.instancey)
+
+    var thisinstance = instance.selectAllComponents('.movable')[e.currentTarget.dataset.index]
+
+    thisinstance.setStyle({
+        'left': instancex + "rpx",
+        'top': instancey + "rpx",
+    })
+}
+var touchmove = function(e, instance) {
+    var changeleft = e.touches[0].pageX - firstx
+    var changetop = e.touches[0].pageY - firsty
+    instancex += changeleft
+    instancey += changetop
+
+    firstx = e.touches[0].pageX
+    firsty = e.touches[0].pageY
+
+    instance.selectAllComponents('.movable')[e.currentTarget.dataset.index].setStyle({
+        'left': instancex + "rpx",
+        'top': instancey + "rpx",
+    })
+
+    e.currentTarget.dataset.item.left = instancex
+    e.currentTarget.dataset.item.top = instancey
+}
+
+
+var changepictouchstart = function(e, instance) {
+    shmallfirstx = parseInt(e.touches[0].pageX)
+    shmallfirsty = parseInt(e.touches[0].pageY)
+}
+
+var changepictouchmove = function(e, instance) {
+    var dataset = e.instance.getDataset();
+    var changeleft = parseInt(e.touches[0].pageX) - shmallfirstx
+    var width = parseInt(e.currentTarget.dataset.width) + changeleft
+    var movableimg = instance.selectAllComponents('.movableimg')[e.currentTarget.dataset.index]
+    movableimg.setStyle({
+        'width': width + "rpx"
+    })
+}
+
+
+
+
+module.exports = {
+    changepictouchstart: changepictouchstart,
+    changepictouchmove: changepictouchmove,
+    touchstart: touchstart,
+    touchmove: touchmove,
+    propObserver: function(newValue, oldValue, ownerInstance, instance) {
+        console.log('prop observer', newValue, oldValue)
+    }
+}

@@ -1,0 +1,708 @@
+.paid {
+    width: 750rpx;
+    height: 100%;
+    background: rgba(238, 238, 238, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.paid_back {
+    width: 750rpx;
+    height: 362rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 待支付 */
+
+.paid_unpaid {
+    width: 661rpx;
+    height: 80rpx;
+    /* border: 1rpx saddlebrown solid; */
+    position: absolute;
+    top: 161rpx;
+    left: 41rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paid_unpaid_left {
+    font-size: 42rpx;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    line-height: 59rpx;
+    letter-spacing: 2rpx;
+}
+
+.paid_unpaid_time {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 37rpx;
+    letter-spacing: 1rpx;
+}
+
+/* 订单详情 */
+
+.paid_tietleli {
+    width: 447rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 63rpx;
+    left: 23rpx;
+    display: flex;
+    /* background-color: tan; */
+    z-index: 300;
+}
+
+.paid_button_left_ever {
+    width: 100rpx;
+    height: 50rpx;
+}
+
+.paid_button_left {
+    width: 21rpx;
+    height: 35rpx;
+    margin-top: 10rpx;
+}
+
+.paid_titletext {
+    margin-left: 180rpx;
+    font-size: 37rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: white;
+    line-height: 45rpx;
+}
+
+/* 去除滚动条样式 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+/* <!-- 姓名电话售后地址样式 --> */
+
+.paid_site_top {
+    width: 706rpx;
+    height: 160rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 15rpx;
+    position: absolute;
+    top: 268rpx;
+    left: 22rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.paid_site_top_view {
+    width: 652rpx;
+    height: 85rpx;
+    margin: 35rpx 0rpx 0rpx 29rpx;
+    display: flex;
+}
+
+.paid_site_top_view_img {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.paid_site_two {
+    width: 500rpx;
+    margin-left: 34rpx;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.paid_site_two_name {
+    font-size: 32rpx;
+    width: 300rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 45rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paid_site_two_phone {
+    width: 200rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    line-height: 55rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paid_site_two_map {
+    width: 500rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin: -30rpx 0rpx 0rpx 120rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paid_site_top_z {
+    width: 19rpx;
+    height: 33rpx;
+    margin: 20rpx;
+}
+
+.paid_email {
+    width: 706rpx;
+    height: 20rpx;
+    position: absolute;
+    top: 140rpx;
+    left: 0rpx;
+}
+
+/* <!-- 商品信息样式 --> */
+
+.paid_shop {
+    width: 706rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 15rpx;
+    /* position: absolute;
+    top: 448rpx;
+    left: 22rpx; */
+    margin: 288rpx 0rpx 0rpx 22rpx;
+}
+
+.shop_message {
+    width: 100%;
+    height: 91rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 91rpx;
+    border-bottom: 1rpx #f2f2f2 solid;
+    display: flex;
+    align-items: center;
+}
+
+.refund_popup_img {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.shop_message_img {
+    width: 56rpx;
+    height: 56rpx;
+    margin-left: 23rpx;
+    border-radius: 50%;
+}
+
+.paid_shop_textone {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-left: 12rpx;
+}
+
+.shop_message_style {
+    width: 100%;
+    height: 218rpx;
+    /* border: 1rpx saddlebrown solid; */
+}
+
+.shop_message_style_one {
+    display: flex;
+    width: 678rpx;
+    height: 158rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 30rpx;
+    margin-left: 23rpx;
+}
+
+.shop_message_style_one image {
+    width: 158rpx;
+    height: 158rpx;
+}
+
+.shop_message_style_two {
+    width: 480rpx;
+    height: 158rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-left: 22rpx;
+}
+
+.shop_message_style_top {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40rpx;
+}
+
+.shop_message_style_bttom {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+    margin-top: 23rpx;
+}
+
+.shop_message_style_zzz {
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10rpx;
+}
+
+/* <!-- 共计样式 --> */
+
+.paid_sumto {
+    width: 706rpx;
+    height: 400rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 15rpx;
+    /* position: absolute;
+   top: 1351rpx;
+   left: 22rpx; */
+    margin: 22rpx;
+    overflow: hidden;
+}
+
+.paid_sumto_zongto {
+    width: 648rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 26rpx;
+    margin-left: 29rpx;
+}
+
+.paid_sumto_top {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paid_sumto_sp {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 50rpx;
+}
+
+.paid_sumto_en {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 50rpx;
+}
+
+.paid_sumto_center {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paid_sumto_sp_one {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 400;
+    color: #666;
+    line-height: 50rpx;
+}
+
+.paid_sumto_sp_shiji {
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: #333;
+}
+
+.paid_sumto_en_shijitwo {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: rgba(250, 50, 50, 1);
+    line-height: 50rpx;
+}
+
+.paid_sumto_en_two {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #333;
+    line-height: 50rpx;
+}
+
+.paid_sumto_bottom {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paid_sumto_sp_new {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 400;
+    color: #666;
+    line-height: 50rpx;
+}
+
+.paid_sumto_en_new {
+    display: flex;
+    align-items: center;
+}
+
+.paid_sumto_en_new_text {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #333;
+}
+
+.paid_sumto_en_new_img {
+    width: 203rpx;
+    height: 40rpx;
+}
+
+/* 订单编号 */
+
+.paid_reference {
+    width: 706rpx;
+    height: 410rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin: 22rpx;
+}
+
+.paid_reference_zongto {
+    width: 648rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 26rpx;
+    margin-left: 29rpx;
+}
+
+.paid_reference_center {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+}
+
+.paid_reference_sp_one {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 400;
+    color: #666;
+    line-height: 50rpx;
+}
+
+.paid_reference_en_two {
+    line-height: 50rpx;
+    display: flex;
+    align-items: center;
+}
+
+.paid_reference_en_two_textone {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin-right: 19rpx;
+}
+
+.paid_reference_en_time {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+
+.paid_reference_en_two_texttwo {
+    width: 87rpx;
+    height: 40rpx;
+    border-radius: 20rpx;
+    border: 1rpx solid rgba(41, 139, 241, 1);
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(41, 139, 241, 1);
+    text-align: center;
+    line-height: 40rpx;
+}
+
+/* 占位 */
+
+.paid_none {
+    width: 750rpx;
+    height: 98rpx;
+}
+
+/* <!-- 支付样式 --> */
+
+.paid_pay {
+    width: 750rpx;
+    height: 98rpx;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    bottom: 0rpx;
+    display: flex;
+}
+
+.paid_pay_one {
+    margin-left: 49rpx;
+}
+
+.paid_pay_col {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    line-height: 98rpx;
+}
+
+.paid_pay_row {
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: bold;
+    color: #fa3232;
+    line-height: 98rpx;
+}
+
+.paid_pay_left {
+    width: 500rpx;
+    height: 98rpx;
+}
+
+/* 取消订单 */
+
+.paid_pay_ancle {
+    width: 168rpx;
+    height: 64rpx;
+    border-radius: 34rpx;
+    border: 1px solid rgba(41, 139, 241, 1);
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(41, 139, 241, 1);
+    text-align: center;
+    line-height: 64rpx;
+    margin-top: 17rpx;
+}
+
+/* 确认支付 */
+
+.paid_pay_right {
+    width: 168rpx;
+    height: 64rpx;
+    background: linear-gradient(159deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 237, 1) 100%);
+    border-radius: 34rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 64rpx;
+    margin: 17rpx 23rpx 0rpx 16rpx;
+}
+
+/* 修改皮肤弹出底部弹框 */
+
+.pupContentBG {
+    width: 100%;
+    /* height: 705rpx; */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.pupContent {
+    width: 100%;
+    /* border: 1rpx saddlebrown solid; */
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px -4rpx 24rpx 0rpx rgba(152, 173, 197, 0.4);
+    border-radius: 12rpx 12rpx 0px 0px;
+}
+
+/* 设置显示的背景 */
+
+.showBG {
+    display: block;
+}
+
+.hideBG {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideBGtUp {
+    from {
+        background: transparent;
+    }
+
+    to {
+        /* background: rgba(0, 0, 0, 0.1); */
+        background: black;
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideBGDown {
+    from {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        background: transparent;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.openBG {
+    animation: slideBGtUp 0.11s ease-in both;
+}
+
+.closeBG {
+    animation: slideBGDown 0.1s ease-in both;
+}
+
+/* 设置显示内容 */
+
+.showContent {
+    display: block;
+}
+
+.hideContent {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideContentUp {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 914rpx;
+    }
+}
+
+@keyframes slideContentDown {
+    from {
+        height: 914rpx;
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.open {
+    animation: slideContentUp 0.3s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.close {
+    animation: slideContentDown 0.2s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+/* 弹出框样式 */
+
+.paid_popup {
+    width: 750rpx;
+    height: 100%;
+}
+
+.paid_popup_top {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin-top: 25rpx;
+}
+
+.paid_popup_footer {
+    margin-left: 51rpx;
+}
+
+.paid_popup_footer view {
+    height: 82rpx;
+}
+
+.paid_popup_cause {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin-top: 23rpx;
+}
+
+.paid_popup_select {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+
+.paid_popup_img {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.paid_popup_list {
+    height: 80rpx;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    display: flex;
+    align-items: center;
+}
+
+.paid_popup_list text {
+    margin-left: 38rpx;
+}
+
+.paid_popup_button {
+    width: 640rpx;
+    height: 82rpx;
+    background: rgba(204, 204, 204, 1);
+    border-radius: 6rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 50rpx;
+}

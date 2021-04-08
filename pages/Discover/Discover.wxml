@@ -1,0 +1,118 @@
+<!--发现- 广场页面 -->
+<view class='discover'>
+  <!-- <view class='discover_tietleli'>
+    <view class='discover_button_left_ever' bindtap='skiphome'>
+      <image class='discover_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+    </view>
+    <view class='discover_titletext'>发现</view>
+  </view> -->
+  <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_top.png' class='discover_top_back'></image>
+  <!-- 轮播图 -->
+  <swiper class='swiper_img' indicator-dots='true' autoplay="true" current="{{currentSwiper}}" interval="2000" duration="1000" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item catchtap="squarecl" data-id="{{item.jump}}">
+        <image src="{{item.image}}" mode="aspectFit" class="lunbo_image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 做任务得积分 -->
+  <view class='discover_task'>
+    <view class='discover_task_gray'>做任务得积分</view>
+    <view class='discover_task_border'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/discover/discover_laba.png' class='discover_task_border_image'></image>
+      <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+        <block wx:for="{{noticeList}}" wx:key>
+          <swiper-item>
+            <view class="swiper_item">{{item.content0}}</view>
+            <view class="swiper_item">{{item.content1}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='discover_task_accomplish' bindtap='wcnageto'>去完成</view>
+    </view>
+  </view>
+  <view class='saletopcla'>
+    <!-- 推荐和附近 -->
+    <view class='recommendone'>
+      <view class='discover_style  {{item.id==num?"discover_active":""}}' catchtap='onclickList' wx:for="{{message}}" wx:key="" id="{{index}}">{{item.text}}
+        <view class='discover_null' wx:if='{{item.id==num}}'></view>
+      </view>
+    </view>
+    <!-- 111 -->
+    <!-- <xxx的酒庄> -->
+    <view class='discover_cafe' scroll-y="true" bindscrolltolower="loadMore">
+      <!-- 推荐 -->
+      <view class="discover_cafe_none">
+        <view class='discover_cafe_recommend' wx:if="{{sindex==0}}" wx:key wx:for="{{chateau}}" data-id="{{item.id}}" bindtap='nageto'>
+          <view class='discover_cafe_recommend_img'>
+            <image src='{{item.coverImage}}' mode="widthFix"></image>
+          </view>
+          <view class='discover_cafe_recommend_text'>
+            <view class='discover_cafe_recommend_textbig'>
+              {{item.title}}
+            </view>
+            <view class='discover_cafe_recommend_textvule'>
+              {{item.content}}
+            </view>
+          </view>
+          <view class='discover_cafe_like'>
+            <image src='{{item.headinfo.head}}' class='discover_cafe_touxiang'></image>
+            <view class='discover_cafe_span'>{{item.headinfo.nickname}}</view>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/discover/discover_good.png' class='discover_cafe_like_good' wx:if="{{item.praises_state==0}}"></image>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgthreered.png' class='discover_nearby_nomber_footer_imgtuijian' wx:if="{{item.praises_state==1}}"></image>
+            <text class='discover_cafe_like_z'>{{item.praise}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 排名 -->
+      <view class="discover_cafe_nonetwo">
+        <view wx:if="{{sindex==1}}" class='discover_nearby' wx:key wx:for="{{chateau}}" data-id="{{item.id}}" bindtap='nageto'>
+          <image src='{{item.img}}' class='discover_nearby_numberone'></image>
+          <image src='{{item.coverImage}}' class='discover_nearby_numbertwo' mode="aspectFit"></image>
+          <view class='discover_nearby_nomber'>
+            <view class='discover_nearby_nomber_top'>
+              <image src='{{item.headinfo.head}}' class='discover_cafe_touxiang'></image>
+              <text class='discover_cafe_span'>{{item.headinfo.nickname}}的酒馆</text>
+            </view>
+            <view class='discover_nearby_nomber_center'>
+              <view class='discover_cafe_recommend_textbig'>
+                {{item.title}}
+              </view>
+              <view>
+                {{item.content}}
+              </view>
+
+            </view>
+            <view class='discover_nearby_nomber_footer'>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/discover/discover_eye.png' class='discover_nearby_nomber_footer_imgone'></image>
+              <text class='discover_nearby_nomber_footer_textone'>{{item.views}}</text>
+
+              <image src='http://qiniu-test.ishzm.com/jxb/img/discover/discover_good.png' class='discover_nearby_nomber_footer_imgtwo' wx:if="{{item.praises_state==0}}"></image>
+              <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgthreered.png' class='discover_nearby_nomber_footer_imgtwo' wx:if="{{item.praises_state==1}}"></image>
+              <text class='discover_nearby_nomber_footer_textone'>{{item.praise}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 添加 -->
+  <image src='http://qiniu-test.ishzm.com/jxb/img/discover/discover_say.png' class='faxianadd' bindtap='addnageto'></image>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 登录组件 -->
+  <!-- <loginPopup id="loginPopup"></loginPopup> -->
+  <!-- <view class='component' wx:if="{{islogin==0}}">
+        <loginpopup id="loginpopup" bind:showTab="homeTab"></loginpopup>    
+    </view> -->
+
+</view>

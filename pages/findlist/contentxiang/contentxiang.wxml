@@ -1,0 +1,97 @@
+<view class='contentxiang'>
+    <view class='ldmainbox' style='height:{{height}}rpx'>
+        <view class='ldmainboxlistcla'>
+            <!-- 头部 -->
+
+            <view class='ldmainboxlisttopcla'>
+                <view style='float:left' bindtap='thisgeto'>
+                    <image src='{{cintentxiang.headinfo.head}}' class='ldheadimgcla'></image>
+                    <view class='ldheadnamelist'>
+                        <view class='ldheadname'>{{cintentxiang.headinfo.nickname}}</view>
+                        <view class='ldheadtime'>{{cintentxiang.time}}</view>
+                    </view>
+                </view>
+                <view class="ldshop" catchtap="gotoshop" wx:if="{{cintentxiang.shopuid>0 ||cintentxiang.waiteruid>0}}" data-shopuid="{{cintentxiang.shopuid}}" data-shopname="{{cintentxiang.shop.name}}">
+                    <image src="https://jiangxiaobai.test.ishzm.com/public/upload/20190726/963a86d428356828605f2b10e4faf171.png"></image>
+                </view>
+                <view class='jubao' catchtap='jubao'>举报</view>
+            </view>
+            <!-- 图片 -->
+            <view class='ldmainboxlistimgcla'>
+                <!-- <image src='{{item}}' class='imagecla' wx:for="{{image}}" bindtap='previewImage' data-item="{{item}}"></image>
+                <view style='clear: both;'></view> -->
+                <swiper class='swiperimg' autoplay="true" interval="2000" duration="1000" circular="true">
+                    <block wx:for="{{image}}" wx:key>
+                        <swiper-item>
+                            <image src="{{item}}" bindtap='previewImage' data-item="{{item}}" mode="aspectFit" style="width:{{bannerimgwidth}}rpx" class="imagecla" />
+                        </swiper-item>
+                        <!-- 重置小圆点样式 -->
+                        <view class="dots">
+                            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+                        </view>
+                    </block>
+                </swiper>
+            </view>
+            <!-- 文字 -->
+            <view class='ldmainboxlisttextcla'>
+                {{cintentxiang.content}}
+            </view>
+            <!-- 推荐 -->
+            <view class='ldmainboxlisttuijiancla' bindtap='tjnageto' data-shopname="{{cintentxiang.shop.name}}" wx:if="{{cintentxiang.goods}}">
+                <image src='{{cintentxiang.goods.playimage}}' class='tuijianimg'></image>
+                <view class='tuijanxinxi'>
+                    <view class='tuijanxtitle'>{{cintentxiang.goods.name}}{{cintentxiang.goods.subname}}</view>
+                    <view class='tuijanmoney'>￥{{cintentxiang.goods.price}}</view>
+                </view>
+                <view style='clear: both;'></view>
+            </view>
+            <!-- 底部 -->
+            <view class='ldmainboxlistnattoncla'>
+                <view class='buttxinxi' bindtap='xqliulan'>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgone.png' class='buttenimg'></image>
+                    <text class='buttentext'>{{cintentxiang.views}}</text>
+                </view>
+                <view class='buttxinxi' bindtap='xqzhuanfa'>
+                    <button class='sharebutten' bindtap='show'></button>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgtwo.png' class='buttenimgtwo'></image>
+                    <text class='buttentext'>{{share}}</text>
+                </view>
+                <view class='buttxinxi' bindtap='xqdianzan'>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgthree.png' class='buttenimgthree' wx:if="{{praises_state==0}}"></image>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/findlist_xq/buimgthreered.png' class='buttenimgthree' wx:if="{{praises_state==1}}"></image>
+                    <text class='buttentext'>{{praise}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 原因弹窗 -->
+    <reasonPopupe id="reasonPopupe" thisid='{{infoid}}' title="{{title}}"></reasonPopupe>
+    <!-- 遮罩显示 -->
+    <view class="zhezao" catchtap="conceal" wx:if="{{goodsOrderflag}}">
+        <!--弹出框开始-->
+        <view class="tanchu_view">
+            <view class="tanchu_fenxiang_left">
+                <view class="tanchu_fenxiang_left_span">转发至微信好友：</view>
+                <button open-type="share" class="zfbtn">
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/wxfriends.png"></image>
+                </button>
+
+            </view>
+            <view class="tanchu_fenxiang_right">
+                <view class="tanchu_fenxiang_left_spantwo">生成海报至朋友圈：</view>
+                <button class="zfbtn m_l" bindtap='formSubmit'>
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/circleofriends.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+    <!--生成海报  -->
+    <view class='imagePathBox' hidden="{{maskHidden == false}}">
+        <image src="{{imagePath}}" class='shengcheng'></image>
+        <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
+    </view>
+    <view hidden="{{maskHidden == false}}" class="mask"></view>
+    <view class="canvas-box">
+        <canvas style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas" />
+    </view>
+</view>

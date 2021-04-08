@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "loginPopup": "/components/loginPopup/loginPopup",
+    "popup": "/components/popup/popup"
+  }
+}

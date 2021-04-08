@@ -1,0 +1,29 @@
+<!-- 我要提货 -->
+<!-- 我要提货 -->
+<!-- 我要提货 -->
+<view class='pickgoods' style='height:{{height}}rpx'>
+    <view class='pickgoods_top' bindtap='xiugaidizhi'>
+        <text>{{tihuoaddress.name}}</text>
+        <text>{{tihuoaddress.phone}}</text>
+        <view class='pickgoods_top_one'>{{tihuoaddress.address}}</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/right_bracket.png'></image>
+    </view>
+    <image src="http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_email.png" class="pickgoods_color_img"></image>
+    <image src="http://qiniu-test.ishzm.com/jxb/img/myStore/wineorder_map.png" class="pickgoods_color_tbimg"></image>
+    <view class='pickgoods_center'>
+        <view class='pickgoods_center_one'>
+            <image src='{{imageUrl}}{{tihuomainthing.presale.pic}}'></image>
+        </view>
+        <view class='pickgoods_center_baijiu'>{{tihuomainthing.presale.title}}</view>
+        <view class='pickgoods_center_two'>
+
+            <view class='pickgoods_center_money'>￥{{tihuomainthing.totalprice}}</view>
+            <view class='pickgoods_center_three'>{{tihuomainthing.buynum}}瓶</view>
+        </view>
+
+    </view>
+    <button class='pickgoods_shoumai' bindtap="toastShow">我要提货</button>
+    <toast hidden="{{status}}" duration="1000" bindchange="toastHide">
+        提货成功
+    </toast>
+</view>

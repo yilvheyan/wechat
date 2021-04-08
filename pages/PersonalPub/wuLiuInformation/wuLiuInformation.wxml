@@ -1,0 +1,46 @@
+<!-- 物流信息 -->
+<view class="wuLiuInformation" style='height:{{height}}rpx'>
+    <view class="wuLiuInformation_heard">
+        <view class="wuLiuInformation_top">
+            <image src="{{wuLiuInformation.result.logo}}" class="wuLiuInformation_topimg"></image>
+            <view class="wuLiuInformation_top_magin">
+                <view class="wuLiuInformation_top_kd"> {{wuLiuInformation.result.expName}}快递 </view>
+                <view class="wuLiuInformation_top_dh" catchtap="kfphone">官网电话\t{{wuLiuInformation.result.expPhone}}
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/wuLiuInformation_youkuo.png" class="wuLiuInformation_top_dh_img"></image>
+                </view>
+            </view>
+        </view>
+        <view class="wuLiuInformation_bottom">
+            <span class="wuLiuInformation_bottom_spanone" selectable="true">{{wuLiuInformation.result.expName}}快递\t{{wuLiuInformation.result.number}}</span>
+            <image src="http://qiniu-test.ishzm.com/jxb/img/wuLiuInformation_ctrlc.png" data-text="{{bianhao}}" catchtap="copyText" class="wuLiuInformation_bottom_dh_img"></image>
+        </view>
+    </view>
+    <!-- 物流详情 -->
+    <view class="wuLiuInformation_body">
+        <view class="wuLiuInformation_body_text">物流管理</view>
+        <view class="wuLiuInformation_body_view">
+            <view class="wuLiuInformation_body_every">
+                <view class="wuLiuInformation_body_every_leftnone">
+                    <view class="wuLiuInformation_body_every_left_image"></view>
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png" class="wuLiuInformation_body_every_left_image"></image>
+                </view>
+                <view class="wuLiuInformation_body_every_center">
+                    <view class="wuLiuInformation_every_center_top">已发货</view>
+                    <view class="wuLiuInformation_every_center_center">包裹正在等待揽收</view>
+                    <view class="wuLiuInformation_every_center_footer">{{wuLiuInformation.time}}</view>
+                </view>
+            </view>
+            <view class="wuLiuInformation_body_every" wx:key wx:for="{{wuliuinfo}}">
+                <view class="wuLiuInformation_body_every_left">
+                    <image src="http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png" class="wuLiuInformation_body_every_left_image"></image>
+                    <view class="wuLiuInformation_body_every_left_image"></view>
+                </view>
+                <view class="wuLiuInformation_body_every_center">
+                    <view class="wuLiuInformation_every_center_top">{{item.statusing}}</view>
+                    <view class="wuLiuInformation_every_center_center">{{item.status}}</view>
+                    <view class="wuLiuInformation_every_center_footer">{{item.time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

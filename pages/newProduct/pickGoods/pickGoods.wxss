@@ -1,0 +1,138 @@
+/* herader   top*/
+
+.pickgoods {
+    width: 750rpx;
+    background: rgba(243, 246, 250, 1);
+    overflow: hidden;
+}
+
+.pickgoods_top {
+    width: 706rpx;
+    margin-left: 22rpx;
+    margin-top: 56rpx;
+    height: 187rpx;
+    background-color: white;
+}
+
+.pickgoods_top text {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    margin-left: 123rpx;
+}
+
+.pickgoods_color_img {
+    width: 706rpx;
+    height: 20rpx;
+    position: absolute;
+    left: 22rpx;
+    top: 220rpx;
+}
+
+.pickgoods_top image {
+    position: fixed;
+    right: 35rpx;
+    top: 82rpx;
+    width: 13rpx;
+    height: 23rpx;
+    margin-top: 20rpx;
+}
+
+.pickgoods_top_one {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    margin-left: 123rpx;
+    margin-top: 29rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.pickgoods_color_tbimg {
+    width: 80rpx;
+    height: 90rpx;
+    position: absolute;
+    top: 100rpx;
+    left: 40rpx;
+}
+
+/* center */
+
+.pickgoods_center {
+    height: 227rpx;
+    background-color: white;
+    margin-top: 20rpx;
+    /* display: flex; */
+}
+
+.pickgoods_center_one {
+    width: 200rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.pickgoods_center_one image {
+    width: 160rpx;
+    height: 160rpx;
+    margin: 33rpx 0rpx 0rpx 34rpx;
+}
+
+.pickgoods_center_two {
+    float: left;
+    width: 550rpx;
+}
+
+.pickgoods_center_baijiu {
+    font-size: 28rpx;
+    font-weight: bold;
+    float: left;
+    color: rgba(55, 58, 61, 1);
+    margin: 31rpx 0rpx 0rpx 43rpx;
+    height: 100rpx;
+    width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.pickgoods_center_money {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(67, 147, 242, 1);
+    margin-left: 43rpx;
+    width: 100rpx;
+    float: left;
+}
+
+.pickgoods_center_three {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    float: right;
+    margin-right: 83rpx;
+}
+
+/* 按钮售卖 */
+
+/* 售卖按钮 */
+
+.pickgoods_shoumai {
+    width: 750rpx;
+    height: 98rpx;
+    color: white;
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    background: linear-gradient(0deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 237, 1) 100%);
+    position: fixed;
+    bottom: 0rpx;
+}

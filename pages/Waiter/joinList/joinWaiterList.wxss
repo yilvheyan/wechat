@@ -1,0 +1,255 @@
+.joinWaiterList {
+    width: 750rpx;
+    background: rgba(243, 243, 243, 1);
+}
+
+.filter {
+    position: relative;
+    width: 750rpx;
+    height: 100%;
+    background: rgba(243, 243, 243, 1);
+}
+
+/* 去除滚动 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+/* top */
+
+.Waiter_top {
+    width: 681rpx;
+    height: 66rpx;
+    margin: 24rpx 0rpx 0rpx 24rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Waiter_top_select {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 66rpx;
+}
+
+.Waiter_top_specification {
+    display: flex;
+}
+
+.Waiter_top_specification image {
+    width: 28rpx;
+    height: 28rpx;
+    margin: 15rpx 0rpx 0rpx 195rpx;
+    display: inline-block;
+}
+
+.Waiter_top_specification text {
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(204, 204, 204, 1);
+    margin: 12rpx 0rpx 0rpx 10rpx;
+}
+
+.Waiter_center {
+    width: 750rpx;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4rpx;
+}
+
+/* 每个店主店铺 */
+
+.Waiter_every {
+    width: 344rpx;
+    height: 594rpx;
+    position: relative;
+    margin: 20rpx 0rpx 0rpx 17rpx;
+    border-radius: 12rpx;
+    background: rgba(255, 255, 255, 1);
+}
+
+.Waiter_every_img {
+    width: 344rpx;
+    height: 344rpx;
+}
+
+.Waiter_center_night {
+    margin-left: 19rpx;
+    display: flex;
+    height: 80rpx;
+}
+
+.Waiter_center_one {
+    margin-left: 19rpx;
+}
+
+.Waiter_every_img_little {
+    width: 62rpx;
+    height: 62rpx;
+    /* margin-left: 19rpx; */
+    margin-top: 10rpx;
+    border-radius: 50%;
+}
+
+.Waiter_center_one_text {
+    width: 100rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Waiter_center_one_view {
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+.Waiter_center_text_big {
+    width: 100%;
+    height: 75rpx;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.Waiter_center_text {
+    margin-top: 10rpx;
+    /* width: 204rpx; */
+    height: 55rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-left: 24rpx;
+    font-size: 18rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+.Waiter_center_quxiao {
+    width: 100rpx;
+    height: 30rpx;
+    font-size: 18rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    text-align: center;
+    line-height: 30rpx;
+}
+
+.Waiter_center_button {
+    position: absolute;
+    bottom: 30rpx;
+    width: 298rpx;
+    height: 50rpx;
+    background: linear-gradient(180deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 238, 1) 100%);
+    border-radius: 6rpx;
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 50rpx;
+    text-align: center;
+    margin-left: 23rpx;
+}
+
+.Waiter_center_button_one {
+    position: absolute;
+    bottom: 30rpx;
+    width: 298rpx;
+    height: 50rpx;
+    background: gray;
+    border-radius: 6rpx;
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 50rpx;
+    text-align: center;
+    margin-left: 23rpx;
+}
+
+/* 弹出框样式 */
+
+.zan-dialog__container {
+    position: fixed;
+    top: 446rpx;
+    left: 90rpx;
+    width: 570rpx;
+    height: 420rpx;
+    background: #f8f8f8;
+    transform: translateY(300%);
+    transition: all 0.4s ease;
+    z-index: 12;
+    border-radius: 20rpx;
+}
+
+.zan-dialog_show .zan-dialog__container {
+    transform: translateY(0);
+}
+
+.Waiter_regulation {
+    text-align: center;
+    font-size: 36rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin-top: 31rpx;
+}
+
+.Waiter_regulation_neirong {
+    width: 480rpx;
+    height: 132rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-left: 45rpx;
+    margin-top: 34rpx;
+}
+
+.Waiter_regulation_button {
+    width: 460rpx;
+    height: 66rpx;
+    background: linear-gradient(180deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 238, 1) 100%);
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 51rpx;
+}
+
+.Waiter_center_two {
+    font-size: 12rpx;
+    text-align: center;
+    margin: 20rpx;
+}
+
+.Waiter_center_onespan {
+    width: 100rpx;
+    font-size: 32rpx;
+    color: red;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}

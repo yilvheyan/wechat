@@ -1,0 +1,5 @@
+/* pages/qukuailiansee/qukailiansee.wxss */
+.qklsee{
+    width: 750rpx;
+    height: 700rpx;
+}

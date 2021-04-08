@@ -1,0 +1,22 @@
+<view wx:if="{{getuserinfoShow}}">
+  <view class="bg"></view>
+  <view class="wrapper">
+    <view class='getuserinfo'>
+      <view class='getuserinfotitle'>
+        获取授权
+      </view>
+      <view class='getuserinfomailtitle'>
+        需要获取您的用户信息
+      </view>
+      <!-- <view class='getuserinfoxian'></view> -->
+      <view class='button'>
+        <view class='cancelbutton' bindtap='noshow'>暂不授权</view>
+        <view class='getuserinfotitlebutton' bindtap='nowgetuserinfo'>
+          <button wx:if="{{canIUse}}" class='ebutton' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            立即授权
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

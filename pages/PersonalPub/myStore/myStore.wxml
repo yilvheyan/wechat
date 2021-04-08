@@ -1,0 +1,141 @@
+<!-- 我的店铺 -->
+<view class='mystore' style="height: {{height}}px;" id="box">
+    <wxs module="myStore" src="./myStore.wxs"></wxs>
+    <view class="mystoremenb" wx:if="{{ismystoremenb==true}}" style='height:{{height}}px'>
+        <popup id="popup"></popup>
+    </view>
+    <!-- <image class="shopxiulist" wx:for="{{shopxiulist}}" src='{{item.img}}' wx:key='index' mode="widthFix" capture-catch:touchstart='picstart' capture-catch:touchend='picend' capture-catch:touchmove='picmove' data-index="{{index}}" style="position: fixed;width: {{item.width}}rpx;top: {{item.top}}rpx;left: {{item.left}}rpx;z-index: {{item.zindex}};"></image> -->
+
+
+    <view change:prop="{{myStore.propObserver}}" prop="{{propValue}}" catch:touchmove="{{myStore.touchmove}}" data-instancex='{{item.left}}' data-instancey='{{item.top}}' data-item='{{item}}' data-width="{{item.width}}" catch:touchstart='{{myStore.touchstart}}'
+        class="movable {{index==movableindex?'movableboder':''}}" capture-bind:touchstart="touchstartli" wx:if="{{aa==1}}" wx:for="{{shopxiulist}}" wx:key='index' data-index="{{index}}" style="z-index: {{item.zindex}};top: {{item.top}}rpx;left: {{item.left}}rpx;"
+        capture-bind:touchend="touchendcli">
+
+        <view class="xiangdui">
+            <image class="movableimg" bindload="onimageadArr" binderror="onImageErrArr" id="{{index}}" src='{{item.image}}' style="width: {{item.width}}rpx;height: {{item.height}}rpx;" mode="widthFix"></image>
+            <image src="http://qiniu-test.ishzm.com/jxb/img/my_shop_delete.png" class="picol poone" wx:if="{{item.ishhow}}" catch:touchstart="gzcancel" data-index="{{index}}"></image>
+            <image src="http://qiniu-test.ishzm.com/jxb/img/my_shop_fangbig.png" class="picol potwo" wx:if="{{item.ishhow}}" capture-bind:touchend="xiaotouchendcli" data-index="{{index}}" data-width="{{item.width}}" catch:touchstart="{{myStore.changepictouchstart}}"
+                catch:touchmove="{{myStore.changepictouchmove}}"></image>
+        </view>
+    </view>
+
+    <view class='mystore_mystore_top' style="height: {{height}}px;">
+        <image class='mystore_top_background_img' src='{{beijingimg.image}}' bindload="onmainimageadArr" binderror="onmainImageErrArr" wx:if="{{aa==1}}"></image>
+        <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/gotofirst.png' class='mystore_top_background_first' bindtap='switchfirst'> </image> -->
+        <view class='mystore_top_state' wx:if="{{fenxiangshow}}">
+            <button open-type='share' class='sharebutten'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_fx.png'></image>
+            </button>
+        </view>
+        <view class='mystore_food'>
+            <!-- 店铺小二 -->
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_style.png' bindtap='bindmenu'></image>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_koji.png' bindtap='mystoreclickPup' wx:if="{{isshow==1}}"></image>
+            <!-- 订单记录 -->
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_order.png' bindtap='orderhistory' wx:if="{{isshow==1||xiaoer==1}}"></image>
+            <!-- 店铺设置 -->
+            <image src='http://qiniu-test.ishzm.com/jxb/img/mystore_setup.png' bindtap='set' wx:if="{{isshow==1}}"></image>
+            <!-- 修改皮肤 -->
+            <image src='http://qiniu-test.ishzm.com/jxb/img/skinselect.png' catchtap='clickPup' wx:if="{{isshow==1}}"></image>
+
+            <!-- 招募 -->
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_setup.png' catchtap='clickPup' wx:if="{{recruit==1}}"></image>
+        </view>
+        <view class='yeshare' bindtap='yesharecli'></view>
+    </view>
+
+    <!-- 我的小二部分 -->
+    <!-- 底部弹窗动画的内容 -->
+    <view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true'>
+        <!-- 下面弹出的部分 -->
+        <view class='mystore_bottom'>
+            <view class='mystore_sale'>
+                <view class='mystore_sale_left'>月销售额
+                    <span class='mystore_sale_left_span'>(元)</span>
+                </view>
+                <view class='mystore_sale_fals'>
+                    <view class='mystore_sale_right'>{{orderallmoney}}</view>
+                </view>
+            </view>
+            <view class='mystore_Koji_nice' wx:for="{{waiterList}}" wx:key="">
+                <image src='{{item.heads.head}}'></image>
+                <span class='mystore_sale_nice_left_span'>{{item.heads.nickname}}</span>
+                <span class='mystore_sale_nice_right'>{{item.totalmoney}}</span>
+            </view>
+            <button class='mystore_recruit' bindtap='recruitmentxer'>小二管理</button>
+        </view>
+    </view>
+    <!-- 固定的背景 -->
+    <view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='mystoreclickPup'></view>
+
+    <!-- 修改皮肤部分 -->
+
+    <!-- 修改皮肤底部弹窗动画的内容 -->
+    <view class='pupContent' animation="{{animationData}}" style="top:{{popheight}}rpx">
+
+        <view class='modification_pf'>
+            <view class='modification_pf_recommend {{index==num?"modification_view":""}}' data-index="{{index}}" catchtap='setonclickList' wx:for="{{modification}}" wx:key>{{item.name}}</view>
+
+        </view>
+        <view wx:if="{{sindex==0}}">
+            <!-- 背景 -->
+            <scroll-view scroll-y="true" style="height: 500rpx" class='recommend_skin'>
+                <view class='recommend_one' wx:for="{{recommendpf}}" wx:key='index' data-id="{{index}}">
+                    <image src='{{item.image}}' mode='aspectFit' class='recommend_skin_one_img' id="{{index}}" bindload="onbeijingadArr" data-img="{{item.image}}" catchtap="bjchosecli"></image>
+                    <view class='recommend_skin_one_name'>{{item.name}}</view>
+                </view>
+                <!-- <view style="clear:both"></view> -->
+            </scroll-view>
+        </view>
+        <view wx:if="{{sindex==1}}">
+            <!-- 人物 -->
+            <scroll-view class='recommend_skin' scroll-y="true" style="height: 500rpx">
+                <view class='gzimgbox' wx:for="{{guitaiimg}}" wx:key id="{{index}}">
+                    <image src='{{item.image}}' class='gzimg' bindload="onguitaiadArr" id="{{index}}" data-widthx="{{item.widthx}}" data-heightx="{{item.heightx}}" data-image="{{item.image}}" mode='aspectFit' catchtap="gzchosecli"></image>
+                    <view class='recommend_skin_one_name'>{{item.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view wx:if="{{sindex==2}}">
+            <!-- 装饰 -->
+            <scroll-view class='recommend_skin' scroll-y="true" style="height: 500rpx">
+                <view class='gzimgbox' wx:for="{{wupinimg}}" wx:key id="{{index}}">
+                    <image src='{{item.image}}' class='xiaogzimg' mode="aspectFit" id="{{index}}" data-widthx="{{item.widthx}}" data-heightx="{{item.heightx}}" bindload="onwupinadArr" data-image="{{item.image}}" catchtap="gzchosecli"></image>
+                    <view class='recommend_skin_one_name'>{{item.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view wx:if="{{sindex==3}}">
+            <!-- 酒柜 -->
+            <scroll-view class='recommend_skin' scroll-y="true" style="height: 500rpx">
+                <view class='gzimgbox' wx:for="{{yijianimg}}" wx:key id="{{index}}">
+                    <image src='{{item.image}}' class='gzimg' data-image="{{item.image}}" id="{{index}}" data-widthx="{{item.widthx}}" data-heightx="{{item.heightx}}" bindload="onyijianadArr" mode='aspectFit' catchtap="gzchosecli"></image>
+                    <view class='recommend_skin_one_name'>一键生成</view>
+                </view>
+            </scroll-view>
+
+        </view>
+        <view wx:if="{{sindex==4}}" class='modification_pf_three'>抱歉,暂无皮肤</view>
+    </view>
+
+
+
+
+    <!--生成图片-->
+    <!-- <view class='imgarr' style="position:fixed;left:100000px; width:{{scwidth}}px;height:{{scheight}}px" wx:if='{{imgarr!=null}}'>
+    <view style="position:relative; width:100%;height:100%;" >
+          <image class="thisimage"  id="{{index}}" src="{{item.img}}"  binderror="onImageErrArr" wx:for='{{shopxiulist}}' style="width:{{item.widthx}}px;height:{{item.heightx}}px;z-index: {{item.zindex}};top: {{item.top}}rpx;left: {{item.left}}rpx;"></image>
+    <canvas canvas-id="canvasOne" class="canvasomne" width='700' height='1000' ></canvas>
+    </view>
+  </view> -->
+
+
+    <canvas canvas-id="canvasOne" style=" width:{{scwidth}}rpx;height:{{height}}px" class="canvasomne" width='700' height='{{height}}'></canvas>
+
+
+    <!-- 微信授权组件 -->
+    <!-- <view class=""></view> -->
+    <!-- <popup id="popup"></popup>
+    <loginPopup id="loginPopup"></loginPopup> -->
+
+</view>

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {},
+    "navigationBarTitleText": "订单详情-已付款",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
+}

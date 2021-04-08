@@ -1,0 +1,32 @@
+<!-- 我的店铺 -->
+<view class='mystore'>
+  <view class='mystore_mystore_top'>
+    <image class='mystore_top_background_img' src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_bg.png'></image>
+    <!-- <view class='mystore_top_state'>
+            <button open-type='share' class='sharebutten'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/mystore_fx.png'></image>
+            </button>
+        </view> -->
+    <view class='mystore_food' wx:if="{{showwaiter}}">
+      <view class='mystore_food_writh'>
+        <view class='mystore_food_top'>欢迎应聘酒馆小二</view>
+        <view class='mystore_food_top_two'>成为小二后您可以享受一下权益</view>
+
+        <view class='mystore_food_text'>1、当您成为小二后您可以享受商店所有酒品八五折优惠的福利，我们将尽心为您剔红更好的服务,让您购物愉快</view>
+        <view class='mystore_food_text'>2、当您成为小二后您可以享受商店所有酒品八五折优惠的福利，我们将尽心为您剔红更好的服务,让您购物愉快</view>
+        <view class='mystore_food_text'>3、当您成为小二后您可以享受商店所有酒品八五折优惠的福利，我们将尽心为您剔红更好的服务,让您购物愉快</view>
+
+        <button catchtap='getorder' wx:if="{{recruit==1}}" class='mystore_food_button'>
+          前去应聘
+        </button>
+      </view>
+    </view>
+    <view class='yeshare' bindtap='yesharecli'></view>
+  </view>
+
+
+
+  <!-- 组件 -->
+  <loginPopup id="loginPopup"></loginPopup>
+  <popup id="popup"></popup>
+</view>

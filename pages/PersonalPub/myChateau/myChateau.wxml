@@ -1,0 +1,115 @@
+<!-- 我的酒庄 -->
+<wxs module="filter" src="../../../utils/util.wxs"></wxs>
+<view class='chateau'>
+    <!-- top -->
+    <view class='chateau_jiuzhuang'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/xinxikuang.png' class='chateau_jiuzhuang_img'></image>
+        <!-- <姓名头像> -->
+        <view class='chateau_jiuzhuang_one'>
+            <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/presell/kol_medium.png' class='chateau_jiuzhuang_img1'></image> -->
+            <image src='http://qiniu-test.ishzm.com/jxb/img/presell/toukuang.png' class='chateau_jiuzhuang_img2'></image>
+            <image src='{{headimg}}' class='chateau_jiuzhuang_img3'></image>
+            <text class='chateau_jiuzhuang_text1'>{{nickName}}</text>
+            <text class='chateau_jiuzhuang_text2' bindtap='myorder'>我的订单></text>
+        </view>
+        <!-- 收益积分 -->
+        <view class='chateau_jiuzhuang_two'>
+            <view class='chateau_shouyi_one'>
+                <view class='chateau_shouyi_integral'>
+                    +{{ydayScore}}
+                    <span class='chateau_shouyi_integra_one'>分</span>
+                </view>
+                <view class='chateau_shouyi_integral2'>昨日收益</view>
+            </view>
+            <view class='chateau_shouyi_two'>
+                <view class='chateau_shouyi_integra3'>
+                    {{monthScore}}
+                    <span class='chateau_shouyi_integra_one1'>分</span>
+                </view>
+                <view class='chateau_shouyi_integral4'>本月收益</view>
+            </view>
+            <view class='chateau_shouyi_three'>
+                <view class='chateau_shouyi_integral5'>
+                    {{score}}
+                    <span class='chateau_shouyi_integra_one2'>分</span>
+                </view>
+                <view class='chateau_shouyi_integral6'>总计</view>
+            </view>
+        </view>
+        <!-- <进入我的店铺> -->
+        <image src='http://qiniu-test.ishzm.com/jxb/img/presell/btn_enter.png' class='chateau_click' bindtap='myshopping'></image>
+    </view>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/presell/writh.png' class='chateau_writh'></image>
+    <!-- <center> -->
+    <view class='chateau_center'>
+        <view class='chateau_center_xiaoer'>小二利润比例</view>
+        <view class='chateau_center_dangqian'>当前设置比例</view>
+        <view class='chateau_center_baifenbi'>
+            <text class='chateau_center_percentage ' wx:if="{{issharing==1||issharing==2}}" bindtap='showtishi'>{{sharing}}%</text>
+            <view class='chateau_center_percentage' wx:if="{{issharing==0}}">
+                <input type='digit' maxlength="2" class='biliclass' style='border:2rpx solid #74CAFB' value='{{sharing}}' bindinput="shopbiliInput"></input>
+                <button class='biliclassbu' bindtap='surechange'>确认</button>
+            </view>
+
+            <image wx:if="{{issharing==1}}" src='http://qiniu-test.ishzm.com/jxb/img/presell/btn_revise.png' class='chateau_center_baifenbi_img' bindtap='changebi'></image>
+
+        </view>
+        <view class='chateau_center_red'>
+            <view class='chateau_center_color'></view>
+            <span>每三个月才可以更改一次利润比例</span>
+        </view>
+    </view>
+    <!-- 高20rpx的背景色 -->
+    <view class='chateau_center_background'></view>
+    <!-- <我的小二> -->
+    <view class='my_little'>
+        <view class='my_little_name'>
+            我的小二（{{currWaiter}}/{{waiterMax}}）
+        </view>
+        <!-- <小二成员> -->
+        <view class='my_little_xiaoer' wx:for="{{waiterlist}}" wx:key="">
+            <image src='http://qiniu-test.ishzm.com/jxb/img/presell/dikuang.png' class='my_little_background'></image>
+            <!-- 信息 -->
+            <view class='my_little_first_one'>
+                <image src='{{item.heads.head}}' class='my_little_xiaoer_img1'></image>
+                <view class='my_little_xiaoer_text1'>
+                    <view class='my_little_xiaoer_text1_one'>{{item.name}}</view>
+                    <view class='my_little_xiaoer_text1_one'>📱：{{item.phone}} ID:{{item.wechatID}}</view>
+                    <view class='my_little_xiaoer_text1_two'>招募时间：{{item.time}}</view>
+                </view>
+                <text class='my_little_xiaoer_text2' bindtap='deletewaiter' data-index="{{index}}">解除关系</text>
+            </view>
+            <!-- 贡献积分 -->
+            <view class='my_little_xiaoer_gongxian_two'>
+                <view class='my_little_xiaoer_numberone'>
+                    <view class='my_little_xiaoer_integral'>
+                        {{item.monthscore}}
+                        <span class='my_little_xiaoer_integra_one'>分</span>
+                    </view>
+                    <view class='my_little_xiaoer_integral2'>本月贡献</view>
+                </view>
+                <view class='my_little_xiaoer_two'>
+                    <view class='my_little_xiaoer_integra3'>
+                        {{item.avgscore}}
+                        <span class='my_little_xiaoer_integra_one1'>分</span>
+                    </view>
+                    <view class='my_little_xiaoer_integral4'>月均贡献</view>
+                </view>
+                <view class='my_little_xiaoer_three'>
+                    <view class='my_little_xiaoer_integral5'>
+                        {{item.totalscore}}
+                        <span class='my_little_xiaoer_integra_one2'>分</span>
+                    </view>
+                    <view class='my_little_xiaoer_integral6'>累计贡献</view>
+                </view>
+            </view>
+            <!-- 查看订单记录 -->
+            <view class='my_little_select' bindtap='toorder' data-waiteruid="{{item.waiteruid}}" data-waitername="{{item.name}}">查看订单记录</view>
+        </view>
+        <view class='my_little_first_two' wx:for="{{surpluslist}}" wx:key>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/btn_add.png' catchtap='numbertwo'></image>
+            <view class='my_little_xiaoer_two_kongwei'>剩余{{waiterMax - currWaiter}}个小二空位</view>
+            <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/presell/dikuang.png' class='my_little_background_two'></image> -->
+        </view>
+    </view>
+</view>

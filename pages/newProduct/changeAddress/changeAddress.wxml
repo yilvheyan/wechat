@@ -1,0 +1,35 @@
+<view class="choaddress">
+    <!--更改地址  -->
+    <view class='xinzengaddress'>
+        <view class='xinname'>
+            <view class='szlist'>联系人：</view>
+            <input name='userName' type='text' class='ptext' placeholder='收货人姓名' value='{{changeaddress.name}}' maxlength="5" bindinput="userNameInput"></input>
+        </view>
+        <view class='xinname'>
+            <view class='szlist'>手机号：</view>
+            <input type='number' class='ptext' placeholder='请输入收货人的手机号码' value='{{changeaddress.phone}}' bindinput="phoneInput"></input>
+        </view>
+        <view class='xinname'>
+            <view class='szlist'>收货地址：</view>
+            <view class="getnewadree">
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                    <view class="picker">
+                        {{region[0]}}，{{region[1]}}，{{region[2]}}
+                    </view>
+                </picker>
+            </view>
+
+
+        </view>
+        <view class='xinname'>
+            <view class='szlist'>具体地址：</view>
+            <input type='text' class='ptext' value='{{changeaddress.xiangaddress}}' placeholder='填写详细地址' bindinput="xiangaddressInput"></input>
+        </view>
+    </view>
+
+
+
+
+    <view class='xinaddress' bindtap='changeadcli'>保存</view>
+
+</view>

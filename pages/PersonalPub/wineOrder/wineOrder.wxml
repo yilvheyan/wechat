@@ -1,0 +1,82 @@
+<!-- 酒品下单 -->
+<view class='wineorder' style='height:{{height}}rpx'>
+  <!-- 姓名电话售后地址 -->
+  <view class='wineorder_site_top' bindtap='placeanorder'>
+    <view class='wineorder_site_top_view'>
+      <image class='wineorder_site_top_view_img' src="http://qiniu-test.ishzm.com/jxb/img/myStore/wineorder_map.png"></image>
+      <view class='wineorder_site_two'>
+        <view class='wineorder_site_two_name'>{{tihuoaddress.name}}</view>
+        <view class='wineorder_site_two_phone'>{{tihuoaddress.phone}}</view>
+      </view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/wineoeder_z.png' class='wineorder_site_top_z'></image>
+    </view>
+    <view class='wineorder_site_two_map'>{{tihuoaddress.address}}</view>
+  </view>
+  <!-- 商品信息 -->
+  <view class='wineorder_shop'>
+    <view class='shop_message'>
+      <span>商品信息</span>
+    </view>
+    <scroll-view scroll-y="true" style="height: 436rpx;">
+      <view class='shop_message_style'>
+        <view class='shop_message_style_one' wx:for="{{shopmessage}}" wx:key data-id="{{item.id}}">
+          <image src='{{item.playimage}}'></image>
+          <view class='shop_message_style_two'>
+            <view class='shop_message_style_top'>
+              {{item.name}}
+            </view>
+            <view class='shop_message_style_bttom'>
+              ￥{{item.price}}
+            </view>
+            <view class='shop_message_style_zzz'>
+              ×{{item.buynum}}
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 共计 -->
+  <view class='wineorder_sumto'>
+    <view class='wineorder_sumto_zongto'>
+      <view class='wineorder_sumto_top'>
+        <view class='wineorder_sumto_sp'>商品合计</view>
+        <view class='wineorder_sumto_en'>￥{{allmoney}}</view>
+      </view>
+      <view class='wineorder_sumto_center'>
+        <view class='wineorder_sumto_sp_one'>运费</view>
+        <view class='wineorder_sumto_en_two'>{{packagepostage}}</view>
+      </view>
+      <view class='wineorder_sumto_bottom'>
+        <view class='wineorder_sumto_sp_new'>新人优惠</view>
+        <view class='wineorder_sumto_en_new'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/new_pople.png' class='wineorder_sumto_en_new_img'></image>
+          -￥0.00
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 支付 -->
+  <view class='wineorder_pay'>
+    <view class='wineorder_pay_left'>
+      <view class='wineorder_pay_one'>
+        <span class='wineorder_pay_col'>合计：</span>
+        <span class='wineorder_pay_row'>￥{{allmoney}}</span>
+      </view>
+    </view>
+    <view class='wineorder_pay_right {{iscreateOrder?"createOrdercla":""}}' bindtap="createOrder">确认支付</view>
+  </view>
+
+
+
+
+
+
+
+
+
+  <popup id="popup"></popup>
+  <phonepopup id="phonepopup"></phonepopup>
+
+</view>

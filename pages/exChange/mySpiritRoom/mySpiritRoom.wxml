@@ -1,0 +1,61 @@
+<!-- 我的酒库 -->
+<view class='mySpiritRoom'>
+    <view class='mySpiritRoom_tietleli'>
+        <view class='mySpiritRoom_button_left_ever' bindtap='skiphome'>
+            <image class='mySpiritRoom_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+        </view>
+        <view class='mySpiritRoom_titletext'>我的酒库</view>
+    </view>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jiuku_bck.png' class='mySpiritRoom_bck'></image>
+    <scroll-view scroll-y="true" class='mySpiritRoom_view' style='height:{{height}}rpx'>
+        <view class='mySpiritRoom_view_top'>
+            <view class='mySpiritRoom_view_topleft'>
+                <image wx:if="{{selectAllStatus}}" data-index="{{index}}" class="mySpiritRoom_radio_chek" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+                <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="mySpiritRoom_radio_chek" data-index="{{index}}" bindtap="selectAll"></image>
+                <text class='mySpiritRoom_view_topleftext'>酒库货存</text>
+            </view>
+            <view class='mySpiritRoom_view_topright'>
+                <text class='mySpiritRoom_view_toprightext' bindtap='operatingData'>酒库操作记录</text>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/duihuan_gray.png' class='mySpiritRoom_view_toprightimg'></image>
+            </view>
+        </view>
+        <image src="http://qiniu-test.ishzm.com/jxb/img/jiuzuang_none.png" class="mysub_cznone" wx:if="{{mySpiritRoom.length==0}}"></image>
+        <view class='mySpiritRoom_view_center' wx:key wx:for="{{mySpiritRoom}}">
+            <image wx:if="{{item.istrue}}" data-index="{{index}}" data-virtual="{{item.goodsinfo.virtual}}" class="mySpiritRoom_view_centertimg" bindtap="selectList" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+            <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="mySpiritRoom_radio_chek" data-index="{{index}}" data-virtual="{{item.goodsinfo.virtual}}" bindtap="selectList"></image>
+            <image src='{{item.bannerimg[0]}}' class='mySpiritRoom_tuimg'></image>
+            <view class='mySpiritRoom_view_centerright'>
+                <view class='mySpiritRoom_centerright_top'>{{item.goodsinfo.name}}{{item.goodsinfo.subname}}</view>
+                <view class='mySpiritRoom_centerright_center'>积分：
+                    <span class='mySpiritRoomt_center_span'>{{item.goodsinfo.price}}</span>
+                    <span class='mySpiritRoomt_center_spantwo'>×{{item.num}}</span>
+                </view>
+            </view>
+        </view>
+
+        <view class='mySpiritRoom_view_center' wx:key wx:for="{{mywinelibrary}}">
+            <image wx:if="{{item.istrue}}" data-index="{{index}}" data-virtual="{{item.goodsinfo.virtual}}" class="mySpiritRoom_view_centertimg" bindtap="selectList" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+            <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="mySpiritRoom_radio_chek" data-index="{{index}}" data-virtual="{{item.goodsinfo.virtual}}" bindtap="selectList"></image>
+            <image src='{{item.bannerimg[0]}}' class='mySpiritRoom_tuimg'></image>
+            <view class='mySpiritRoom_view_centerright'>
+                <view class='mySpiritRoom_centerright_top'>{{item.goodsinfo.name}}{{item.goodsinfo.subname}}</view>
+                <view class='mySpiritRoom_centerright_center'>积分：
+                    <span class='mySpiritRoomt_center_span'>{{item.goodsinfo.price}}</span>
+                    <span class='mySpiritRoomt_center_spantwo'>×{{item.num}}</span>
+                </view>
+            </view>
+        </view>
+
+    </scroll-view>
+    <view class='mySpiritRoom_presell_bottom'>
+        <image wx:if="{{selectAllStatus}}" data-index="{{index}}" class="mySpiritRoom_radio_chek" bindtap="selectAll" src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png'></image>
+        <image wx:else src='http://qiniu-test.ishzm.com/jxb/img/pitchon.png' class="mySpiritRoom_radio_chek" data-index="{{index}}" bindtap="selectAll"></image>
+        <text class='mySpiritRoom_presell_select' bindtap='selectAll'>全选</text>
+        <text class='mySpiritRoom_presell_total' bindtap='selectAll'>合计:</text>
+        <text class='mySpiritRoom_presell_money'>{{totalPrice}}\t元</text>
+        <view class='mySpiritRoom_presell_btnone' bindtap="mySpiritRoomgomoney" wx:if="{{getgood==1}}">换钱</view>
+        <view class='mySpiritRoom_presell_btntwo' bindtap='mySpiritRoomDetails' wx:if="{{getgood==0}}">提货</view>
+        <image src="http://qiniu-test.ishzm.com/jxb/img/shop_gomoney.png" wx:if="{{getgood==1}}" class='mySpiritRoom_presell_gomoney'></image>
+        <image src="http://qiniu-test.ishzm.com/jxb/img/shop_goshop.png" wx:if="{{getgood==0}}" class='mySpiritRoom_presell_goshop' bindtap='mySpiritRoomDetails'></image>
+    </view>
+</view>

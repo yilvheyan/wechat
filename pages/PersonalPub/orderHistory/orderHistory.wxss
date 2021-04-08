@@ -1,0 +1,460 @@
+/* 总体样式 */
+
+.orderhistory {
+    overflow-y: scroll;
+    width: 750rpx;
+    background: rgba(243, 243, 243, 1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+/* 头部 */
+
+.orderhistory_one {
+    width: 750rpx;
+    height: 129rpx;
+    background: rgba(243, 243, 243, 1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 全部-下拉菜单 */
+
+.complete {
+    width: 200rpx;
+    height: 300rpx;
+}
+
+.top-selected {
+    width: 140rpx;
+    height: 66rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    margin: 32rpx 31rpx 0rpx 0rpx;
+    overflow: hidden;
+    text-align: center;
+}
+
+.top-selected_quanbu {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    line-height: 66rpx;
+    text-align: center;
+    width: 100rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.top-selected_xiala {
+    width: 24rpx;
+    height: 20rpx;
+    position: relative;
+    left: 27rpx;
+}
+
+.select_box {
+    position: absolute;
+    top: 115rpx;
+    left: 40rpx;
+}
+
+.select_box  view {
+    width: 140rpx;
+    height: 60rpx;
+}
+
+/*  下拉需要显示的列表  */
+
+.select_one {
+    border-top: 1rpx #f0f0f1 solid;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    color: rgba(68, 156, 254, 1);
+    background: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    width: 100rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+}
+
+/* 选择日期样式 */
+
+.section {
+    width: 200rpx;
+    height: 66rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    margin: 32rpx 70rpx 0rpx 0rpx;
+    text-align: center;
+}
+
+.picker {
+    width: 200rpx;
+    height: 66rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+    line-height: 66rpx;
+    margin-left: 35rpx;
+}
+
+.picker view {
+    float: left;
+}
+
+/* 订单收益记录 */
+
+.record {
+    width: 686rpx;
+    border-radius: 12rpx;
+    margin-left: 32rpx;
+}
+
+/* <!-- x月订单收益记录 --> */
+
+.gainrecording {
+    width: 626rpx;
+    margin: 32rpx 0rpx 0rpx 23rpx;
+    border-radius: 12rpx;
+    /* border: 1rpx saddlebrown solid; */
+    background: rgba(255, 255, 255, 1);
+}
+
+.gainrecording_one {
+    width: 100%;
+    /* border-bottom:1rpx rgba(181,182,184,1) solid; */
+}
+
+.gainrecording_one_none {
+    height: 10rpx;
+}
+
+.gainrecording_one_top {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    margin-top: 20rpx;
+    margin-left: 25rpx;
+}
+
+.gainrecording_one_top_span {
+    width: 35rpx;
+    height: 22rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_one_top_right {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    text-align: right;
+    flex: 1;
+}
+
+/* 日收益:06.17*/
+
+.gainrecording_two {
+    width: 100%;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 17rpx;
+}
+
+.gainrecording_two_left {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+    width: 575rpx;
+    margin-left: 50rpx;
+    border-bottom: 1rpx #f0f0f1 solid;
+}
+
+.gainrecording_two_left_two {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_two_center_one {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_two_left_three {
+    float: right;
+    font-size: 35rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    margin-right: 24rpx;
+}
+
+.gainrecording_two_center_two {
+    width: 100%;
+    margin-top: 5rpx;
+}
+
+.gainrecording_two_xiaoer {
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gainrecording_mm {
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+}
+
+.gainrecording_mm_vw1 {
+    text-align: left;
+    width: 186rpx;
+    font-size: 35rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: #99b9f8;
+}
+
+.gainrecording_mm_vw2 {
+    width: 186rpx;
+    font-size: 35rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: #99b9f8;
+    text-align: center;
+}
+
+.gainrecording_mm_vw3 {
+    width: 186rpx;
+    font-size: 35rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: #99b9f8;
+    text-align: right;
+}
+
+.gainrecording_two_xiaoer_span1 {
+    width: 186rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+    text-align: left;
+}
+
+.gainrecording_two_xiaoer_span2 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+    width: 186rpx;
+    text-align: center;
+}
+
+.gainrecording_two_xiaoer_span3 {
+    width: 186rpx;
+    font-size: 26rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+    text-align: right;
+}
+
+/* 日收益:06.06*/
+
+.gainrecording_three {
+    width: 100%;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 17rpx;
+}
+
+.gainrecording_three_left_one {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_three_left_two {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    margin-left: 70rpx;
+}
+
+.gainrecording_three_center_one {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_three_left_three {
+    float: right;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+}
+
+.gainrecording_three_center_two {
+    width: 100%;
+    height: 57rpx;
+    border-bottom: 1rpx #f0f0f1 solid;
+}
+
+.gainrecording_three_xiaoer {
+    width: 540rpx;
+    margin-left: 146rpx;
+    display: flex;
+}
+
+.gainrecording_three_xiaoer_span1 {
+    width: 270rpx;
+    height: 22rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+}
+
+.gainrecording_three_xiaoer_span2 {
+    width: 170rpx;
+    height: 22rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+}
+
+.gainrecording_three_xiaoer_span3 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+}
+
+/* 日收益06.02 */
+
+.gainrecording_four {
+    width: 100%;
+    /* border: 1rpx saddlebrown solid; */
+    margin-top: 17rpx;
+}
+
+.gainrecording_four_left_one {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_four_left_two {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+    margin-left: 70rpx;
+}
+
+.gainrecording_four_center_one {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_four_left_three {
+    float: right;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+}
+
+.gainrecording_four_center_two {
+    width: 100%;
+    height: 57rpx;
+    margin-top: -10rpx;
+}
+
+.gainrecording_four_xiaoer {
+    width: 540rpx;
+    margin-left: 146rpx;
+    display: flex;
+}
+
+.gainrecording_four_xiaoer_span1 {
+    width: 270rpx;
+    height: 22rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+}
+
+.gainrecording_four_xiaoer_span2 {
+    width: 170rpx;
+    height: 22rpx;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: bold;
+    color: rgba(181, 182, 184, 1);
+}
+
+.gainrecording_four_xiaoer_span3 {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(55, 58, 61, 1);
+}
+
+.gainrecording_two_none {
+    width: 100%;
+    height: 50rpx;
+}
+
+/* 下拉弹出 */
+
+.personal_image {
+    z-index: 100;
+    right: 2.5%;
+    width: 40rpx;
+    height: 35rpx;
+    margin-left: 150rpx;
+    transition: All 0.4s ease;
+    -webkit-transition: All 0.4s ease;
+}
+
+.rotateRight {
+    transform: rotate(180deg);
+}
+
+.gainrecording_xl {
+    width: 603rpx;
+    margin-left: 23rpx;
+    background: rgba(255, 255, 255, 1);
+}
+
+.phone_select {
+    width: 558rpx;
+    margin-left: 23rpx;
+    /* border-top: 1rpx #f0f0f1 solid; */
+}

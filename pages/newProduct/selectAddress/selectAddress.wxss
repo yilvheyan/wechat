@@ -1,0 +1,165 @@
+.selectAddress {
+    width: 100%;
+    background: rgba(243, 246, 250, 1);
+}
+
+.choaddress {
+    width: 100%;
+    border-top: 1rpx solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+
+.choaddresscen {
+    width: 686rpx;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.choaddresslistcla {
+    width: 100%;
+    height: 187rpx;
+    /* padding-top: 23rpx; */
+    margin-top: 20rpx;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    /* border-bottom: 1rpx solid #ccc; */
+}
+
+.choose {
+    width: 47rpx;
+    height: 47rpx;
+    float: left;
+    margin-right: 21rpx;
+    margin-left: 20rpx;
+    margin-top: 53rpx;
+    border-radius: 50%;
+    border: 1rpx solid #ccc;
+}
+
+.choosemain {
+    margin-top: 30rpx;
+    float: left;
+}
+
+.choosemainname {
+    font-size: 28rpx;
+    color: rgba(55, 58, 61, 1);
+}
+
+.chooesname {
+    float: left;
+    margin-right: 34rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.chooesphone {
+    font-size: 28rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    float: left;
+}
+
+.choosemainaddress {
+    width: 500rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 33rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.chomarkcla {
+    float: right;
+    width: 39rpx;
+    height: 40rpx;
+    margin-top: 52rpx;
+    margin-right: 20rpx;
+}
+
+.xinaddress {
+    text-align: center;
+    line-height: 153rpx;
+    width: 706rpx;
+    height: 153rpx;
+    font-size: 22rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    position: fixed;
+    bottom: 257rpx;
+    left: 30rpx;
+}
+
+.xinaddress_img {
+    width: 26rpx;
+    height: 26rpx;
+    line-height: 153rpx;
+    margin-right: 14rpx;
+}
+
+/* 新增地址 */
+
+.xinzengaddress {
+    width: 100%;
+    border-top: 1rpx solid #ccc;
+    position: relative;
+}
+
+.szlist {
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    width: 200rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+    line-height: 100rpx;
+    float: left;
+}
+
+.xinname {
+    width: 686rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #ccc;
+    margin: 0 auto;
+}
+
+.ptext {
+    width: 300rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+}
+
+.rjiant {
+    float: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-right: 20rpx;
+}
+
+/* 确定 */
+
+.choaddress_bottom {
+    width: 640rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background: rgba(67, 147, 242, 1);
+    border-radius: 6rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    position: fixed;
+    bottom: 87rpx;
+    left: 55rpx;
+}

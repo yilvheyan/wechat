@@ -1,0 +1,82 @@
+<!-- 积分 -->
+<view class='integral'>
+  <!-- 我的积分 -->
+  <view class='myintegral'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_back.png' class='myintegral_bck'></image>
+    <view class='myintegral_view'>
+      <view class='myintegral_view_top'>
+        <span class='myintegral_view_top_spanone'> 我的积分 </span>
+        <view class='myintegral_view_toptwo' bindtap='integral'> 积分明细
+          <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_youkuohao.png' class='myintegral_youkuohao'></image>
+        </view>
+      </view>
+      <view class='myintegral_view_center'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_money.png' class='myintegral_bckmoney'></image>
+        <span class='myintegral_view_center_spantwo'>可用积分:</span>
+        <view class='myintegral_view_center_spantwo_span'>{{totalscore}}</view>
+        <span class='myintegral_view_center_spantwo'>分</span>
+      </view>
+      <view class='myintegral_view_center1' wx:if="{{freezetotal!=0}}">
+        <span class='myintegral_view_center_spantwo1'>冻结积分:</span>
+        <view class='myintegral_view_center_spantwo_span1'>{{freezetotal}}</view>
+        <span class='myintegral_view_center_spantwo2'>分</span>
+      </view>
+      <view class='myintegral_view_center_spanthree'> 昨日收入\t{{mygains}}</view>
+      <view class='myintegral_view_bottom'>
+        <view class='myintegral_view_bottomjf' bindtap="integralWithdraw">积分提现</view>
+        <view class='myintegral_view_bottomjz' bindtap="jiuzuandeal">酒钻交易</view>
+      </view>
+    </view>
+    <view class='integral_explain'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_gantanhao.png' class='integral_explain_img'></image>
+      <span class='integral_explain_span'>积分说明</span>
+      <view class='integral_explain_shuo'>点赞丶转发丶评论等互动行为,每次可获得1积分,每天上限5次,发布的文章排进热点榜单,可获得100平台积分.</view>
+      <view class='integral_explain_liucheng'>积分体现流程</view>
+      <view class='integral_explain_tixian'>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_huanjiu.png'></image>
+        <view class='integral_explain_tixian_progress'></view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_tixian.png'></image>
+        <view class='integral_explain_tixian_progress_two'></view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jifen_jifen.png'></image>
+      </view>
+      <view class='integral_explain_bottixian'>
+        <view class='integral_explain_tixian_one'>
+          <view class='integral_explain_tixian_one_huanjiu'>去换酒</view>
+          <view class='integral_explain_tixian_one_gray'>积分兑换酒品</view>
+        </view>
+        <view class='integral_explain_tixian_two'>
+          <view class='integral_explain_tixian_two_huanjiu'>去提现</view>
+          <view class='integral_explain_tixian_two_gray'>酒库提现已有酒品</view>
+        </view>
+        <view class='integral_explain_tixian_three'>
+          <view class='integral_explain_tixian_three_huanjiu'>完成</view>
+          <view class='integral_explain_tixian_three_gray'>提现完成</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 积分兑换酒钻记录 -->
+  <view class='integral_exch'>
+    <view class='integral_exch_title'>积分兑换酒钻记录</view>
+    <!-- 每一个view -->
+    <view class='integral_exch_view' wx:key wx:for="{{integral}}">
+      <view class='integral_exch_view_top'>
+        <image src='{{item.kolinfo.headpic}}'></image>
+        <view class='integral_exch_view_name'>
+          <view class='integral_exch_view_one'>{{item.kolinfo.name}}</view>
+          <view class='integral_exch_view_two'>{{item.time}}</view>
+        </view>
+        <span class='integral_exch_view_three' wx:if="{{item.status==1}}">进行中</span>
+        <span class='integral_exch_view_threet' wx:if="{{item.status==2}}">已完成</span>
+        <span class='integral_exch_view_threeh' wx:if="{{item.status==3}}">已取消</span>
+      </view>
+      <view class='integral_exch_view_bottom'>
+        <view class='integral_exch_view_bottom_textone'>酒钻分数</view>
+        <view class='integral_exch_view_bottom_texttwo'>{{item.count}}</view>
+        <view class='integral_exch_view_bottom_none'></view>
+        <view class='integral_exch_view_bottom_textone'>当前汇率</view>
+        <view class='integral_exch_view_bottom_texttwo'>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,117 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/conPen/conPen",
+        "pages/quKuaiLianz/quKuaiLianz",
+        "pages/quKuaiLianx/quKuaiLianx",
+        "pages/quKuaiLian/quKuaiLian",
+        "pages/main/index",
+        "pages/index/index",
+        "pages/PersonalPub/toshareWaiter/toshareWaiter",
+        "pages/PersonalPub/xiaoXDetails/xiaoXDetails",
+        "pages/PersonalPub/ShoppingCar/ShoppingCar",
+        "pages/Waiter/applyWaiter/applyWaiter",
+        "pages/PersonalPub/myChateauXer/myChateauXer",
+        "pages/PersonalPub/shopSetUp/shopSetUp",
+        "pages/PersonalPub/myXer/myXer",
+        "pages/Waiter/joinList/joinWaiterList",
+        "pages/PersonalPub/myStorerecruit/myStorerecruit",
+        "pages/PersonalPub/myStore/myStore",
+        "pages/newProduct/refund/refund",
+        "pages/PersonalPub/orderConfirmation/orderConfirmation",
+        "pages/PersonalPub/recruitmentXer/recruitmentXer",
+        "pages/exChange/operatingData/operatingData",
+        "pages/findlist/contentxiang/contentxiang",
+        "pages/newProduct/presellJoin/presellJoin",
+        "pages/newProduct/pickGoods/pickGoods",
+        "pages/PersonalPub/redactData/redactData",
+        "pages/PersonalPub/xiaoXiInform/xiaoXiInform",
+        "pages/PersonalPub/wuLiuInformation/wuLiuInformation",
+        "pages/exChange/changeMoney/changeMoney",
+        "pages/exChange/GoodsOrder/GoodsOrder",
+        "pages/exChange/mySpiritRoom/mySpiritRoom",
+        "pages/newProduct/selectAddress/selectAddress",
+        "pages/exchangeSuo/exchangeSuo",
+        "pages/JiaoYiplate/JiuZuandeal/JiuZuandeal",
+        "pages/JiaoYiplate/jiuZuanResult/jiuZuanResult",
+        "pages/exChange/lianXiService/lianXiService",
+        "pages/exChange/yiJianFeedback/yiJianFeedback",
+        "pages/exChange/takeGoods/takeGoods",
+        "pages/exChange/withdrawDetails/withdrawDetails",
+        "pages/newProduct/changeAddress/changeAddress",
+        "pages/exChange/integralWithdraw/integralWithdraw",
+        "pages/exChange/myJiFen/myJiFen",
+        "pages/exChange/myJiuZuan/myJiuZuan",
+        "pages/exChange/integralDetail/integralDetail",
+        "pages/findlist/listdetails/listdetails",
+        "pages/findlist/findcontent/findcontent",
+        "pages/Discover/Discover",
+        "pages/findlist/searchwine/searchwine",
+        "pages/PersonalPub/changeInformation/changeInformation",
+        "pages/PersonalPub/orderDetails/orderDetails",
+        "pages/PersonalPub/refund/refund",
+        "pages/PersonalPub/havePaid/havePaid",
+        "pages/newProduct/newAddress/newAddress",
+        "pages/PersonalPub/orderHistory/orderHistory",
+        "pages/newProduct/shopkerTication/shopkerTication",
+        "pages/PersonalPub/myShop/myShop",
+        "pages/newProduct/salell/salell",
+        "pages/newProduct/salesRank/salesRank",
+        "pages/square/square",
+        "pages/PersonalPub/paymentOk/paymentOk",
+        "pages/PersonalPub/WinePurchase/WinePurchase",
+        "pages/PersonalPub/wineOrder/wineOrder",
+        "pages/PersonalPub/AddTheWine/AddTheWine",
+        "pages/PersonalPub/myChateau/myChateau",
+        "pages/PersonalPub/wineDetailPage/wineDetailPage",
+        "pages/newProduct/presellSucceed/presellSucceed",
+        "pages/newProduct/presell/presell",
+        "pages/newProduct/orderForm/orderForm",
+        "pages/newProduct/paymentSuccess/paymentSuccess",
+        "pages/newProduct/paymentFailure/paymentFailure",
+        "pages/login/login",
+        "pages/exChange/jiuZuanDetail/jiuZuanDetail", 
+        "pages/exChange/integralShop/integralShop",
+        "pages/qukuailiansee/qukailiansee"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "/img/home_one.png",
+                "selectedIconPath": "/img/home_two.png"
+            },
+            {
+                "pagePath": "pages/square/square",
+                "text": "酒市",
+                "iconPath": "/img/square_one.png",
+                "selectedIconPath": "/img/square_two.png"
+            },
+            {
+                "pagePath": "pages/Discover/Discover",
+                "text": "发现",
+                "iconPath": "/img/content_one.png",
+                "selectedIconPath": "/img/content_two.png"
+            },
+            {
+                "pagePath": "pages/exchangeSuo/exchangeSuo",
+                "text": "交易所",
+                "iconPath": "/img/trading_one.png",
+                "selectedIconPath": "/img/trading_two.png"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "sitemapLocation": "sitemap.json"
+}

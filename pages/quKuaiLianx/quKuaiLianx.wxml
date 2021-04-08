@@ -1,0 +1,3 @@
+<view class="qkl">
+  <view>*{{id}}</view>
+</view>

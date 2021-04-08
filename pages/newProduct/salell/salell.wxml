@@ -1,0 +1,190 @@
+<!--预售-->
+<view class='salebox'>
+  <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/bg.png' class='ositimg'></image>
+  <view class='tietleli'>
+    <view class='bastimgbox' bindtap='backpage'>
+      <image class='bastimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+    </view>
+    <view class='titletext'>预售</view>
+  </view>
+  <!-- 待合伙行列 -->
+  <view class='saletopcla'>
+    <view wx:for='{{saletoplist}}' wx:key wx:for-index="idx" data-index='{{idx}}' class='saletoplistcla {{ngindex==idx?"saletoplistclals":"saletoplistclalaa"}}' bindtap="saletoplisttap">
+      <view class='saletoplistclaitem'>{{item}}</view>
+      <view class='saletoplistclagang' data-index='{{idx}}' wx:if='{{ngindex==idx}}'></view>
+    </view>
+  </view>
+  <!-- 主要信息行列 -->
+  <scroll-view class='salemestcla' scroll-y="true" bindtap='onPullDownRefresh' bindscrolltolower="loadMore">
+    <!-- <block wx:for='{{salemestlist}}' wx:key='index' class='salemestlistcla' data-name="{{item.id}}" > -->
+    <view wx:if='{{ngindex == 0}}' wx:for='{{salemestlist}}' wx:key='index' data-id="{{item.id}}" class='salemestlistclacen'>
+      <image class='salemainimg' src='{{item.pic}}' mode='aspectFit'></image>
+      <image class='salemainimgtwo' src='http://qiniu-test.ishzm.com/jxb/img/yushou/hraderpc.png'></image>
+      <image class='saletouimg' src='{{item.kol.headimage}}'></image>
+      <image class='salekuanimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/kol_small.png'></image>
+      <text class='saletextname'>{{item.kol.name}}</text>
+      <view class='saleinforme'>
+        <text class='saleinformationone'>{{item.title}}</text>
+        <text class='saleinformationtwo'>{{item.subtitle}}</text>
+      </view>
+      <!-- 进度条 -->
+      <view class='salejindu'>
+        <view class='salejinducen'>
+          <image class='salejindubuimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/jindutiao.png'></image>
+          <view class='salejindutopimgview' style="width:{{item.percentage*4.30+20}}rpx">
+            <image class='salejindutopimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/schedulelinetop.png'></image>
+          </view>
+          <view class='salejindubanfenbi' style="left:{{item.percentage*4.30-65}}rpx">
+            <view class='salejindubanfenbicen'>
+              <view class='salejindutext'>{{item.cursellnum}}%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='salemubiao'>
+        <view class='salemubiaolist salemubiaotwo'>
+          {{item.price}}
+          <span>元/份(500ml)</span>
+        </view>
+
+        <view class='salemubiaolist salemubiaothree'>
+          剩余：
+          <span>{{item.allnum-item.nownum}}</span>份
+        </view>
+      </view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/btn_buy.png' class='salepareti' data-id='{{item.id}}' bindtap='saleboxbtap'></image>
+    </view>
+
+
+    <!--合作成功  -->
+    <view wx:if='{{ngindex == 1}}' wx:for='{{salemestlist}}' wx:key='index' data-id="{{item.id}}" class='salemestlistclacen' bindtap='hehuocli'>
+      <image class='salemainimg' src='{{imageUrl}}{{item.pic}}' mode="aspectFit"></image>
+      <image class='salemainimgtwo' src='http://qiniu-test.ishzm.com/jxb/img/yushou/hraderpc.png'></image>
+      <image class='saletouimg' src='{{imageUrl}}{{item.kol.headpic}}'></image>
+      <image class='salekuanimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/kol_small.png'></image>
+      <text class='saletextname'>{{item.kol.name}}</text>
+      <view class='saleinforme'>
+        <text class='saleinformationone'>{{item.title}}</text>
+        <text class='saleinformationtwo'>{{item.subtitle}}</text>
+      </view>
+      <view class='salehezuobut'>
+        <view class='salehezuobutlist'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/icon_yushou_blue.png' class='salehezuobutimg'></image>
+          <view class='salerigth'>
+            <view class='salebutime {{item.knowtimenum>=2?"hhcolor":""}}'>{{item.time}}</view>
+            <view class='salebuyushou {{item.knowtimenum>=2?"hhcolor":""}}'>开始预售</view>
+          </view>
+
+        </view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/jiantouhui.png' class='salebujiantou'></image>
+
+        <view class='salehezuobutlist'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/icon_zhizuo_blue.png' class='salehezuobutimgtwo'></image>
+          <view class='salerigth'>
+            <view class='salebutime {{item.knowtimenum>=3?"hhcolor":""}}'>{{item.maketime}}</view>
+            <view class='salebuyushou {{item.knowtimenum>=3?"hhcolor":""}}'>制作完成</view>
+          </view>
+
+        </view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/jiantouhui.png' class='salebujiantou'></image>
+
+
+        <view class='salehezuobutlist salelistthree'>
+          <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/icon_fahuo_blue.png' class='salehezuobutimg'></image>
+          <view class='salerigth'>
+            <view class='salebutime {{item.knowtimenum>=4?"hhcolor":""}}'>{{item.sendtime}}</view>
+            <view class='salebuyushou {{item.knowtimenum>=4?"hhcolor":""}}'>发货</view>
+          </view>
+        </view>
+
+
+      </view>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/finish.png' class='finish'></image>
+
+
+    </view>
+
+    <!-- 我参与的 -->
+    <view wx:if='{{ngindex == 2}}' wx:for='{{salemestlist}}' wx:key='index' data-orderid="{{item.orderid}}" data-id="{{item.id}}" class='salemestlistclacen' bindtap='mycanyucli'>
+      <image class='salemainimg' src='{{imageUrl}}{{item.presale.pic}}' mode="aspectFit"></image>
+      <image class='salemainimgtwo' src='http://qiniu-test.ishzm.com/jxb/img/yushou/hraderpc.png'></image>
+      <image class='saletouimg' src='{{imageUrl}}{{item.presale.kol.headpic}}'></image>
+      <image class='salekuanimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/kol_small.png'></image>
+      <text class='saletextname'>{{item.presale.kol.name}}</text>
+      <view class='saleinforme saleinformethree'>
+        <text class='saleinformationone'>{{item.presale.title}}</text>
+        <text class='saleinformationtwo'>{{item.presale.subtitle}}</text>
+      </view>
+      <!-- 进度条 -->
+
+      <view class='salejindu salejinduthree'>
+        <view class='salejinducen'>
+          <image class='salejindubuimg salejindubuimgthree' src='http://qiniu-test.ishzm.com/jxb/img/yushou/jindutiao.png'></image>
+          <view class='salejindutopimgview' style="width:{{item.cypercentage*4.30}}rpx">
+            <image class='salejindutopimg' src='http://qiniu-test.ishzm.com/jxb/img/yushou/schedulelinetop.png'>
+            </image>
+          </view>
+          <view class='salejindubanfenbi' style="left:{{item.cypercentage*4.30-65}}rpx">
+            <view class='salejindubanfenbicen'>
+              <view class='salejindutext' style='text-align: center;'>{{item.cursellnum}}%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+      <!-- 开始预售部分 -->
+      <view class='salehezuobut salehezuobutthree'>
+        <view class='salehezuobutlist salehezuobutlistthree'>
+          <!-- <view class='salehezuobutlistmban'></view> -->
+          <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/icon_yushou_white.png' class='salehezuobutimg'></image> -->
+          <view class='salerigth'>
+            <view class='salebutime salebutimethree hhcolor'>开始预售</view>
+            <view class='salebuyushou hhcolor' wx:if="{{item.knowtimenum>2}}">已完成</view>
+            <view class='salebuyushou hhcolor' wx:if="{{item.knowtimenum==2}}">进行中</view>
+          </view>
+
+        </view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/jiantouhui.png' class='salebujiantou salebujiantouthree'></image>
+
+        <view class='salehezuobutlist salehezuobutlistthree'>
+          <!-- <view class='salehezuobutlistmban'></view> -->
+          <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/icon_zhizuo_whit.png' class='salehezuobutimgtwo'></image> -->
+          <view class='salerigth'>
+            <view class='salebutime salebutimethree {{item.knowtimenum>=3?"hhcolor" :""}}'>开始制作</view>
+            <view class='salebuyushou hhcolor' wx:if="{{item.knowtimenum>3}}">已完成</view>
+            <view class='salebuyushou hhcolor' wx:if="{{item.knowtimenum==3}}">进行中</view>
+            <view class='salebuyushou' wx:if="{{item.knowtimenum<3}}">未进行</view>
+          </view>
+
+        </view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/jiantouhui.png' class='salebujiantou salebujiantouthree'></image>
+
+
+        <view class='salehezuobutlist salelistthree salehezuobutlistthree'> 
+          <!-- <view class='salehezuobutlistmban'></view> -->
+          <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/icon_fahuo_white.png' class='salehezuobutimg'></image> -->
+          <view class='salerigth'>
+            <view class='salebutime salebutimethree {{item.knowtimenum>=4?"hhcolor" :""}}'>准备发货</view>
+            <!-- <view class='salebuyushou hhcolor' wx:if="{{item.state>2}}">已完成</view> -->
+            <view class='salebuyushou hhcolor' wx:if="{{item.knowtimenum==4}}">进行中</view>
+            <view class='salebuyushou' wx:if="{{item.knowtimenum<4}}">未进行</view>
+            <view class='salebuyushou hhcolor' wx:if="{{item.knowtimenum>4}}">已完成</view>
+          </view>
+        </view>
+      </view>
+      <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/yushou/saleyiti.png' class='salehuoxinxi'></image> -->
+
+
+      <image src='{{item.pathimg}}' class='finish'></image>
+
+    </view>
+
+
+
+
+
+  </scroll-view>
+</view>
+<!-- <view class='contentView' style='padding-bottom:{{btuBottom}}'>
+    </view>  -->

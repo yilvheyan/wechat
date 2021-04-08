@@ -1,0 +1,41 @@
+<!-- 我的酒库 -->
+<view class='operatingData' style='height:{{height}}rpx'>
+    <view class='operatingData_tietleli'>
+        <view class='operatingData_button_left_ever' bindtap='mySpiritRoom'>
+            <image class='operatingData_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+        </view>
+        <view class='operatingData_titletext'>酒库操作记录</view>
+    </view>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/exChange/jiuku_bck.png' class='operatingData_bck'></image>
+    <scroll-view scroll-y="true" class='operatingData_view' wx:if="{{operatingData!=null}}">
+        <!-- <提货订单> -->
+        <view class='operatingData_view_totality' wx:key wx:for="{{operatingData}}">
+            <view class='operatingData_view_top'>
+                <view class='operatingData_view_topone' wx:if="{{item.optionstate==0}}">未选择订单</view>
+                <view class='operatingData_view_topone' wx:if="{{item.optionstate==1}}">提现订单</view>
+                <view class='operatingData_view_topone' wx:if="{{item.optionstate==2}}">提货订单</view>
+
+                <view class='operatingData_view_toptwo' wx:if="{{item.goodsinfo.virtual==0}}">{{item.stateStr}}</view>
+                <view class='operatingData_view_toptwo' wx:if="{{item.verify==0&&item.goodsinfo.virtual==1}}">正在处理中</view>
+                <view wx:if="{{item.verify==1&&item.goodsinfo.virtual==1}}">
+                    <view class='operatingData_view_toptwo'>{{item.stateStr}}</view>
+                </view>
+            </view>
+            <view class='operatingData_view_bh'>
+                <view class='operatingData_view_bhleft'>订单编号：{{item.sn}}</view>
+                <view class='operatingData_view_bhright'>{{item.time}}</view>
+            </view>
+            <view class='operatingData_view_bom'>
+                <image src='{{item.goodsinfo.detailimage}}' class='operatingData_view_bomimg' mode="scaleToFill"></image>
+                <view class='operatingData_bom_none'>
+                    <view class='operatingData_bom_top'>
+                        {{item.goodsinfo.name}}{{item.goodsinfo.desc}}
+                    </view>
+                    <view class='operatingData_bom_bom'>￥ {{item.goodsinfo.price}}
+                        <span class='operatingData_bom_span'>× {{item.num}}</span>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

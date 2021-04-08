@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\pages",
+    "\\pages\\Discover",
+    "\\pages\\home",
+    "\\pages\\index",
+    "\\pages\\main",
+    "\\utils",
+    "\\vendor",
+    "\\vendor\\weapp-cookie",
+    "\\vendor\\weapp-cookie\\src"
+  ],
+  "SelectedNode": "\\vendor\\weapp-cookie\\src\\CookieStore.js",
+  "PreviewInSolutionExplorer": false
+}

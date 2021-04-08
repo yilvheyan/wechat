@@ -1,0 +1,769 @@
+.myshop {
+    width: 750rpx;
+    /* background: rgba(243, 243, 243, 1); */
+}
+page{
+    overflow-y: hidden;
+}
+/* 去除滚动条样式 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+/* xxx的酒庄专栏  */
+
+.myshop_top {
+    width: 750rpx;
+    height: 356rpx;
+}
+
+.top_background {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    position: absolute;
+    width: 750rpx;
+    height: 356rpx;
+    top: 0rpx;
+    right: 0rpx;
+    z-index: -1;
+}
+
+.top_background_img {
+    width: 750rpx;
+    height: 356rpx;
+    position: absolute;
+    top: 0rpx;
+    right: 0rpx;
+    z-index: -10;
+}
+
+.top_state {
+    width: 60rpx;
+    height: 60rpx;
+    display: flex;
+    position: absolute;
+    top: 25rpx;
+    right: 32rpx;
+    margin-left: 25rpx;
+}
+
+.top_state image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+/*头像 名字专栏 */
+
+.top_name_medium {
+    width: 54rpx;
+    height: 52rpx;
+    position: absolute;
+    top: 210rpx;
+    left: 39rpx;
+    z-index: 100;
+}
+
+.top_name_touxiangkuang {
+    width: 102rpx;
+    height: 102rpx;
+    position: absolute;
+    top: 233rpx;
+    left: 47rpx;
+}
+
+.top_name_headportrait {
+    width: 82rpx;
+    height: 82rpx;
+    position: absolute;
+    top: 242rpx;
+    left: 57rpx;
+    border-radius: 50%;
+}
+
+.top_who {
+    position: absolute;
+    top: 212rpx;
+    left: 168rpx;
+}
+
+.top_who_name {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+}
+
+.top_who_language {
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/* 酒单详情 */
+
+.myshop_center {
+    width: 750rpx;
+    background: rgba(243, 243, 243, 1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 20rpx;
+}
+
+.myshop_center_scroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 750rpx;
+    background: rgba(243, 243, 243, 1);
+    height: calc(100%);
+}
+
+/* 第一个 */
+
+.myshop_center_one {
+    width: 332rpx;
+    height: 470rpx;
+    /* border: 1rpx sandybrown solid; */
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin-top: 23rpx;
+    margin-left: 30rpx;
+}
+
+.myshop_center_one image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+.myshop_center_one_black {
+    font-size: 24rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(19, 46, 76, 1);
+    margin-left: 17rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.myshop_center_one_writh {
+    height: 30rpx;
+    font-size: 20rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(19, 46, 76, 1);
+    opacity: 0.5;
+    margin-left: 17rpx;
+}
+
+.myshop_center_one_money {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(68, 156, 254, 1);
+    margin-right: 17rpx;
+    float: right;
+}
+
+.myshop_center_two {
+    width: 332rpx;
+    height: 470rpx;
+    margin-left: 23rpx;
+    margin-top: 23rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+}
+
+.myshop_center_two image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+.myshop_center_three {
+    width: 332rpx;
+    height: 470rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+}
+
+.myshop_center_three image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+.myshop_center_four {
+    width: 332rpx;
+    height: 470rpx;
+    margin-left: 23rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+}
+
+.myshop_center_four image {
+    width: 332rpx;
+    height: 332rpx;
+}
+
+.shopSetUp_center {
+    width: 750rpx;
+    /* height: 1000rpx; */
+    background: rgba(243, 243, 243, 1);
+    /* display: flex; */
+    flex-wrap: wrap;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+/* one */
+
+.shopSetUp_center_one {
+    width: 332rpx;
+    height: 470rpx;
+    /* border: 1rpx sandybrown solid; */
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin-top: 32rpx;
+    float: left;
+    margin-left: 30rpx;
+}
+
+/* 购物车样式 */
+
+.myshop_shopcar {
+    width: 152rpx;
+    height: 152rpx;
+    position: fixed;
+    bottom: 106rpx;
+    left: 568rpx;
+}
+
+.myshop_shopcar_img {
+    width: 152rpx;
+    height: 152rpx;
+}
+
+/* 购物车数量 */
+
+.myshop_shopcar_button {
+    width: 40rpx;
+    height: 40rpx;
+    background: rgba(250, 50, 50, 1);
+    position: fixed;
+    bottom: 203rpx;
+    left: 658rpx;
+    border-radius: 50%;
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+/* * 弹出底部弹框 */
+
+.pupContentBG {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.pupContent {
+    width: 100%;
+    background: rgba(243, 243, 243, 1);
+    /* border: 1rpx saddlebrown solid; */
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    z-index: 999;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.myshop_track {
+    /* background-color: white; */
+    margin-top: 20rpx;
+}
+
+/* 设置显示的背景 */
+
+.showBG {
+    display: block;
+}
+
+.hideBG {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideBGtUp {
+    from {
+        background: transparent;
+    }
+
+    to {
+        /* background: rgba(0, 0, 0, 0.1); */
+        background: black;
+        opacity: 0.3;
+    }
+}
+
+@keyframes slideBGDown {
+    from {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        background: transparent;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.openBG {
+    animation: slideBGtUp 0.11s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.closeBG {
+    animation: slideBGDown 0.1s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+/* 设置显示内容 */
+
+.showContent {
+    display: block;
+}
+
+.hideContent {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideContentUp {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 643rpx;
+    }
+}
+
+@keyframes slideContentDown {
+    from {
+        height: 643rpx;
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.open {
+    animation: slideContentUp 0.3s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.close {
+    animation: slideContentDown 0.5s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.myshop_payment {
+    width: 704rpx;
+    height: 82rpx;
+    background: linear-gradient(180deg, 0%, rgba(91, 163, 238, 1) 100%);
+    border-radius: 6rpx;
+    font-size: 36rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 82rpx;
+    text-align: center;
+}
+
+/* 支付订单 */
+
+/* .shop_message_style {
+    width: 90%;
+    margin-left: 40rpx;
+}
+
+
+.shop_message_style_one image {
+    width: 158rpx;
+    height: 158rpx;
+}
+
+.shop_message_style_two {
+    width: 480rpx;
+    height: 158rpx;
+    margin-left: 22rpx;
+}
+
+.shop_message_style_top {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40rpx;
+}
+
+.sharebutten {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0.6;
+}
+
+
+
+.shop_message_style_danjia {
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10rpx;
+} */
+
+/* *加号和减号* */
+
+.myshop_normal1 {
+    text-align: center;
+    float: left;
+    width: 42rpx;
+    line-height: 20px;
+    height: 44rpx;
+    border-right: 1px solid rgba(224, 223, 230, 1);
+    border-radius: 4px 0px 0px 4px;
+    color: rgba(181, 182, 184, 1);
+}
+
+.myshop_normal2 {
+    text-align: center;
+    float: right;
+    width: 42rpx;
+    line-height: 20px;
+    height: 44rpx;
+    border-left: 1px solid rgba(224, 223, 230, 1);
+    border-radius: 0px 4px 4px 0px;
+    color: rgba(181, 182, 184, 1);
+}
+
+/*数值*/
+
+.myshop_shuzhi {
+    width: 40rpx;
+    height: 26rpx;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 20rpx;
+}
+
+.myshop_stepper {
+    float: right;
+    width: 165rpx;
+    height: 44rpx;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 4rpx;
+}
+
+/* 列表 */
+
+.list {
+    width: 678rpx;
+    height: 200rpx;
+    border-bottom: 1rpx #f3f3f4 solid;
+    margin-top: 20rpx;
+    background-color: white;
+    border-radius: 12rpx;
+    margin-left: 32rpx;
+    display: flex;
+    position: relative;
+}
+
+/* 编辑 */
+
+.edit {
+    width: 90%;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 12rpx;
+    margin-left: 32rpx;
+}
+
+/* 编辑标题 */
+
+.shop_message_style_top {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40rpx;
+    margin-top: 40rpx;
+    margin-left: 20rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.shop_message_style_bttom {
+    font-size: 26rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+    margin-top: 23rpx;
+    margin-left: 20rpx;
+}
+
+.edit_btn {
+    float: right;
+    font-size: 30rpx;
+    color: #888;
+    right: 30rpx;
+}
+
+.shop_message_style {
+    width: 500rpx;
+    height: 100%;
+    margin-top: 10rpx;
+}
+
+/* 删除 */
+
+.dele_edit {
+    width: 40rpx;
+    height: 40rpx;
+    bottom: 25rpx;
+    position: absolute;
+    top: 100rpx;
+    right: 30rpx;
+    /* background: rebeccapurple; */
+}
+
+/* 单选按钮总体 */
+
+.radio_chek_zong {
+    height: 100%;
+    width: 50rpx;
+    margin-top: 69rpx;
+}
+
+/* 单选状态 */
+
+.radio_chek {
+    width: 40rpx;
+    height: 40rpx;
+    /* background: red; */
+    margin-left: 20rpx;
+}
+
+/* 列表商品图片 */
+
+.list_image {
+    width: 158rpx;
+    height: 158rpx;
+    margin-top: 35rpx;
+    margin-left: 20rpx;
+}
+
+/* 列表规格 */
+
+.cart_g_name {
+    position: absolute;
+    left: 280rpx;
+    font-size: 26rpx;
+    color: #aaa;
+    top: 75rpx;
+}
+
+/* 收藏 */
+
+.collert {
+    position: absolute;
+    font-size: 28rpx;
+    right: 40rpx;
+    top: 30rpx;
+}
+
+/* 收藏图标 */
+
+.collert_img {
+    position: relative;
+    top: 2rpx;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+/* 列表商品名称 */
+
+.list_name {
+    position: absolute;
+    left: 280rpx;
+    top: 30rpx;
+    width: 300rpx;
+    /* background-color: red; */
+    font-size: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 列表商品价格 */
+
+.list_price {
+    position: absolute;
+    font-size: 32rpx;
+    color: #d66058;
+    left: 280rpx;
+    bottom: 20rpx;
+}
+
+/* 列表商品删除 */
+
+.list_del {
+    position: absolute;
+    right: 220rpx;
+    bottom: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 44rpx;
+}
+
+/* 固定底部 */
+
+.cont_bot {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    line-height: 104rpx;
+    background: #fff;
+    border-top: 2rpx solid #ebebeb;
+}
+
+/* 全选ICON */
+
+.total-select {
+    position: absolute;
+    left: 30rpx;
+    top: 34rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+/* 全选标题 */
+
+.sel_count_name {
+    position: absolute;
+    left: 90rpx;
+    top: 6rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+/* 合计金额 */
+
+.count_price {
+    position: absolute;
+    font-size: 28rpx;
+    left: 200rpx;
+    color: #aaa;
+}
+
+.count_price text {
+    font-size: 34rpx;
+    color: #d66058;
+}
+
+/* 购物车为空 */
+
+.list_none {
+    padding: 40rpx 0;
+    color: #999;
+    text-align: center;
+}
+
+/* 提交 */
+
+.submit {
+    position: absolute;
+    width: 232rpx;
+    height: 104rpx;
+    line-height: 104rpx;
+    right: 0rpx;
+    font-size: 30rpx;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(116, 202, 251, 1);
+}
+
+.navigator-hover {
+    background: none;
+}
+
+/*数量加减*/
+
+.carts-num {
+    position: absolute;
+    right: 30rpx;
+    bottom: 23rpx;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 50rpx;
+}
+
+.view_text_center {
+    border: 1rpx solid #ebebeb;
+    font-size: 30rpx;
+    display: inline-block;
+    color: #333;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 76rpx;
+}
+
+.carts-num .minus, .carts-num .plus {
+    margin: 10rpx 0rpx 10rpx 0rpx;
+    border: 1rpx solid #ebebeb;
+    color: #000;
+    text-align: center;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 40rpx;
+}
+
+.carts-num .minus {
+    font-size: 34rpx;
+}
+
+/* .carts-num .minus.disabled{color: red;} */
+
+.carts-num .plus {
+    font-size: 34rpx;
+}

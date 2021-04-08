@@ -1,0 +1,15 @@
+<!-- 意见反馈 -->
+<view class='yiJianFeedback'>
+    <view class='yiJianFeedback_bor'>
+        <form class='addmain' bindsubmit="formSubmit">
+            <textarea maxlength='-1' bindinput="textareainput" placeholder="请写下您的宝贵建议，便于我们能够及时改正，为您提供更好的服务" class='addmain' />
+        </form>
+
+        <!-- 图片列表 -->
+        <view class='fcmainboxlistimgcla'>
+            <image src='{{item}}' bindtap='chosepic' data-img="{{item}}" class='imagecla {{(index+1)%3==0?"aa" :""}}' wx:for="{{image}}" wx:key='index' wx:for-item="item" data-index="{{index}}"></image>
+            <view style='clear: both;'></view>
+        </view>
+    </view>
+    <button class='takeGoods_botton' bindtap='tijiaofankui'>提交反馈</button>
+</view>

@@ -1,0 +1,328 @@
+.salesrank {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* 返回以及店铺排名 */
+
+.salesrank_tietleli {
+    width: 504rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 63rpx;
+    left: 23rpx;
+    display: flex;
+    /* background-color: tan; */
+    z-index: 300;
+}
+
+.salesrank_button_left_ever {
+    width: 100rpx;
+    height: 50rpx;
+}
+
+.salesrank_button_left {
+    width: 21rpx;
+    height: 35rpx;
+    margin-top: 10rpx;
+}
+
+.salesrank_titletext {
+    margin-left: 184rpx;
+    font-size: 37rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: white;
+    line-height: 45rpx;
+}
+
+/* 背景图 */
+
+.salesrank_back {
+    width: 750rpx;
+    height: 422rpx;
+}
+
+/* 背景图日期 */
+
+.salesrank_data {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 1rpx;
+    position: absolute;
+    left: 52rpx;
+    top: 239rpx;
+}
+
+/* 名称+酒馆排名 */
+
+.salesrank_titleview {
+    position: absolute;
+    top: 390rpx;
+    left: 30rpx;
+    width: 690rpx;
+    height: 118rpx;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 2rpx 10rpx 0px rgba(197, 197, 197, 0.28);
+    border-radius: 12rpx;
+    display: flex;
+}
+
+.salesrank_titleview_one {
+    width: 40rpx;
+    height: 40rpx;
+    background: linear-gradient(180deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 238, 1) 100%);
+    border-radius: 50%;
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    margin: 39rpx 0rpx 0rpx 24rpx;
+}
+
+.salesrank_titleview_two {
+    width: 88rpx;
+    height: 88rpx;
+    margin: 20rpx 0rpx 0rpx 24rpx;
+    border-radius: 50%;
+}
+
+.salesrank_titleview_three {
+    width: 150rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin: 50rpx 0rpx 0rpx 41rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.salesrank_titleview_four {
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin: 41rpx 0rpx 0rpx 84rpx;
+}
+
+.salesrank_titleview_five {
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin-top: 41rpx;
+    margin-left: 80rpx;
+}
+
+.salesrank_titleview_four span {
+    color: #fa3232;
+    font-size: 24rpx;
+    font-weight: bold;
+}
+
+.salesrank_center {
+    width: 750rpx;
+    height: 60rpx;
+    margin: 116rpx 0rpx 0rpx 132rpx;
+}
+
+/*  推荐和附近 */
+
+.salesrank_recommendone {
+    width: 487rpx;
+    height: 57rpx;
+    border: 2rpx solid rgba(91, 164, 238, 1);
+    background-color: white;
+    border-radius: 29rpx;
+    display: flex;
+    position: relative;
+    line-height: 57rpx;
+}
+
+.salesrank_style {
+    width: 244rpx;
+    height: 57rpx;
+    font-size: 26rpx;
+    /* border-radius: 29rpx 0rpx 0rpx 29rpx; */
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(91, 164, 238, 1);
+    line-height: 57rpx;
+    text-align: center;
+    border-radius: 20rpx;
+}
+
+.salesrank_active {
+    width: 244rpx;
+    height: 57rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(91, 164, 238, 1);
+    /* border-radius: 29rpx; */
+}
+
+.salesrank_explain {
+    width: 244rpx;
+    height: 57rpx;
+}
+
+/* 感叹 */
+
+.salesrank_explain {
+    margin-left: 31rpx;
+    display: flex;
+}
+
+.salesrank_explain_gantan {
+    width: 28rpx;
+    height: 28rpx;
+    margin-top: 10rpx;
+}
+
+.salesrank_explain text {
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin-left: 15rpx;
+    margin-top: 6rpx;
+}
+
+.salesrank_explain_updata {
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin-left: 69rpx;
+}
+
+/* 第一：list-one */
+
+.salesrank_explain_numberone {
+    width: 750rpx;
+    height: 273rpx;
+    border-bottom: 1rpx solid #efefef;
+    display: flex;
+}
+
+.salesrank_explain_numberone_img {
+    width: 48rpx;
+    height: 59rpx;
+    margin-top: 114rpx;
+    margin-left: 22rpx;
+}
+
+.salesrank_explain_numberone_right {
+    width: 640rpx;
+    height: 212rpx;
+    /* border: 1rpx saddlebrown solid; */
+    margin: 30rpx 0rpx 0rpx 21rpx;
+    display: flex;
+}
+
+.salesrank_numberone_right_img {
+    height: 212rpx;
+    width: 312rpx;
+    /* border: 1rpx saddlebrown solid; */
+}
+
+.salesrank_numberone_right_view {
+    height: 212rpx;
+    width: 100%;
+    /* border: 1rpx saddlebrown solid; */
+    margin-left: 26rpx;
+}
+
+.salesrank_numberone_right_view_img {
+    width: 74rpx;
+    height: 75rpx;
+    border-radius: 50%;
+}
+
+.salesrank_numberone_right_view_text {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin: 18rpx 0rpx 0rpx 20rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 250rpx;
+}
+
+.salesrank_numberone_right_view_top {
+    height: 75rpx;
+    display: flex;
+}
+
+.salesrank_numberone_right_view_centet {
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    height: 60rpx;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-top: 10rpx;
+}
+
+.salesrank_view_food_textone {
+    color: #999;
+    font-size: 16rpx;
+    text-align: left;
+}
+
+.salesrank_view_food_texttwo {
+    color: #333;
+    font-size: 18rpx;
+    font-weight: bold;
+}
+
+.salesrank_view_food_textthree {
+    color: #999;
+    font-size: 16rpx;
+    float: right;
+    margin-top: 15rpx;
+    margin-right: 10rpx;
+}
+
+.salesrank_view_food_textthree_red {
+    color: #fa3232;
+    font-size: 22rpx;
+    font-weight: bold;
+}
+
+.salesrank_right {
+    width: 100%;
+    height: 500rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    text-align: center;
+    color: rgba(153, 153, 153, 1);
+    margin-top: 300rpx;
+}
+
+.sorry_none {
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    /* margin-left: 200rpx; */
+    text-align: center;
+    margin-top: 200rpx;
+}

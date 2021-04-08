@@ -1,0 +1,88 @@
+.paymentok {
+    width: 750rpx;
+    height: 754rpx;
+    /* border: 1rpx salmon solid; */
+}
+
+.paymentok_image_one {
+    width: 750rpx;
+    height: 581rpx;
+    background-color: white;
+}
+
+.paymentok_image_two {
+    width: 248rpx;
+    height: 182rpx;
+    margin-top: 146rpx;
+}
+
+.paymentok_one {
+    position: absolute;
+    left: 184rpx;
+    top: 99rpx;
+    width: 400rpx;
+    height: 483rpx;
+    text-align: center;
+}
+
+.paymentok_image_three {
+    width: 237rpx;
+    height: 237rpx;
+    color: white;
+}
+
+.paymentok_one1 {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: 500;
+    color: #333333;
+}
+
+
+.paymentok_one3 {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(181, 182, 184, 1);
+    /* border: 1rpx rebeccapurple solid; */
+}
+
+/* 提货按钮 */
+
+.pay_food_tihuo {
+    width: 520rpx;
+    height: 76rpx;
+    background: linear-gradient(0deg, rgba(116, 202, 251, 1) 0%, rgba(91, 163, 237, 1) 100%);
+    border-radius: 12rpx;
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color:white;
+    margin-top: 28rpx;
+}
+/* 退款按钮 */
+.pay_food_tuikuan {
+    width: 520rpx;
+    height: 76rpx;
+    background-color: white;
+    border-radius: 12rpx;
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(67, 147, 242, 1);
+    margin-top: 32rpx;
+    border:2rpx solid rgba(67,147,242,1);
+}
+/* 售卖按钮 */
+.pay_food_shoumai {
+    width: 520rpx;
+    height: 76rpx;
+    background-color: white;
+    border-radius: 12rpx;
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(67, 147, 242, 1);
+    margin-top: 32rpx;
+    border:2rpx solid rgba(67,147,242,1);
+}

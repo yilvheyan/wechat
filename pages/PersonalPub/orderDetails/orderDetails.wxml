@@ -1,0 +1,137 @@
+<!-- 酒品下单 -->
+<view class='orderDetails'>
+    <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_top.png' class='orderDetails_back'></image>
+    <!-- 订单详情 -->
+    <view class='orderDetails_tietleli'>
+        <view class='orderDetails_button_left_ever' bindtap='skipnew'>
+            <image class='orderDetails_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+        </view>
+        <view class='orderDetails_titletext'>订单详情</view>
+    </view>
+    <!-- 待支付 -->
+    <view class='orderDetails_unpaid'>
+        <view class='orderDetails_unpaid_left'>待支付</view>
+        <view class='orderDetails_unpaid_time'>还剩\t
+            <text>{{qgdjs_jo.min}}\t分</text>
+            <text>{{qgdjs_jo.sec}}\t秒</text> 订单关闭
+        </view>
+    </view>
+    <!-- 姓名电话售后地址 -->
+    <view class='orderDetails_site_top' bindtap='placeanorder'>
+        <view class='orderDetails_site_top_view'>
+            <image class='orderDetails_site_top_view_img' src="http://qiniu-test.ishzm.com/jxb/img/myStore/wineorder_map.png"></image>
+            <view class='orderDetails_site_two'>
+                <view class='orderDetails_site_two_name'>{{tihuoaddress.name}}</view>
+                <view class='orderDetails_site_two_phone'>{{tihuoaddress.phone}}</view>
+            </view>
+
+            <image src='http://qiniu-test.ishzm.com/jxb/img/myStore/wineoeder_z.png' class='orderDetails_site_top_z'></image>
+        </view>
+        <view class='orderDetails_site_two_map'>{{tihuoaddress.address}}</view>
+        <image src='http://qiniu-test.ishzm.com/jxb/img/orderConfirmation/order_email.png' class='orderDetails_email'></image>
+    </view>
+    <!-- 商品信息 -->
+    <view class='orderDetails_shop'>
+        <view class='shop_message'>
+            <image src='{{peopleinfohead}}' class='shop_message_img'></image>
+            <text class='orderDetails_shop_textone'>{{peopleinfoname}}的酒馆</text>
+        </view>
+        <scroll-view scroll-y="true">
+            <view class='shop_message_style'>
+                <view class='shop_message_style_one' wx:for="{{shopmessage}}" wx:key data-id="{{item.id}}">
+                    <image src='{{item.goodsinfo.playimage}}'></image>
+                    <view class='shop_message_style_two'>
+                        <view class='shop_message_style_top'>
+                            {{item.goodsinfo.name}}
+                        </view>
+                        <view class='shop_message_style_bttom'>
+                            ￥{{item.goodsinfo.price}}
+                        </view>
+                        <view class='shop_message_style_zzz'>
+                            ×{{item.num}}
+
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 底部弹窗动画的内容 -->
+    <view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true'>
+        <!-- 下面弹出的部分 -->
+        <view class='orderDetails_popup'>
+            <view class='orderDetails_popup_top'>取消订单</view>
+            <view class='orderDetails_popup_footer'>
+                <view class='orderDetails_popup_cause'>注:一旦您的订单取消,将无法恢复</view>
+                <view class='orderDetails_popup_select'>请选择取消订单的原因\t(必选)</view>
+                <view class='refund_popup_list' wx:for="{{popuplist}}" data-id="{{item.id}}" wx:key="index" wx:for-index="index">
+                    <image src='http://qiniu-test.ishzm.com/jxb//img/pitchon.png' wx:if="{{item.orderpopupic==false}}" class='refund_popup_img' bindtap='selectList' data-id="{{item.id}}" data-index="{{index}}"></image>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/pitchon_two.png' wx:if="{{item.orderpopupic==true}}" class='refund_popup_img' bindtap='selectList' data-id="{{item.id}}" data-index="{{index}}"></image>
+
+                    <text class='orderDetails_shop_textone'>{{item.name}}</text>
+                </view>
+            </view>
+            <button class='orderDetails_popup_button' style='background:{{viewBg}};' bindtap='orderpresent'>提交</button>
+        </view>
+    </view>
+    <!-- 固定的背景 -->
+    <view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'></view>
+    <!-- 共计 -->
+    <view class='orderDetails_sumto'>
+        <view class='orderDetails_sumto_zongto'>
+            <view class='orderDetails_sumto_top'>
+                <view class='orderDetails_sumto_sp'>商品合计</view>
+                <view class='orderDetails_sumto_en'>￥{{allmoney}}</view>
+            </view>
+            <view class='orderDetails_sumto_center'>
+                <view class='orderDetails_sumto_sp_one'>运费</view>
+                <view class='orderDetails_sumto_en_two'>{{packagepostage}}</view>
+            </view>
+            <view class='orderDetails_sumto_bottom'>
+                <view class='orderDetails_sumto_sp_new'>新人优惠</view>
+                <view class='orderDetails_sumto_en_new'>
+                    <image src='http://qiniu-test.ishzm.com/jxb/img/new_pople.png' class='orderDetails_sumto_en_new_img'></image>
+                    <view>-￥{{state}}</view>
+                </view>
+            </view>
+            <view class='orderDetails_sumto_center'>
+                <view class='orderDetails_sumto_sp_shiji'>实际支付</view>
+                <view class='orderDetails_sumto_en_shijitwo'>￥{{allmoney}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 订单编号 -->
+    <view class='orderDetails_reference'>
+        <view class='orderDetails_reference_zongto'>
+            <view class='orderDetails_reference_center'>
+                <view class='orderDetails_reference_sp_one'>订单编号:</view>
+                <view class='orderDetails_reference_en_two'>
+                    <view class='orderDetails_reference_en_two_textone'>{{sn}}</view>
+                    <view class='orderDetails_reference_en_two_texttwo' data-text="{{sn}}" bindtap="copyText">复制</view>
+                </view>
+            </view>
+            <view class='orderDetails_reference_center'>
+                <view class='orderDetails_reference_sp_one'>下单时间</view>
+                <view class='orderDetails_reference_en_time'>{{xiadantime}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 占位 -->
+    <view class='orderDetails_none'></view>
+    <!-- 支付 -->
+    <view class='orderDetails_pay'>
+        <view class='orderDetails_pay_left'>
+            <view class='orderDetails_pay_one'>
+                <span class='orderDetails_pay_col'>实际支付：</span>
+                <span class='orderDetails_pay_row'>￥{{allmoney}}</span>
+            </view>
+        </view>
+
+        <!-- <确认支付> -->
+
+        <view class='orderDetails_pay_ancle' bindtap='clickPup' data-orderid="{{item.id}}">取消订单</view>
+        <view class='orderDetails_pay_right' bindtap='havePaid'>确认支付</view>
+    </view>
+
+</view>

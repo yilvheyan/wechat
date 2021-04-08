@@ -1,0 +1,132 @@
+<!--酒市- 广场页面 -->
+<view class='square'>
+  <!-- <view class='square_tietleli'>
+    <view class='square_button_left_ever' bindtap='skiphome'>
+      <image class='square_button_left' src='http://qiniu-test.ishzm.com/jxb/img/yushou/bast.png'></image>
+    </view>
+    <view class='square_titletext'>酒市</view>
+  </view> -->
+  <!-- 轮播图 -->
+  <swiper class='swiper_img' indicator-dots='true' autoplay="true" current="{{currentSwiper}}" interval="2000" duration="1000" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item catchtap="squarecl" data-id="{{item.jump}}">
+        <image src="{{item.url}}" class="lunbo-image" mode="aspectFit" />
+        <!-- 暂且使用：-->
+        <image src='http://qiniu-test.ishzm.com/jxb/img/Wine/banner.png' class="lunbo-image" />
+      </swiper-item>
+      <!-- 修改指示点样式-暂未完成 -->
+      <view class="dots">
+        <block wx:for="{{advimg}}" wx:key>
+          <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+        </block>
+      </view>
+    </block>
+  </swiper>
+  <!-- 酒馆排名和新品预售专区  -->
+  <view class="section">
+    <!-- 销量排名 -->
+    <view class="section_one" bindtap='choicecli'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/Wine/btn_ranking.png'></image>
+      <view class='section_one_sales'>
+        <view class='section_one_tavern'>排名</view>
+        <view class='section_one_ranking'>销售排名</view>
+      </view>
+    </view>
+    <!-- 预售专区 -->
+    <view class="section_two" bindtap='presellClick'>
+      <image src='http://qiniu-test.ishzm.com/jxb/img/Wine/btn_presell.png'></image>
+      <view class='section_two_moddle'>
+        <view class='section_two_new'>新品</view>
+        <view class='section_two_presell'>预售专区</view>
+      </view>
+    </view>
+  </view>
+  <view class='saletopcla'>
+    <!-- 推荐和附近 -->
+    <view class='recommendone'>
+      <view class='square_style  {{item.id==num?"square_active":""}}' catchtap='onclickList' wx:for="{{message}}" wx:key="" id="{{index}}">{{item.text}}
+        <view class='square_null' wx:if='{{item.id==num}}'></view>
+      </view>
+      <view class='inabatch' bindtap='inabatchcli'>换一批</view>
+    </view>
+    <!-- 111 -->
+    <!-- <xxx的酒庄> -->
+    <view class='cafe' bindscrolltolower="loadMore">
+      <!-- 推荐 -->
+      <view class='cafe_left' wx:if="{{sindex==0}}" wx:for="{{chateau}}" wx:key="" data-uid="{{item.uid}}" data-name="{{item.name}}" bindtap='myhose'>
+        <view class='cafe_left_img'>
+          <image src='{{item.image}}' mode="widthFix"></image>
+        </view>
+        <view class='cafe_workoff'>
+          <view class='cafe_workoff_one'>
+            <image src='{{item.heads.head}}' class='cafe_workoff_touxiang'></image>
+            <view class='cafe_workoff_span'>{{item.name}}的酒庄</view>
+          </view>
+          <view class='cafe_workoff_socor'>
+            <span class='cafe_workoff_socor_one'>已出售</span>
+            <span class='cafe_workoff_socor_two'>{{item.num}}份</span>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/Wine/hot.png' class='cafe_workoff_hot'></image>
+            <view class='cafe_workoff_math'>{{item.num*70}}</view>
+          </view>
+          <view>
+
+          </view>
+        </view>
+      </view>
+
+      <!-- 推荐 -->
+      <view class='cafe_left' wx:if="{{sindex==2}}" wx:for="{{chateau}}" style='height:{{height}}rpx' wx:key="" data-uid="{{item.uid}}" data-name="{{item.name}}" bindtap='myhose'>
+
+        <image src='{{item.image}}' class='cafe_left_img' mode="widthFix"></image>
+        <view class='cafe_workoff'>
+          <view class='cafe_workoff_one'>
+            <image src='{{item.heads.head}}' class='cafe_workoff_touxiang'></image>
+            <view class='cafe_workoff_span'>{{item.name}}的酒庄</view>
+          </view>
+          <view class='cafe_workoff_socor'>
+            <span class='cafe_workoff_socor_one'>已出售</span>
+            <span class='cafe_workoff_socor_two'>{{item.num}}份</span>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/Wine/hot.png' class='cafe_workoff_hot'></image>
+            <view class='cafe_workoff_math'>{{item.hot}}</view>
+          </view>
+          <view>
+
+          </view>
+        </view>
+      </view>
+
+      <!--附近  -->
+      <view class='cafe_left' wx:if="{{sindex==1}}" wx:for="{{chateau}}" wx:key="" data-uid="{{item.uid}}" data-name="{{item.name}}" bindtap='myhose'>
+        <view class="cafe_left_none">
+          <text>{{item.address}}</text>
+        </view>
+        <view class='cafe_left_img'>
+          <image src='{{item.image}}' mode="scaleToFill"></image>
+        </view>
+        <!-- <image src='{{item.image}}' class='cafe_left_img'></image> -->
+        <view class='cafe_workoff'>
+          <view class='cafe_workoff_one'>
+            <image src='{{item.heads.head}}' class='cafe_workoff_touxiang'></image>
+            <view class='cafe_workoff_span'>{{item.name}}的酒庄</view>
+          </view>
+          <view class='cafe_workoff_socor'>
+            <span class='cafe_workoff_socor_one'>已出售</span>
+            <span class='cafe_workoff_socor_two'>{{item.num}}份</span>
+            <!-- <image src='http://qiniu-test.ishzm.com/jxb/img/Wine/hot.png' class='cafe_workoff_hot'></image>-->
+            <view class='cafe_workoff_math'>{{city}}</view>
+          </view>
+          <view>
+          </view>
+        </view>
+      </view>
+      <!-- <view wx:if="{{sindex==1}}" class='nearby'>暂且没有东西哦主人~</view> -->
+    </view>
+  </view>
+
+  <!-- 登录组件 -->
+  <loginPopup id="loginPopup"></loginPopup>
+  <!-- <view class='component' wx:if="{{islogin==0}}">
+        <loginpopup id="loginpopup" bind:showTab="homeTab"></loginpopup>    
+    </view> -->
+
+</view>

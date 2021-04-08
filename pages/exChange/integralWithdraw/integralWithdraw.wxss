@@ -1,0 +1,318 @@
+/* 总体样式 */
+
+.Withdraw {
+    width: 750rpx;
+    height: 100%;
+    background: rgba(243, 246, 250, 1);
+    overflow: hidden;
+}
+
+/* 去除滚动样式 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.myWithdraw {
+    width: 706rpx;
+    height: 620rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12rpx;
+    margin: 20rpx 22rpx 0rpx 22rpx;
+    position: relative;
+}
+
+.myWithdraw_bck {
+    width: 706rpx;
+    height: 302rpx;
+}
+
+.myWithdraw_view {
+    width: 646rpx;
+    height: 282rpx;
+    position: absolute;
+    top: 28rpx;
+    left: 30rpx;
+}
+
+/* <!-- 积分兑换商品 --> */
+
+.myWithdraw_view_duihuan {
+    width: 706rpx;
+    height: 104rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 22rpx;
+}
+
+.myWithdraw_view_duihuan_spanone {
+    font-size: 30rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: #666;
+}
+
+.myWithdraw_view_duihuantwo {
+    font-size: 24rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+.myWithdraw_view_duihuanimg {
+    width: 10rpx;
+    height: 19rpx;
+    margin-right: 30rpx;
+    margin-left: 10rpx;
+}
+
+.myWithdraw_view_top {
+    width: 100%;
+}
+
+.myWithdraw_view_top_spanone {
+    font-size: 28rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    float: left;
+}
+
+.myWithdraw_view_toptwo {
+    font-size: 28rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    float: right;
+}
+
+.myWithdraw_youkuohao {
+    width: 13rpx;
+    height: 22rpx;
+    margin-left: 9rpx;
+}
+
+.myWithdraw_view_center {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.myWithdraw_bckmoney {
+    width: 156rpx;
+    height: 157rpx;
+    margin-left: 60rpx;
+}
+
+.myWithdraw_view_center_spantwo {
+    font-size: 30rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 180rpx;
+    margin-left: 14rpx;
+}
+
+.myWithdraw_view_center_spantwo_benyue {
+    font-size: 30rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 180rpx;
+}
+
+.myWithdraw_view_center_spantwo_span {
+    font-size: 81rpx;
+    font-family: PingFangSC;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    line-height: 150rpx;
+    letter-spacing: 2rpx;
+    /* width: 208rpx; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 14rpx;
+}
+
+.myWithdraw_view_bottom {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.myWithdraw_view_bottomjf {
+    font-size: 26rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+}
+
+.Withdraw_explain {
+    width: 100%;
+    /* height: 500rpx; *//* margin-top: 30rpx; */
+}
+
+.Withdraw_explain_liucheng {
+    font-size: 26rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 37rpx;
+    margin: 23rpx 0rpx 0rpx 30rpx;
+}
+
+.Withdraw_explain_tixian {
+    width: 100%;
+    margin-top: 51rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Withdraw_explain_tixian image {
+    width: 62rpx;
+    height: 62rpx;
+}
+
+.Withdraw_explain_tixian_progress {
+    width: 174rpx;
+    height: 6rpx;
+    background: rgba(67, 147, 242, 1);
+    border-radius: 2rpx;
+}
+
+.Withdraw_explain_tixian_progress_two {
+    width: 174rpx;
+    height: 6rpx;
+    background: rgba(67, 147, 242, 1);
+    border-radius: 2rpx;
+}
+
+.Withdraw_explain_bottixian {
+    display: flex;
+    align-items: center;
+}
+
+.Withdraw_explain_tixian_one {
+    width: 110rpx;
+    height: 100rpx;
+    text-align: center;
+    margin: 14rpx 0rpx 0rpx 60rpx;
+}
+
+.Withdraw_explain_tixian_one_huanjiu {
+    font-size: 22rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(67, 147, 242, 1);
+}
+
+.Withdraw_explain_tixian_one_gray {
+    font-size: 18rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+.Withdraw_explain_tixian_two {
+    height: 100rpx;
+    text-align: center;
+    margin: 14rpx 0rpx 0rpx 120rpx;
+}
+
+.Withdraw_explain_tixian_two_huanjiu {
+    font-size: 22rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(67, 147, 242, 1);
+}
+
+.Withdraw_explain_tixian_two_gray {
+    font-size: 18rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+.Withdraw_explain_tixian_three {
+    width: 110rpx;
+    height: 100rpx;
+    text-align: center;
+    margin: 14rpx 0rpx 0rpx 115rpx;
+}
+
+.Withdraw_explain_tixian_three_huanjiu {
+    font-size: 22rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(67, 147, 242, 1);
+}
+
+.Withdraw_explain_tixian_three_gray {
+    font-size: 18rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+/* 积分兑换酒钻记录 */
+
+.Withdraw_exch {
+    width: 348rpx;
+    /* height: 562rpx; */
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6rpx;
+    margin: 14rpx 0rpx 0rpx 18rpx;
+    overflow: hidden;
+    /* border: 1rpx saddlebrown solid; */
+}
+
+.Withdraw_exch_img {
+    width: 100%;
+    height: 348rpx;
+}
+
+.Withdraw_exch_text {
+    width: 310rpx;
+    /* height: 108rpx; */
+    overflow: hidden;
+    line-height: 36rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-left: 17rpx;
+}
+
+.Withdraw_exch_amoney {
+    font-size: 22rpx;
+    font-family: PingFangSC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    margin: 21rpx 0rpx 32rpx 17rpx;
+}
+
+.Withdraw_exch_amoneycolor {
+    font-size: 30rpx;
+    font-family: PingFangSC;
+    font-weight: 500;
+    color: rgba(41, 139, 241, 1);
+    letter-spacing: 1rpx;
+}
+
+.Withdraw_exch_ensemble {
+    width: 750rpx;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50rpx;
+}

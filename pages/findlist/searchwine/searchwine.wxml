@@ -1,0 +1,20 @@
+<view class='searchwinebox'>
+  <!-- <view class='searchtop'>
+        <view class='searchinput'>
+            <input type='text' bindconfirm="bindconfirm" focus='{{focus}}' bindinput='bindinput' confirm-type='search' placeholder='搜索您需要的商品'></input>
+        </view>
+    </view> -->
+
+  <view class='searchmain' style='height:{{height}}rpx'>
+    <view class='searchmainlisttuijiancla' wx:key wx:for="{{searchmainlist}}" bindtap='getjiupin' data-item="{{item}}" data-shopuid="{{item.shopuid}}">
+      <view class='smtuijianimg'>
+        <image src='{{item.playimage}}' mode="scaleToFill"></image>
+      </view>
+      <view class='smtuijanxinxi'>
+        <view class='smtuijanxtitle'>{{item.name}}{{item.subname}}</view>
+        <view class='smtuijanmoney'>￥{{item.price}}</view>
+      </view>
+      <view style='clear: both;'></view>
+    </view>
+  </view>
+</view>

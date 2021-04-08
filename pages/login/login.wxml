@@ -1,0 +1,100 @@
+<view class="container">
+    <!-- 注册界面注册界面注册界面 -->
+    <view wx:if="{{type == 'registe'}}" class='registered'>
+        <view class='registered_touxiang'>
+            <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='registered_button'>
+                获取头像昵称
+            </button>
+
+            <view class='registered_shouji'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/phone_two.png'>
+                </image>
+                <input type='number' placeholder="请输入手机" bindinput="phoneInput" auto-focus class='login_shuru' />
+            </view>
+            <view class='login_mima'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/validation.png'>
+                </image>
+                <input placeholder="请输入验证码" bindinput="codeInput" auto-focus class='login_shuru' />
+                <text bindtap='sendSms' class='registered_yanzheng'>{{code}}</text>
+            </view>
+
+            <view class='login_mima'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/password_two.png'>
+                </image>
+                <input input placeholder="请输入密码" bindinput="passwordInput" auto-focus class='login_shuru' />
+                <image src='http://qiniu-test.ishzm.com/jxb/img/eyes_two.png' class='login_yanjing'>
+                </image>
+            </view>
+            <view class='registered_xieyi'>
+                <radio class='registered_xieyi_one'></radio>
+                <text class='registered_xieyi_two'>注册则默认同意《用户服务协议》</text>
+            </view>
+            <button bindtap='registeAccount' class='registered_zhuce'>注册</button>
+            <!-- <view>
+        <text>密码：</text>
+        <input password placeholder="请输入密码" bindinput="passwordInput" auto-focus/>
+        <view>
+          <switch checked bindchange="switchChange" />
+          <text>***</text>
+        </view>
+      </view> 
+      <view>
+        <checkbox></checkbox>
+        <text>用户协议</text>
+      </view>
+      <button bindtap='registeAccount'>注册</button>-->
+        </view>
+    </view>
+
+    <!-- 重置密码重置密码重置密码 -->
+    <view wx:elif="{{type == 'forget'}}" class='reset'>
+        <view>
+            <view class='login_shouji'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/phone_two.png'>
+                </image>
+                <input type='number' placeholder="请输入手机" bindinput="phoneInput" auto-focus class='login_shuru' />
+            </view>
+            <!-- <view>
+        <text>短信验证：</text>
+        <input type='number' placeholder="请验证码" bindinput="codeInput" auto-focus/>
+        <text bindtap='sendSms'>发送验证码</text>
+      </view> -->
+            <view class='login_mima'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/validation.png'>
+                </image>
+                <input placeholder="请输入验证码" bindinput="codeInput" auto-focus class='login_shuru' />
+                <text bindtap='sendSms' class='registered_yanzheng'>{{code}}</text>
+            </view>
+            <view class='login_mima'>
+                <image src='http://qiniu-test.ishzm.com/jxb/img/password_two.png'>
+                </image>
+                <input password placeholder="请输入密码" bindinput="passwordInput" auto-focus class='login_shuru' />
+                <image src='http://qiniu-test.ishzm.com/jxb/img/eyes.png' class='login_yanjing'>
+                </image>
+            </view>
+            <button bindtap='resetAccount' class='login_denglu'>确认</button>
+        </view>
+    </view>
+
+    <!-- 登陆界面登陆界面登陆界面 -->
+    <view wx:else class='login'>
+        <view class='login_touxiang'>登录</view>
+        <view class='login_shouji'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/phone_two.png'>
+            </image>
+            <input type='number' placeholder="请输入手机" bindinput="phoneInput" auto-focus class='login_shuru' />
+        </view>
+        <view class='login_mima'>
+            <image src='http://qiniu-test.ishzm.com/jxb/img/password_two.png'>
+            </image>
+            <input password placeholder="请输入密码" bindinput="passwordInput" auto-focus class='login_shuru' />
+            <image src='http://qiniu-test.ishzm.com/jxb/img/eyes.png' class='login_yanjing'>
+            </image>
+        </view>
+        <view class='login_zh'>
+            <text bindtap='registeClick' class='login_chuangjian'>创建账号</text>
+            <text bindtap='forgetClick' class='login_wangji'>忘记密码</text>
+        </view>
+        <button bindtap='loginClick' class='login_denglu'>登录</button>
+    </view>
+</view>
